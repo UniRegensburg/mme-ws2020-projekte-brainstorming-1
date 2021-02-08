@@ -9,7 +9,8 @@
 | **Post-Its** | Auf dem Whiteboard können Post-Its eingefügt werden. Die Post-Its können erstellt, editiert (Größe, Text, Farbe) und gelöscht werden. | kritisch | 4 Tage | Frontend, Canvas Rendering, User Interface |
 | **Text** | Es kann an beliebigen Stellen auf dem Whiteboard Text eingefügt werden. Der Text kann erstellt, editiert (Größe, Text, Farbe) und gelöscht werden. | kritisch | 2 Tag | Frontend, Canvas Rendering, User Interface |
 | **Einladungs-Link** | Der Nutzer kann einen Einladungs-Link generieren und kopieren, um zur kollaborativen Arbeit einzuladen. | kritisch | 3 Tage | Backend, User Interface |
-| **Export** | Das erstellte Whiteboard kann als PDF exportiert werden. | kritisch | 5 Tage | Backend, User Interface |
+| **Benutzername** | Der Nutzer gibt sich einen Namen. Die anderen Nutzer sehen die Namen der Nutzer, die gerade am Whiteboard arbeiten | sehr hoch | 2 Tage | Backend, Frontend, Canvas Rendering, User Interface |
+| **Export** | Das erstellte Whiteboard kann als PDF exportiert werden. | hoch | 5 Tage | Backend, User Interface |
 | **Timer** | Der Nutzer hat die Möglichkeit, für einzelne Brainstorming-Aufgaben einen Timer zu stellen. Nach Ablauf des Timers wird eine Push-Nachricht angezeigt. | mittel | 3 Tage | Frontend, Canvas Rendering, User Interface |
 | **Bilder einfügen** | Der Nutzer hat die Möglichkeit, Bilder zu importieren. | nice-to-have | 3 Tage | Frontend, Backend, Canvas Rendering, User Interface |
 | **Formen (Kreis, Pfeile)** | Der Nutzer kann zur Strukturierung der Gedanken Kreise und Pfeile einfügen. | nice-to-have | 4 Tage | Frontend, Canvas Rendering, User Interface |
