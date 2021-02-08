@@ -22,3 +22,10 @@
 ## Umsetzung
 
 [Beschreiben Sie kurz das geplante Vorgehen bei der Umsetzung der Features. Entwerfen Sie dazu ein oder mehrere *Vertical Slices* anhand derer Sie den zentralen *Use Case* der Anwendung implementieren werden. Geben Sie an, wann welche Funktionen (und in welchem Vollständigkeitsgrad) implementiert werden. Begründen Sie kurz die gewählte Reihenfolge. ]
+
+1. Zunächst wird das Whiteboard, auf das die Nutzer später gemeinsam zugreifen können, implementiert.
+2. Die grundlegenden Features zur Arbeit auf dem Whiteboard werden umgesetzt (Post-Its, Text).
+3. Der gemeinsame Zugriff auf das Whiteboard wird ermöglicht. Dies wird über die Implementierung des Einladungs-Links erreicht, den der Nutzer erzeugen und kopieren kann.
+4. Die restlichen Features werden nach Gewichtung geordnet umgesetzt.
+
+Diese Reihenfolge wurde gewählt, da zuerst die grundlegenden Funktionen (1.-3.) der Anwendung umgesetzt werden sollen. Anschließend wird die Anwendung um Features erweitert, die auf den Grundfunktionen aufbauen oder diese erweitern. 1.-3. sollten einzeln immer weitestgehend umgesetzt sein, bevor bei 4. parallel an der Umsetzung der Features gearbeitet werden kann.
