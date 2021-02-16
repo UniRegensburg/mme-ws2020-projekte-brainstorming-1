@@ -11,7 +11,6 @@ Design:https://material.io/develop/web/getting-started
 
 index.js
 
-
 Utils  
 oberservable.js  
 eventManager.js  
@@ -20,40 +19,30 @@ UI
 boardCreator.js  
 textboxCreator.js  
 pictureImporter.js  
-drawCreator.js  
+drawCreator.js    
+timer.js  
+menue.js  
 
-timer.js
+Tools  
+export.js  
+boardManager.js  
+textboxManager.js  
+pictureManager.js  
+drawManager.js  
+viewManager.js  
 
-menue.js
-
-
-Tools
-
-export.js
-
-boardManager.js
-
-textboxManager.js
-
-pictureManager.js
-
-drawManager.js
-
-viewManager.js
-
-
-index: zentrale Stelle zur Verwaltung aller Module; enthält init Funktionen
-oberservable: lauscht auf interessante Events; wie bei Studienleistungen
-eventManager: reagiert auf Events
-boardCreator: erstellt das leere Whiteboard mit eingegebenen Nutzernamen, Board-Titel und Werkzeugleiste
-boardManager: updatet das Whiteboard
-textboxCreator: erstellt eine Textbox mit mini-Menü (zur Einstellung von Schriftfarbe und Hintergrundfarbe)
-textboxManager: updatet die Textboxen
-pictureImporter: importiert ein Bild vom Rechner des Nutzers; (z.B. als drag and drop)
-pictureManager: updatet Bilder
-drawCreator: erstellt eine Freihand Zeichnung
-drawManager: updatet Freihand Zeichnungen
-viewManager: regelt den Zoom
-timer: erstellt den Timer und überwacht dessen Ablauf; schickt Pop-up Nachricht nach dessen Ablauf
-export: exportiert das Whiteboard (z.B. als PDF oder JPEG)
-menue: erstellt die Werkzeugleiste
+index: zentrale Stelle zur Verwaltung aller Module; enthält init Funktionen  
+oberservable: lauscht auf interessante Events; wie bei Studienleistungen  
+eventManager: reagiert auf Events  
+boardCreator: erstellt das leere Whiteboard mit eingegebenen Nutzernamen, Board-Titel und Werkzeugleiste  
+boardManager: updatet das Whiteboard  
+textboxCreator: erstellt eine Textbox mit mini-Menü (zur Einstellung von Schriftfarbe und Hintergrundfarbe)  
+textboxManager: updatet die Textboxen  
+pictureImporter: importiert ein Bild vom Rechner des Nutzers; (z.B. als drag and drop)  
+pictureManager: updatet Bilder  
+drawCreator: erstellt eine Freihand Zeichnung  
+drawManager: updatet Freihand Zeichnungen  
+viewManager: regelt den Zoom  
+timer: erstellt den Timer und überwacht dessen Ablauf; schickt Pop-up Nachricht nach dessen Ablauf  
+export: exportiert das Whiteboard (z.B. als PDF oder JPEG)  
+menue: erstellt die Werkzeugleiste  
