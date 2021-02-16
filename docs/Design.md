@@ -12,21 +12,14 @@ Design:https://material.io/develop/web/getting-started
 index.js
 
 
-Utils
-
+*Utils
 oberservable.js
-
 eventManager.js
 
-
-UI
-
+*UI
 boardCreator.js
-
 textboxCreator.js
-
 pictureImporter.js
-
 drawCreator.js
 
 timer.js
