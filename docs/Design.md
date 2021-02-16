@@ -4,10 +4,10 @@
 
 Für UI Elemente gibt es eine Creator Klasse, die das Element erstellt und eine Manager Klasse, die das Element updatet.
 
-APIs und Bibliotheken:
-Canvas: http://fabricjs.com/ 
-Kommunikation: https://lance.gg/#quickstart oder https://colyseus.io/
-Design:https://material.io/develop/web/getting-started
+APIs und Bibliotheken:  
+Canvas: http://fabricjs.com/   
+Kommunikation: https://lance.gg/#quickstart oder https://colyseus.io/  
+Design:https://material.io/develop/web/getting-started  
 
 index.js
 
