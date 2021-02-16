@@ -11,7 +11,7 @@ Notieren und beschreiben Sie hier alle wesentlichen Funktionen bzw. *Features* I
 | **Einladungs-Link** | Der Nutzer kann einen Einladungs-Link generieren und kopieren, um zur kollaborativen Arbeit einzuladen. | kritisch | 3 Tage | Backend, User Interface |
 | **Benutzername** | Der Nutzer gibt sich einen Namen. Die anderen Nutzer sehen die Namen der Nutzer, die gerade am Whiteboard arbeiten | sehr hoch | 2 Tage | Backend, Frontend, Canvas Rendering, User Interface |
 | **Export** | Das erstellte Whiteboard kann als PDF exportiert werden. | hoch | 5 Tage | Backend, User Interface |
-| **Timer** | Der Nutzer hat die Möglichkeit, für einzelne Brainstorming-Aufgaben einen Timer zu stellen. Nach Ablauf des Timers wird eine Push-Nachricht angezeigt. | mittel | 3 Tage | Frontend, Canvas Rendering, User Interface |
+| **Timer** | Der Nutzer hat die Möglichkeit, für einzelne Brainstorming-Aufgaben einen Timer zu stellen. Nach Ablauf des Timers wird ein Pop-up angezeigt. | mittel | 3 Tage | Frontend, Canvas Rendering, User Interface |
 | **Bilder einfügen** | Der Nutzer hat die Möglichkeit, Bilder zu importieren. | nice-to-have | 3 Tage | Frontend, Backend, Canvas Rendering, User Interface |
 | **Formen (Kreis, Pfeile)** | Der Nutzer kann zur Strukturierung der Gedanken Kreise und Pfeile einfügen. | nice-to-have | 4 Tage | Frontend, Canvas Rendering, User Interface |
 | **Ansicht** | Der Nutzer kann die Ansicht individuell anpassen. Hierfür kann eine Zoom-Funktion sowie eine Pan-Funktion, mit der der Bildausschnitt angepasst werden kann, verwendet werden. | nice-to-have | 7 Tage | Frontend, Canvas Rendering, User Interface |
