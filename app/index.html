@@ -13,114 +13,100 @@
 </head>
 
 <body> 
+              <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
-    <button class="mdc-button foo-button">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Button</span>
-      </button>
-      <span class="material-icons">
-        text_fields
-        </span>
-        <text>brainboard</text>
-
-
-          <label class="mdc-text-field mdc-text-field--filled">
-            <span class="mdc-text-field__ripple"></span>
-            <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
-            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-            <span class="mdc-line-ripple"></span>
-          </label>
-
-          <button class="mdc-button foo-button">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Exportieren</span>
-          </button>
-
-
+              <div id="Logo" style="position: absolute; top:0; left:0;">
+              <text>brainboard</text>
+              <label class="mdc-text-field mdc-text-field--filled">
+                <span class="mdc-text-field__ripple"></span>
+                <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
+                <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+                <span class="mdc-line-ripple"></span>
+              </label>
               <button class="mdc-button">
                 <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
               </button>
-              <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">undo</i>
-              </button>
-              <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">mode</i>
-              </button>
+            </div>
 
-              <p>
-                  
-              </p>
-              <p>
+            <div id="Zoom" style="position: absolute; bottom:0; right:0;">
+            <button class="mdc-button">
+              <span class="mdc-button__ripple"></span>
+              <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
+            </button><p></p>
+            <button class="mdc-button">
+              <span class="mdc-button__ripple"></span>
+              <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
+            </button><p></p>
+            <button class="mdc-button">
+                <span class="mdc-button__ripple"></span>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
+              </button>
+              </div>
+
+              <div id="toolbar" style="position: absolute; top:20%; left:0;">
                 <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">palette</i>
-                  </button>
+                  </button><p></p>
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">add_photo_alternate</i>
-                  </button>
+                  </button><p></p>
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">gesture</i>
-                  </button>
-              </p>
-
-              <p>
+                  </button><p></p>
                 <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">panorama_fish_eye</i>
-                  </button>
+                  </button><p></p>
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">crop_16_9</i>
-                  </button>
+                  </button><p></p>
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">trending_flat</i>
                   </button>
-              </p>
-              <p>
-                <button class="mdc-button">
+                </div>
+
+                <div id="Account" style="position: absolute; top:0; right:0;">
+                  <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
                   </button>
-              </p>
-              <p>
-                <button class="mdc-button">
+                  <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
                   </button>
-              </p>
-              <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
-              </button>
-              <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
-              </button>
-              <p>
-                <button class="mdc-button">
-                  <span class="mdc-button__ripple"></span>
-                  <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
-                </button>
-                <button class="mdc-button">
-                  <span class="mdc-button__ripple"></span>
-                  <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
-                </button>
-                <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
-                  </button>
-              </p>
-          
-    <canvas id="canvas"></canvas>
-    <h1>Multimedia Engineering</h1>
+                  </div>
+
+                  <div id="Timer" style="position: absolute; bottom:0; left:0;">
+                    <button class="mdc-button">
+                      <span class="mdc-button__ripple"></span>
+                      <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>
+                    </button>
+                    </div>
+      
+                    <button class="mdc-button">
+                      <span class="mdc-button__ripple"></span>
+                      <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
+                    </button>
+                    <button class="mdc-button">
+                      <span class="mdc-button__ripple"></span>
+                      <i class="material-icons mdc-button__icon" aria-hidden="true">undo</i>
+                    </button>
+                    <button class="mdc-button">
+                      <span class="mdc-button__ripple"></span>
+                      <i class="material-icons mdc-button__icon" aria-hidden="true">mode</i>
+                    </button>
+      
+                
+                
+              
     <script src="resources/js/fabric.min.js"></script>
-    <script src="resources/js/index.js"></script> </script>
+    <script type="module" src="resources/js/index.js"></script> </script>
 </body>
 
 </html>

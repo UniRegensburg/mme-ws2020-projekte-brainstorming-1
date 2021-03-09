@@ -1,5 +1,7 @@
 /* eslint-env browser */
 
+var rect;
+
 function init() {
 	let outputElement = document.querySelector("div");
 	//outputElement.innerHTML = "It works!";
@@ -8,11 +10,20 @@ function init() {
 }
 
 const canvas = new fabric.Canvas('canvas', {
-	height: 2000,
-	width: 2000,
+	height: window.innerHeight,
+	width: window.innerWidth,
 	backgroundColor: '#e3e3e3'
-
 });
+
+rect = new fabric.Rect({
+	left: 100,
+	top: 100,
+	fill: "red",
+	width: 20,
+	height: 20
+  });
+
+canvas.add(rect);
 
 canvas.renderAll();
 init();
