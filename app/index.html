@@ -15,7 +15,7 @@
 <body> 
               <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
-              <div id="Logo" style="position: absolute; top:0; left:0;">
+              <div id="title" style="position: absolute; top:0; left:0;">
               <text>brainboard</text>
               <label class="mdc-text-field mdc-text-field--filled">
                 <span class="mdc-text-field__ripple"></span>
@@ -29,49 +29,53 @@
               </button>
             </div>
 
-            <div id="Zoom" style="position: absolute; bottom:0; right:0;">
-            <button class="mdc-button">
-              <span class="mdc-button__ripple"></span>
-              <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
-            </button><p></p>
-            <button class="mdc-button">
-              <span class="mdc-button__ripple"></span>
-              <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
-            </button><p></p>
-            <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
-              </button>
-              </div>
-
-              <div id="toolbar" style="position: absolute; top:20%; left:0;">
+              <div class="menue" id="toolbar" style="position: absolute; top:20%; left:0.7%;">
                 <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">palette</i>
+                  <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
                   </button><p></p>
                   <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">add_photo_alternate</i>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
                   </button><p></p>
                   <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">gesture</i>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
+                  </button><p></p>
+                  <button class="mdc-button">
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
                   </button><p></p>
                 <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">panorama_fish_eye</i>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
                   </button><p></p>
                   <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">crop_16_9</i>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
                   </button><p></p>
                   <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">trending_flat</i>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
                   </button>
                 </div>
 
-                <div id="Account" style="position: absolute; top:0; right:0;">
+                <div id="zoom" style="position: absolute; bottom:0; right:0;">
+                  <button class="mdc-button">
+                    <span class="mdc-button__ripple"></span>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
+                  </button><p></p>
+                  <button class="mdc-button">
+                    <span class="mdc-button__ripple"></span>
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
+                  </button><p></p>
+                  <button class="mdc-button">
+                      <span class="mdc-button__ripple"></span>
+                      <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
+                    </button>
+                    </div>
+
+                <div id="user" style="position: absolute; top:0; right:0;">
                   <button class="mdc-button">
                     <span class="mdc-button__ripple"></span>
                     <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
@@ -82,7 +86,7 @@
                   </button>
                   </div>
 
-                  <div id="Timer" style="position: absolute; bottom:0; left:0;">
+                  <div id="timer" style="position: absolute; bottom:0; left:0;">
                     <button class="mdc-button">
                       <span class="mdc-button__ripple"></span>
                       <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>

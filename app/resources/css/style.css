@@ -1,3 +1,10 @@
+:root {
+    --background: #F5F5F5;
+    --ui-light: #EEEEEE;
+    --ui-light-transperent: #eeeeeeef;
+    --ui-dark: #616161;
+  }
+
 html {
     margin: 0;
 }
@@ -23,3 +30,23 @@ h1 {
     border-color: #FFF;
     color: #FAFAFA;
 }
+
+.menue {
+    background-color: var(--ui-light-transperent);
+    border-radius: 5px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.button-icon {
+    color: var(--ui-dark);
+}
+
+.button-icon-ripple::after{
+    background-color:var(--ui-dark) !important;
+}
+
+.button-icon-ripple::before{
+    background-color:var(--ui-dark) !important;
+}
+
+

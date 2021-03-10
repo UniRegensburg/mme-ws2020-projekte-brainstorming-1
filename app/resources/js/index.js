@@ -12,15 +12,15 @@ function init() {
 const canvas = new fabric.Canvas('canvas', {
 	height: window.innerHeight,
 	width: window.innerWidth,
-	backgroundColor: '#e3e3e3'
+	backgroundColor: '#F5F5F5'
 });
 
 rect = new fabric.Rect({
 	left: 100,
 	top: 100,
-	fill: "red",
-	width: 20,
-	height: 20
+	fill: '#FF5722',
+	width: 100,
+	height: 150
   });
 
 canvas.add(rect);
