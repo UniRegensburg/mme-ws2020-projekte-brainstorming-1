@@ -14,7 +14,7 @@
 
 <body> 
               <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
-
+              
               <div id="title" style="position: absolute; top:0; left:0;">
               <text>brainboard</text>
               <label class="mdc-text-field mdc-text-field--filled">
@@ -30,31 +30,38 @@
             </div>
 
               <div class="menue" id="toolbar" style="position: absolute; top:20%; left:0.7%;">
-                <button class="mdc-button">
+                <button class="mdc-button tooltip">
+                  <span class="tooltiptext">color</span>
                   <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
                   </button><p></p>
-                  <button class="mdc-button">
+                  <button class="mdc-button tooltip">
+                    <span class="tooltiptext">textbox</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
                   </button><p></p>
-                  <button class="mdc-button">
+                  <button class="mdc-button tooltip">
+                    <span class="tooltiptext">upload picture</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
                   </button><p></p>
-                  <button class="mdc-button">
+                  <button class="mdc-button tooltip">
+                    <span class="tooltiptext">draw</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
                   </button><p></p>
-                <button class="mdc-button">
+                <button class="mdc-button tooltip">
+                    <span class="tooltiptext">circle</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
                   </button><p></p>
-                  <button class="mdc-button">
+                  <button id="button-rect" class="mdc-button tooltip">
+                    <span class="tooltiptext">rectangle</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
                   </button><p></p>
-                  <button class="mdc-button">
+                  <button class="mdc-button tooltip">
+                    <span class="tooltiptext">arrow</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
                   </button>
