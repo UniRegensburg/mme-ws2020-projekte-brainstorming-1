@@ -1,14 +1,22 @@
+import FreeDraw from "./FreeDraw.js";
+
 var colorMenue = document.getElementById("colorPicker"), 
 icon = document.getElementById("icon-colorpicker"),
-selectedColor;
+selectedColor, freeDraw;
 
-class Color{
-    
+class Color{  
+
+
     showMenue(){
         colorMenue.classList.remove("hide");
     }
 
-    selectColor(position){
+    init(fd){
+      this.freeDraw = fd;}
+
+    selectColor(position, canvas){
+
+      //freeDraw;
 
         switch (position) {
             case 1:
@@ -40,6 +48,7 @@ class Color{
         colorMenue.classList.add("hide");
         icon.style.color = selectedColor;
 
+        if(this.freeDraw.getIsActive()){this.freeDraw.freeDrawing(canvas, selectedColor, true);}
     }
 
 }

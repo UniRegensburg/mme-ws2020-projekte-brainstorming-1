@@ -4,6 +4,7 @@
     --ui-light-transperent: #eeeeeeef;
     --ui-dark: #616161;
     --ui-semidark: #9E9E9E;
+    --default: #F3722C;
   }
 
 html {
@@ -52,6 +53,10 @@ h1 {
 
 .button-icon-ripple::before{
     background-color:var(--ui-dark) !important;
+}
+
+#icon-colorpicker{
+  color:var(--default);
 }
 
 .tooltip {

@@ -1,3 +1,5 @@
+import Config from "./Config.js";
+
 var canvas;
 
 class Canvas{
@@ -6,7 +8,7 @@ class Canvas{
         canvas = new fabric.Canvas("canvas", {
             height: window.innerHeight,
             width: window.innerWidth,
-            backgroundColor: '#F5F5F5'
+            backgroundColor: Config.COLORCANVAS,
         });  
         return canvas;
     }

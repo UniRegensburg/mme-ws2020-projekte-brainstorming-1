@@ -1,6 +1,7 @@
 import {selectedColor} from "./Color.js";
+import Config from "./Config.js";
 
-var isDown, origX, origY, ellipse;
+var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT;
 
 class Circle{
 
@@ -10,6 +11,8 @@ class Circle{
         canvas.on('mouse:down', function(o){
             var pointer = canvas.getPointer(o.e);
         
+            if(selectedColor){color = selectedColor;}
+
             isDown = true;
             origX = pointer.x;
             origY = pointer.y;
@@ -23,7 +26,7 @@ class Circle{
                 ry: pointer.y-origY,
                 angle: 0,
                 fill: 'transparent',
-                stroke: selectedColor,
+                stroke: color,
                 strokeWidth: 3,
             });
             canvas.add(ellipse);
