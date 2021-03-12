@@ -50,3 +50,15 @@ h1 {
 }
 
 
+<<<<<<< Updated upstream
+=======
+  .button-color:hover {
+    border-color: var(--ui-semidark);
+  }
+
+  #user_count {
+    font-size: 1em;
+    color: #6119e9;
+    margin-right: 15px;
+  }
+>>>>>>> Stashed changes
