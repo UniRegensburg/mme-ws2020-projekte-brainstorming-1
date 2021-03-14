@@ -10,108 +10,143 @@
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+
+    <!-- Code zum automatischen Öffnen des Modal beim Laden der Seite-->
+    <script>
+        $(document).ready(function() {
+            $('.modal').modal('show');
+        });
+    </script>
+
 </head>
 
-<body> 
-              <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
+<body>
 
-              <div id="title" style="position: absolute; top:0; left:0;">
-              <img src="app/resources/images/Brainboard_Logo.png" alt="brainboard"> </img>
-              <label class="mdc-text-field mdc-text-field--filled">
-                <span class="mdc-text-field__ripple"></span>
-                <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
-                <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-                <span class="mdc-line-ripple"></span>
-              </label>
-              <button class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
-              </button>
-            </div>
+    <!-- Beginn Code Webseite-->
+    <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
-              <div class="menue" id="toolbar" style="position: absolute; top:20%; left:0.7%;">
-                <button class="mdc-button">
-                  <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
-                  </button><p></p>
-                <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
-                  </button>
-                </div>
+    <div id="title" style="position: absolute; top:0; left:0;">
+        <img src="app/resources/images/Brainboard_Logo.png" alt="brainboard"> </img>
+        <!-- <label class="mdc-text-field mdc-text-field--filled">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
+            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+            <span class="mdc-line-ripple"></span>
+        </label> -->
 
-                <div id="zoom" style="position: absolute; bottom:0; right:0;">
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                      <span class="mdc-button__ripple"></span>
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
-                    </button>
-                    </div>
+        <button class="modal-button" id="modal-new" style="vertical-align: middle;"><span> Einstellungen </span> </button>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
+        </button>
+    </div>
 
-                <div id="user" style="position: absolute; top:0; right:0;">
-                  <text id="user_count"> 0 von 5 </text>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
-                  </button>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple"></span>
-                    <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
-                  </button>
-                  </div>
+    <div class="menue" id="toolbar" style="position: absolute; top:20%; left:0.7%;">
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
+        </button>
+    </div>
 
-                  <div id="timer" style="position: absolute; bottom:0; left:0;">
-                    <button class="mdc-button">
-                      <span class="mdc-button__ripple"></span>
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>
-                    </button>
-                    </div>
-      
-                    <button class="mdc-button">
-                      <span class="mdc-button__ripple"></span>
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
-                    </button>
-                    <button class="mdc-button">
-                      <span class="mdc-button__ripple"></span>
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">undo</i>
-                    </button>
-                    <button class="mdc-button">
-                      <span class="mdc-button__ripple"></span>
-                      <i class="material-icons mdc-button__icon" aria-hidden="true">mode</i>
-                    </button>
-      
-                
-                
-              
+    <div id="zoom" style="position: absolute; bottom:0; right:0;">
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_in</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">zoom_out</i>
+        </button>
+        <p></p>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">open_in_full</i>
+        </button>
+    </div>
+
+    <div id="user" style="position: absolute; top:0; right:0;">
+        <text id="user_count"> 0 von 5 </text>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
+        </button>
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
+        </button>
+    </div>
+
+    <div id="timer" style="position: absolute; bottom:0; left:0;">
+        <button class="mdc-button">
+            <span class="mdc-button__ripple"></span>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>
+        </button>
+    </div>
+
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
+    </button>
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">undo</i>
+    </button>
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">mode</i>
+    </button>
+
     <script src="resources/js/fabric.min.js"></script>
-    <script type="module" src="resources/js/index.js"></script> </script>
+    <script type="module" src="resources/js/index.js"></script>
+    <script type="module" src="resources/js/show-modal.js"></script>
+    </script>
+
+    <!-- Code für Modal-->
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div id="close">+</div>
+            <img src="app/resources/images/Brainboard_Logo.png" alt="Logo brainboard">
+            <form class="modal-form" action="">
+                <input id="board-name" type="text" placeholder="Name des Boards?">
+                <input id="user-name" type="text" placeholder="Name">
+                <input id="code" type="text" placeholder="Zugangscode">
+                <button class="modal-button" id="modal-join" style="vertical-align: middle;"><span> Beitreten </span> </button>
+                <button class="modal-button" id="modal-create" style="vertical-align: middle;"><span> Erstellen </span> </button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

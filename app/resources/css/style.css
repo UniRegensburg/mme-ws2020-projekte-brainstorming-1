@@ -3,7 +3,7 @@
     --ui-light: #EEEEEE;
     --ui-light-transperent: #eeeeeeef;
     --ui-dark: #616161;
-  }
+}
 
 html {
     margin: 0;
@@ -33,7 +33,7 @@ h1 {
 
 .menue {
     background-color: var(--ui-light-transperent);
-    border-radius: 5px;
+    border-radius: 55px;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
 
@@ -41,21 +41,117 @@ h1 {
     color: var(--ui-dark);
 }
 
-.button-icon-ripple::after{
-    background-color:var(--ui-dark) !important;
+.button-icon-ripple::after {
+    background-color: var(--ui-dark) !important;
 }
 
-.button-icon-ripple::before{
-    background-color:var(--ui-dark) !important;
+.button-icon-ripple::before {
+    background-color: var(--ui-dark) !important;
 }
 
 
-  .button-color:hover {
+.button-color:hover {
     border-color: var(--ui-semidark);
-  }
+}
 
-  #user_count {
+#user_count {
     font-size: 1em;
     color: #6119e9;
     margin-right: 15px;
-  }
+}
+
+
+/* Style für Modal */
+
+.bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(97, 25, 233, 0.9);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content {
+    width: 600px;
+    height: 400px;
+    background-color: #FFF;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.5s;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+    position: relative;
+
+}
+
+.modal-button {
+    display: inline-block;
+    border-radius: 25px;
+    background-color: #6119e9;
+    border: none;
+    color: #FFF;
+    font-size: 1em;
+    padding: 1.2em;
+    width: 15em;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+.modal-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.modal-button:hover {
+    background-color: #E89131;
+}
+
+.modal-button span::after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.modal-button:hover span {
+    padding-right: 25px;
+}
+
+.modal-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+input {
+    font-size: 1em;
+    text-align: center;
+    width: 15em;
+    display: block;
+    margin: 15px auto;
+    padding: 1.2em;
+    border-radius: 25px;
+    border: 1px solid;
+}
+
+.bg-modal img {
+    margin: 1.5em;
+}
+
+#close {
+    position: absolute;
+    padding: -20px;
+    right: 0px;
+    top: 0px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
