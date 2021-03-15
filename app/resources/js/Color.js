@@ -6,7 +6,6 @@ selectedColor, freeDraw;
 
 class Color{  
 
-
     showMenue(){
         colorMenue.classList.remove("hide");
     }

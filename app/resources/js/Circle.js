@@ -1,22 +1,44 @@
 import {selectedColor} from "./Color.js";
 import Config from "./Config.js";
 
-var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT;
+var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT, circleMenue = document.getElementById("circlePicker"),
+fill, stroke;
 
 class Circle{
 
+    showMenue(){
+        circleMenue.classList.remove("hide");
+    }
+
+    constructor(type){
+        this.type = type;
+    }
+
+    setType(type){
+        this.type = type;
+    }
+
+    getType(){
+        return this.type;
+    }
+
     // from https://stackoverflow.com/questions/34100866/how-to-free-draw-ellipse-using-fabricjs
-    drawCircle(canvas){
+    drawCircle(canvas, circle){
 
         canvas.on('mouse:down', function(o){
+            
+            circleMenue.classList.add("hide");
+            
             var pointer = canvas.getPointer(o.e);
-        
-            if(selectedColor){color = selectedColor;}
+
+            if (selectedColor) {color = selectedColor;}
+            if (circle.getType() === "withBorder") {fill = "transparent"; stroke = 3;}
+            else if (circle.getType() === "filled") {fill = color; stroke = 0;}
 
             isDown = true;
             origX = pointer.x;
             origY = pointer.y;
-        
+
             ellipse = new fabric.Ellipse({
                 left: origX,
                 top: origY,
@@ -25,9 +47,9 @@ class Circle{
                 rx: pointer.x-origX,
                 ry: pointer.y-origY,
                 angle: 0,
-                fill: 'transparent',
+                fill: fill,
+                strokeWidth: stroke,
                 stroke: color,
-                strokeWidth: 3,
             });
             canvas.add(ellipse);
         });

@@ -1,17 +1,39 @@
 import {selectedColor} from "./Color.js";
 import Config from "./Config.js";
 
-var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT;
+var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT, rectMenue = document.getElementById("rectPicker"),
+fill, stroke;
 
 class Rect{
 
+    showMenue(){
+        rectMenue.classList.remove("hide");
+    }
+
+    constructor(type){
+        this.type = type;
+    }
+
+    setType(type){
+        this.type = type;
+    }
+
+    getType(){
+        return this.type;
+    }
+
     // from https://jsfiddle.net/wcwabpwc/
-    drawRect(canvas){
+    drawRect(canvas, rect){
 
         canvas.on('mouse:down', function(o){
+
+            rectMenue.classList.add("hide");
+
             var pointer = canvas.getPointer(o.e);
 
-            if(selectedColor){color = selectedColor;}
+            if(selectedColor) {color = selectedColor;}
+            if (rect.getType() === "withBorder") {fill = "transparent"; stroke = 3;}
+            else if (rect.getType() === "filled") {fill = color; stroke = 0;}
         
             isDown = true;
             origX = pointer.x;
@@ -20,9 +42,9 @@ class Rect{
             rectangle = new fabric.Rect({
                 left: origX,
                 top: origY,
-                fill: 'transparent',
+                fill: fill,
                 stroke: color,
-                strokeWidth: 3,
+                strokeWidth: stroke,
             });
             canvas.add(rectangle);
         });

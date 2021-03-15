@@ -1,5 +1,4 @@
 /* eslint-env browser */
-
 import Canvas from "./Canvas.js";
 import Rect from "./Rect.js";
 import Circle from "./Circle.js";
@@ -11,7 +10,10 @@ import Arrow from "./Arrow.js";
 
 var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7;
+colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
+circleButton1, circleButton2,
+rectButton1, rectButton2,
+textboxButton1, textboxButton2, textboxButton3;
 
 function init() {
 	//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
@@ -25,7 +27,7 @@ function initUI(){
 
 	color = new Color;
 
-	freedraw = new FreeDraw (true); 
+	freedraw = new FreeDraw (false); 
 	color.init(freedraw);
 
 	colorpickerButton = document.getElementById("button-colorpicker");
@@ -47,24 +49,45 @@ function initUI(){
 	colorButton6.addEventListener("click", function(){color.selectColor(6, canvas);});
 	colorButton7.addEventListener("click", function(){color.selectColor(7, canvas);});
 
+	textbox = new Textbox ("notFilled");
+
 	textboxButton = document.getElementById("button-textbox");
-	textboxButton.addEventListener("click", function(){textbox = new Textbox; textbox.drawTextbox(canvas);});
+	textboxButton.addEventListener("click", function(){textbox.showMenue(); textbox.drawTextbox(canvas, textbox);});
+
+	textboxButton1 = document.getElementById("button-textbox-1");
+	textboxButton2 = document.getElementById("button-textbox-2");
+	textboxButton1.addEventListener("click", function(){textbox.setType("notFilled");});
+	textboxButton2.addEventListener("click", function(){textbox.setType("filled");});
 
 	mouseButton = document.getElementById("button-mouse");
 	mouseButton.addEventListener("click", function(){freedraw.freeDrawing(canvas, Config.COLORDEFAULT, false);});
 	
-	//freeDrawButton = document.getElementById("button-freedraw");
 	freeDrawButton = Config.FREEDRAWBUTTON;
-	freeDrawButton.addEventListener("click", function(){freedraw.freeDrawing(canvas, Config.COLORDEFAULT, true);});
+	freeDrawButton.addEventListener("click", function(){freedraw.showMenue(freedraw, canvas); 
+		freedraw.freeDrawing(canvas, Config.COLORDEFAULT, true);});
+
+	circle = new Circle ("withBorder");
 
 	circleButton = document.getElementById("button-circle");
-	circleButton.addEventListener("click", function(){circle = new Circle; circle.drawCircle(canvas);});
+	circleButton.addEventListener("click", function(){circle.showMenue(); circle.drawCircle(canvas, circle);});
+
+	circleButton1 = document.getElementById("button-circle-1");
+	circleButton2 = document.getElementById("button-circle-2");
+	circleButton1.addEventListener("click", function(){circle.setType("withBorder");});
+	circleButton2.addEventListener("click", function(){circle.setType("filled");});
+
+	rect = new Rect ("withBorder");
 
 	rectButton = document.getElementById("button-rect");
-	rectButton.addEventListener("click", function(){rect = new Rect; rect.drawRect(canvas);});
+	rectButton.addEventListener("click", function(){rect.showMenue(); rect.drawRect(canvas, rect);});
 
+	rectButton1 = document.getElementById("button-rect-1");
+	rectButton2 = document.getElementById("button-rect-2");
+	rectButton1.addEventListener("click", function(){rect.setType("withBorder");});
+	rectButton2.addEventListener("click", function(){rect.setType("filled");});
+
+	
 	arrow = new Arrow;
-
 	arrowButton = document.getElementById("button-arrow");
 	arrowButton.addEventListener("click", function(){arrow.drawArrow(canvas);});
 }
