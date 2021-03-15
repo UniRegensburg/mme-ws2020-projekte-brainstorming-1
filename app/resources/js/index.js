@@ -8,10 +8,11 @@ import Color from "./Color.js";
 import FreeDraw from "./FreeDraw.js";
 import Config from "./Config.js";
 import Arrow from "./Arrow.js";
+import Download from "./Download.js";
 
-var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow,
+var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow, download,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7;
+colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7, downloadButton, exampleRect;
 
 function init() {
 	//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
@@ -67,6 +68,16 @@ function initUI(){
 
 	arrowButton = document.getElementById("button-arrow");
 	arrowButton.addEventListener("click", function(){arrow.drawArrow(canvas);});
+
+	downloadButton = document.getElementById("button-download");
+	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
+	if(downloadButton) {
+		downloadButton.addEventListener("click", function(){
+			download = new Download; 
+			download.startDownlad(canvas);
+		});
+	}
+	
 }
 
 init();
