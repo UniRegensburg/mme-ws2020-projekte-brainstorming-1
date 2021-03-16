@@ -10,9 +10,10 @@ import Config from "./Config.js";
 import Arrow from "./Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
+import Pan from "./Pan.js";
 
-var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow, download,
-zoom, textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
+var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow, download, zoom, pan,
+textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7, 
 downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
 
@@ -85,6 +86,9 @@ function initUI(){
 	zoomInitButton = document.getElementById("button-zoom-init");
 	zoomOutButton = document.getElementById("button-zoom-out");
 	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
+
+	pan = new Pan;
+	pan.enablePan(canvas);
 }
 
 init();
