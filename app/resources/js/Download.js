@@ -1,9 +1,7 @@
 /* eslint-env browser */
 
 function createDataURI(canvas) {
-    let dataURI = canvas.toDataURL();
-
-    console.log(dataURI);
+    canvas.toDataURL();
 }
 
 function downloadToLocal(canvas) {

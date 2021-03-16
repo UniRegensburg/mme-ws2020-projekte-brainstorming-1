@@ -9,10 +9,12 @@ import FreeDraw from "./FreeDraw.js";
 import Config from "./Config.js";
 import Arrow from "./Arrow.js";
 import Download from "./Download.js";
+import Zoom from "./Zoom.js";
 
 var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow, download,
-textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7, downloadButton, exampleRect;
+zoom, textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
+colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7, 
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
 
 function init() {
 	//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
@@ -77,7 +79,12 @@ function initUI(){
 			download.startDownlad(canvas);
 		});
 	}
-	
+
+	zoom = new Zoom;
+	zoomInButton = document.getElementById("button-zoom-in");
+	zoomInitButton = document.getElementById("button-zoom-init");
+	zoomOutButton = document.getElementById("button-zoom-out");
+	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
 }
 
 init();
