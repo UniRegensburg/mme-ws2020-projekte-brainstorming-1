@@ -13,7 +13,9 @@
 </head>
 
 <body> 
+
               <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
+            
 
               <div id="title" style="position: absolute; top:0; left:0;">
               <img src="app/resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
@@ -29,35 +31,121 @@
               </button>
             </div>
 
-              <div class="menue" id="toolbar" style="position: absolute; top:20%; left:0.7%;">
-                <button class="mdc-button">
+              <div class="menue" id="toolbar" style="position: absolute; top:15%; left:0.7%;">
+                <button id="button-colorpicker" class="mdc-button tooltip">
+                  <span class="tooltiptext">color</span>
                   <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
-                  </button><p></p>
-                  <button class="mdc-button">
+                    <i id="icon-colorpicker" class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
+                  </button><p/>
+                  <button id="button-mouse" class="mdc-button tooltip">
+                    <span class="tooltiptext">mouse</span>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                      <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">near_me</i>
+                    </button><p/>
+                  <button id="button-textbox" class="mdc-button tooltip">
+                    <span class="tooltiptext">textbox</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
-                  </button><p></p>
-                  <button class="mdc-button">
-                    <span class="mdc-button__ripple button-icon-ripple"></span>
-                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
-                  </button><p></p>
-                  <button class="mdc-button">
+                  </button><p/>
+                  <button id="button-freedraw" class="mdc-button tooltip">
+                    <span class="tooltiptext">draw</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
-                  </button><p></p>
-                <button class="mdc-button">
+                  </button><p/>
+                <button id="button-circle" class="mdc-button tooltip">
+                    <span class="tooltiptext">circle</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
-                  </button><p></p>
-                  <button class="mdc-button">
+                  </button><p/>
+                  <button id="button-rect" class="mdc-button tooltip">
+                    <span class="tooltiptext">rectangle</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
-                  </button><p></p>
-                  <button class="mdc-button">
+                  </button><p/>
+                  <button id="button-arrow" class="mdc-button tooltip">
+                    <span class="tooltiptext">arrow</span>
                     <span class="mdc-button__ripple button-icon-ripple"></span>
                     <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
+                  </button><p/>
+                  <button class="mdc-button tooltip">
+                    <span class="tooltiptext">upload picture</span>
+                    <span class="mdc-button__ripple button-icon-ripple"></span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
                   </button>
+                </div>
+
+                <div id="colorPicker" class="menue hide" style="position: absolute; top:15%; left:10%;">
+                  <button id="button-color-1" class="button-color" style="background-color:#F94144;"/>
+                  <button id="button-color-2" class="button-color" style="background-color:#F3722C;"/>
+                  <button id="button-color-3" class="button-color" style="background-color:#F8961E;"/>
+                  <button id="button-color-4" class="button-color" style="background-color:#F9C74F;"/>
+                  <button id="button-color-5" class="button-color" style="background-color:#90BE6D;"/>
+                  <button id="button-color-6" class="button-color" style="background-color:#43AA8B;"/>
+                  <button id="button-color-7" class="button-color" style="background-color:#577590;"/>
+                </div>
+
+                <div id="textboxPicker" class="menue hide" style="position: absolute; top:33%; left:10%;">
+                  <button id="button-textbox-1" class="button-textbox button-not-filled tooltip">
+                    <span class="tooltiptext">not filled</span>
+                    abc
+                  </button>
+                  <button id="button-textbox-2" class="button-textbox button-filled tooltip">
+                    <span class="tooltiptext">filled</span>
+                    abc
+                  </button>
+                  <div>
+                    <p id="slider-textbox-output" style="font-size: small; color: gray">Text size: </p>
+                    <input id="slider-textbox" class="slider" type="range" min="10" max="100" value="35">
+                  </div>
+                </div>
+
+                <div id="freeDrawPicker" class="menue hide" style="position: absolute; top:43%; left:10%;">
+                  <button id="button-freedraw-1" class="button-freedraw tooltip">
+                    <span class="tooltiptext">pen</span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+                  </button>
+                  <button id="button-freedraw-2" class="button-freedraw tooltip">
+                    <span class="tooltiptext">marker</span>
+                    <i id="icon-freedraw-marker" class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+                  </button>
+                  <div>
+                    <p id="slider-freedraw-output" style="font-size: small; color: gray">Pen size: </p>
+                    <input id="slider-freedraw" class="slider" type="range" min="1" max="70" value="10">
+                  </div>
+                </div>
+
+                <div id="circlePicker" class="menue hide" style="position: absolute; top:50%; left:10%;">
+                  <button id="button-circle-1" class="button-circle button-with-border tooltip">
+                    <span class="tooltiptext">with border</span>
+                  </button>
+                  <button id="button-circle-2" class="button-circle button-filled tooltip">
+                    <span class="tooltiptext">filled</span>
+                  </button>
+                </div>
+
+                <div id="rectPicker" class="menue hide" style="position: absolute; top:60%; left:10%;">
+                  <button id="button-rect-1" class="button-rect button-with-border tooltip">
+                    <span class="tooltiptext">with border</span>
+                  </button>
+                  <button id="button-rect-2" class="button-rect button-filled tooltip">
+                    <span class="tooltiptext">filled</span>
+                  </button>
+                </div>
+
+                <div id="objectMenue" class="menue hide" style="position: absolute; top:20%; left:20%;">
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">color</span>
+                    <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">palette</i>
+                  </button>
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">dublicate</span>
+                    <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">content_copy</i>
+                  </button>
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">delete</span>
+                    <i class="material-icons button-icon icon-objectMenue" aria-hidden="true">delete</i>
+                  </button>
+
                 </div>
 
                 <div id="zoom" style="position: absolute; bottom:0; right:0;">
