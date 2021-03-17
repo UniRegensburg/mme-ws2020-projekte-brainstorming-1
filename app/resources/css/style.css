@@ -1,58 +1,225 @@
 :root {
-    --background: #F5F5F5;
-    --ui-light: #EEEEEE;
-    --ui-light-transperent: #eeeeeeef;
-    --ui-dark: #616161;
+  --background: #F5F5F5;
+  --ui-light: #EEEEEE;
+  --ui-semilight: #E0E0E0;
+  --ui-light-transperent: #eeeeeee1;
+  --ui-dark: #757575;
+  --ui-semidark: #9E9E9E;
+  --transparent: #ffffff00;
+  --default: #F3722C;
 }
 
 html {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    margin: 0;
-    background: #FAFAFA;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    color: #000;
+  margin: 0;
+  background: #FAFAFA;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #000;
 }
 
 body div {
-    padding: 1vw;
+  padding: 1vw;
 }
 
 h1 {
-    width: 98vw;
-    margin: 0;
-    padding: 1vw;
-    background-color: #333;
-    border-style: solid;
-    border-width: 0 0 0.25vh 0;
-    border-color: #FFF;
-    color: #FAFAFA;
+  width: 98vw;
+  margin: 0;
+  padding: 1vw;
+  background-color: #333;
+  border-style: solid;
+  border-width: 0 0 0.25vh 0;
+  border-color: #FFF;
+  color: #FAFAFA;
+}
+
+.hide{
+  display: none;
+  opacity: 0;
 }
 
 .menue {
-    background-color: var(--ui-light-transperent);
-    border-radius: 55px;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  background-color: var(--ui-light-transperent);
+  border-radius: 5px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 .button-icon {
-    color: var(--ui-dark);
+  color: var(--ui-dark);
 }
 
-.button-icon-ripple::after {
-    background-color: var(--ui-dark) !important;
+.button-icon-ripple::after{
+  background-color:var(--ui-dark) !important;
 }
 
-.button-icon-ripple::before {
-    background-color: var(--ui-dark) !important;
+.button-icon-ripple::before{
+  background-color:var(--ui-dark) !important;
 }
 
+
+#icon-colorpicker{
+color:var(--default);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  height: 30px;
+  background-color: #f5f5f500;
+  color: var(--ui-dark);
+  text-align: center;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  margin-left: -50px;
+  font-size: 70%;
+  text-transform: lowercase;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-color {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  border-radius: 50%;
+  border-color: var(--transparent);
+  border-style: solid;
+  border-width: medium;
+}
 
 .button-color:hover {
-    border-color: var(--ui-semidark);
+  border-color: var(--ui-semidark);
 }
+
+.button-freedraw {
+  border-color: var(--transparent);
+}
+
+.button-freedraw:hover {
+  border-color: var(--ui-semidark);
+  border-style: solid;
+  border-width: small;
+  border-radius: 10%;
+}
+
+.button-freedraw .tooltiptext {
+  bottom: 50%;
+}
+
+#icon-freedraw-marker {
+  color: var(--ui-semidark);
+}
+
+.button-circle {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.button-rect {
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  border-radius: 10%;
+}
+
+.button-textbox {
+  height: 23px;
+  width: 30px;
+  margin: 5px;
+  border-radius: 10%;
+  border-color: var(--transparent);
+  font-size: 50%;
+}
+
+.button-textbox .tooltiptext {
+  font-size: 120%;
+}
+
+.button-not-filled {
+  background-color: var(--transparent);
+  border-color: var(--transparent);
+  border-style: solid;
+  border-width: medium;
+  color: var(--ui-dark);
+}
+
+.button-not-filled:hover {
+  background-color: var(--ui-semilight);
+  color: var(--ui-light);
+}
+
+.button-with-border {
+  background-color: var(--transparent);
+  border-color: var(--ui-dark);
+  border-style: solid;
+  border-width: medium;
+  color: var(--ui-dark);
+}
+
+.button-with-border:hover {
+  border-color: var(--ui-semidark);
+  color: var(--ui-semidark);
+}
+
+.button-filled {
+  background-color: var(--ui-dark);
+  border-color: var(--transparent);
+  color: var(--ui-light);
+}
+
+.button-filled:hover {
+  background-color: var(--ui-semidark);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 5%;  
+  background: var(--ui-semidark);
+  outline: none;
+  opacity: 0.9;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%; 
+  background: var(--ui-dark);
+  cursor: pointer;
+}
+
+.button-objectMenue {
+  border-color: var(--transparent);
+}
+
+.button-objectMenue:hover {
+  border-color: var(--ui-semidark);
+  border-style: solid;
+  border-width: small;
+  border-radius: 10%;
+}
+
+.button-objectMenue .tooltiptext {
+    bottom: 50%;
+}
+
 
 #user_count {
     font-size: 1em;
