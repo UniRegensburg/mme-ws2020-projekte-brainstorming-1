@@ -10,12 +10,7 @@ class Color{
         colorMenue.classList.remove("hide");
     }
 
-    init(fd){
-      this.freeDraw = fd;}
-
-    selectColor(position, canvas){
-
-      //freeDraw;
+    selectColor(position, canvas, freeDraw){
 
         switch (position) {
             case 1:
@@ -47,7 +42,7 @@ class Color{
         colorMenue.classList.add("hide");
         icon.style.color = selectedColor;
 
-        if(this.freeDraw.getIsActive()){this.freeDraw.freeDrawing(canvas, selectedColor, true);}
+        if(freeDraw.getIsActive()){freeDraw.freeDrawing(canvas, freeDraw, selectedColor, true);}
     }
 
 }

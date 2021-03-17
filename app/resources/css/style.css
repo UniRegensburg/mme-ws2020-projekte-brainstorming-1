@@ -2,7 +2,7 @@
     --background: #F5F5F5;
     --ui-light: #EEEEEE;
     --ui-semilight: #E0E0E0;
-    --ui-light-transperent: #eeeeeeef;
+    --ui-light-transperent: #eeeeeee1;
     --ui-dark: #757575;
     --ui-semidark: #9E9E9E;
     --transparent: #ffffff00;
@@ -37,6 +37,7 @@ h1 {
 
 .hide{
     display: none;
+    opacity: 0;
 }
 
 .menue {
@@ -56,6 +57,7 @@ h1 {
 .button-icon-ripple::before{
     background-color:var(--ui-dark) !important;
 }
+
 
 #icon-colorpicker{
   color:var(--default);
@@ -99,6 +101,25 @@ h1 {
 
   .button-color:hover {
     border-color: var(--ui-semidark);
+  }
+
+  .button-freedraw {
+    border-color: var(--transparent);
+  }
+
+  .button-freedraw:hover {
+    border-color: var(--ui-semidark);
+    border-style: solid;
+    border-width: small;
+    border-radius: 10%;
+  }
+
+  .button-freedraw .tooltiptext {
+    bottom: 50%;
+  }
+
+  #icon-freedraw-marker {
+    color: var(--ui-semidark);
   }
 
   .button-circle {
@@ -182,4 +203,19 @@ h1 {
     border-radius: 50%; 
     background: var(--ui-dark);
     cursor: pointer;
+  }
+
+  .button-objectMenue {
+    border-color: var(--transparent);
+  }
+  
+  .button-objectMenue:hover {
+    border-color: var(--ui-semidark);
+    border-style: solid;
+    border-width: small;
+    border-radius: 10%;
+  }
+  
+  .button-objectMenue .tooltiptext {
+      bottom: 50%;
   }

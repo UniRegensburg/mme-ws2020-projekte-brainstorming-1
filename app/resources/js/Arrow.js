@@ -1,8 +1,9 @@
 import Canvas from "./Canvas.js";
 import {selectedColor} from "./Color.js";
 import Config from "./Config.js";
+import {calculateAngle} from "./Config.js";
 
-var arrow, arrowTri, color = Config.COLORDEFAULT, isDown, origX, origY;
+var arrow, arrowTri, color = Config.COLORDEFAULT, isDown, origX, origY, angle;
 
 class Arrow{
     
@@ -16,19 +17,23 @@ class Arrow{
             isDown = true;
             origX = pointer.x;
             origY = pointer.y;
-            
+        
         arrow = new fabric.Line([0,0,0,0], {
             left: origX,
             top: origY,
-            stroke: color,});
+            stroke: color,
+            strokeWidth: 2,
+            });
 
         arrowTri = new fabric.Triangle({
             left: origX,
             top: origY,
-            height:10,
-            width:10,
-            fill: color,});
-        
+            height: 16,
+            width: 16,
+            fill: color,
+            angle: -30,
+            });
+
         canvas.add(arrow);
         canvas.add(arrowTri);
         });
@@ -41,9 +46,11 @@ class Arrow{
             
             if(origX>pointer.x){
                 arrow.set({ left: Math.abs(pointer.x) });
+                arrow.flipX = true;            
             }
             if(origY>pointer.y){
                 arrow.set({ top: Math.abs(pointer.y) });
+                arrow.flipY = true;
             }
             
             arrow.set({ width: Math.abs(origX - pointer.x) });
@@ -52,6 +59,12 @@ class Arrow{
             arrowTri.set({ top: Math.abs(pointer.y) });
             arrowTri.set({ left: Math.abs(pointer.x) });
 
+            //angle = calculateAngle(424, 376, 226, 232);
+            angle = calculateAngle(origX, origY, pointer.x, pointer.y);
+           
+           // console.log(Math.abs(parseInt(angle)));
+            arrowTri.set({angle: Math.abs(parseInt(-angle))});
+            
             canvas.renderAll();
         });
         
@@ -59,7 +72,6 @@ class Arrow{
             isDown = false;
             canvas.off('mouse:down');
         });
-
 
     }
     

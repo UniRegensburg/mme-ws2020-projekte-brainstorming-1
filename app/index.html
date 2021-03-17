@@ -13,7 +13,6 @@
 </head>
 
 <body> 
-  
 
               <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
             
@@ -101,6 +100,14 @@
                 </div>
 
                 <div id="freeDrawPicker" class="menue hide" style="position: absolute; top:43%; left:10%;">
+                  <button id="button-freedraw-1" class="button-freedraw tooltip">
+                    <span class="tooltiptext">pen</span>
+                    <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+                  </button>
+                  <button id="button-freedraw-2" class="button-freedraw tooltip">
+                    <span class="tooltiptext">marker</span>
+                    <i id="icon-freedraw-marker" class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+                  </button>
                   <div>
                     <p id="slider-freedraw-output" style="font-size: small; color: gray">Pen size: </p>
                     <input id="slider-freedraw" class="slider" type="range" min="1" max="70" value="10">
@@ -123,6 +130,22 @@
                   <button id="button-rect-2" class="button-rect button-filled tooltip">
                     <span class="tooltiptext">filled</span>
                   </button>
+                </div>
+
+                <div id="objectMenue" class="menue hide" style="position: absolute; top:20%; left:20%;">
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">color</span>
+                    <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">palette</i>
+                  </button>
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">dublicate</span>
+                    <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">content_copy</i>
+                  </button>
+                  <button id="button-objectMenue-1" class="button-objectMenue tooltip">
+                    <span class="tooltiptext">delete</span>
+                    <i class="material-icons button-icon icon-objectMenue" aria-hidden="true">delete</i>
+                  </button>
+
                 </div>
 
                 <div id="zoom" style="position: absolute; bottom:0; right:0;">
