@@ -11,21 +11,15 @@ import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 
-<<<<<<< HEAD
-var textbox, rect, circle, color, canvas, freedraw, arrow,
+var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
 circleButton1, circleButton2,
 rectButton1, rectButton2,
 textboxButton1, textboxButton2,
 freeDrawButton1, freeDrawButton2,
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton,
 objectMenue = document.getElementById("objectMenue");
-=======
-var textbox, rect, circle, colorpicker, color, canvas, freedraw, mouse, arrow, download, zoom, pan,
-textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7, 
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
->>>>>>> Dev-Anna
 
 function init() {
 	//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
@@ -106,7 +100,24 @@ function initUI(){
 	arrowButton = document.getElementById("button-arrow");
 	arrowButton.addEventListener("click", function(){arrow.drawArrow(canvas);});
 
-<<<<<<< HEAD
+	downloadButton = document.getElementById("button-download");
+	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
+	if(downloadButton) {
+		downloadButton.addEventListener("click", function(){
+			download = new Download; 
+			download.startDownlad(canvas);
+		});
+	}
+
+	zoom = new Zoom;
+	zoomInButton = document.getElementById("button-zoom-in");
+	zoomInitButton = document.getElementById("button-zoom-init");
+	zoomOutButton = document.getElementById("button-zoom-out");
+	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
+
+	pan = new Pan;
+	pan.enablePan(canvas);
+
 	canvas.on('selection:updated', function(o){
 		showObjMenue();
 	});
@@ -128,7 +139,6 @@ function initUI(){
 	canvas.on('object:moving', function(o){
 		showObjMenue();
 	}); 
-
 }
 
 function showObjMenue(){
@@ -145,25 +155,6 @@ function showObjMenue(){
 	objectMenue.classList.remove("hide");} 
 	
 	else {objectMenue.classList.add("hide");}
-=======
-	downloadButton = document.getElementById("button-download");
-	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
-	if(downloadButton) {
-		downloadButton.addEventListener("click", function(){
-			download = new Download; 
-			download.startDownlad(canvas);
-		});
-	}
-
-	zoom = new Zoom;
-	zoomInButton = document.getElementById("button-zoom-in");
-	zoomInitButton = document.getElementById("button-zoom-init");
-	zoomOutButton = document.getElementById("button-zoom-out");
-	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
-
-	pan = new Pan;
-	pan.enablePan(canvas);
->>>>>>> Dev-Anna
 }
 
 init();
