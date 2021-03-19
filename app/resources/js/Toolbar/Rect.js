@@ -1,13 +1,13 @@
 import {selectedColor} from "./Color.js";
-import Config from "./Config.js";
+import Config from "../Config.js";
+import ConfigUI from "../ConfigUI.js";
 
-var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT, rectMenue = document.getElementById("rectPicker"),
-fill, stroke;
+var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT, fill, stroke;
 
 class Rect{
 
     showMenue(){
-        rectMenue.classList.remove("hide");
+        ConfigUI.RECTMENUE.classList.remove("hide");
     }
 
     constructor(type){
@@ -23,11 +23,11 @@ class Rect{
     }
 
     // from https://jsfiddle.net/wcwabpwc/
-    drawRect(canvas, rect){
+    drawRect(canvas, rect, pan){
 
         canvas.on('mouse:down', function(o){
 
-            rectMenue.classList.add("hide");
+            ConfigUI.RECTMENUE.classList.add("hide");
 
             var pointer = canvas.getPointer(o.e);
 
@@ -66,6 +66,7 @@ class Rect{
         canvas.on('mouse:up', function(o){
             isDown = false;
             canvas.off('mouse:down');
+            pan.enablePan(canvas);
         });
     }
 }

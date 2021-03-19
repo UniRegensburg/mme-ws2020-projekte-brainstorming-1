@@ -43,6 +43,12 @@ class Pan {
         onMouseMove(canvas);
         onMouseRelease(canvas);
     }
+
+    disablePan(canvas){
+        canvas.off('mouse:down');
+        canvas.off('mouse:move');
+        canvas.off('mouse:up');
+    }
 }
 
 export default Pan;

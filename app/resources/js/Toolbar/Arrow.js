@@ -1,13 +1,12 @@
-import Canvas from "./Canvas.js";
 import {selectedColor} from "./Color.js";
-import Config from "./Config.js";
-import {calculateAngle} from "./Config.js";
+import Config from "../Config.js";
+import {calculateAngle} from "../Config.js";
 
 var arrow, arrowTri, color = Config.COLORDEFAULT, isDown, origX, origY, angle;
 
 class Arrow{
     
-    drawArrow(canvas){
+    drawArrow(canvas, pan){
 
         canvas.on('mouse:down', function(o){
             var pointer = canvas.getPointer(o.e);
@@ -71,6 +70,7 @@ class Arrow{
         canvas.on('mouse:up', function(o){
             isDown = false;
             canvas.off('mouse:down');
+            pan.enablePan(canvas);
         });
 
     }

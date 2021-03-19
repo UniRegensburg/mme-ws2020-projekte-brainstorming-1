@@ -1,13 +1,13 @@
 import {selectedColor} from "./Color.js";
-import Config from "./Config.js";
+import Config from "../Config.js";
+import ConfigUI from "../ConfigUI.js";
 
-var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT, circleMenue = document.getElementById("circlePicker"),
-fill, stroke;
+var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT,fill, stroke;
 
 class Circle{
 
     showMenue(){
-        circleMenue.classList.remove("hide");
+        ConfigUI.CIRCLEMENUE.classList.remove("hide");
     }
 
     constructor(type){
@@ -23,11 +23,11 @@ class Circle{
     }
 
     // from https://stackoverflow.com/questions/34100866/how-to-free-draw-ellipse-using-fabricjs
-    drawCircle(canvas, circle){
+    drawCircle(canvas, circle, pan){
 
         canvas.on('mouse:down', function(o){
             
-            circleMenue.classList.add("hide");
+            ConfigUI.CIRCLEMENUE.classList.add("hide");
             
             var pointer = canvas.getPointer(o.e);
 
@@ -83,6 +83,7 @@ class Circle{
         canvas.on('mouse:up', function(o){
           isDown = false;
           canvas.off('mouse:down');
+          pan.enablePan(canvas);
         });
     }
 }

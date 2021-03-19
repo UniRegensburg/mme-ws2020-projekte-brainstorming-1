@@ -1,160 +1,84 @@
 /* eslint-env browser */
 import Canvas from "./Canvas.js";
-import Rect from "./Rect.js";
-import Circle from "./Circle.js";
-import Textbox from "./Textbox.js";
-import Color from "./Color.js";
-import FreeDraw from "./FreeDraw.js";
+import Rect from "./Toolbar/Rect.js";
+import Circle from "./Toolbar/Circle.js";
+import Textbox from "./Toolbar/Textbox.js";
+import Color from "./Toolbar/Color.js";
+import FreeDraw from "./Toolbar/FreeDraw.js";
 import Config from "./Config.js";
-import Arrow from "./Arrow.js";
+import ConfigUI from "./ConfigUI.js";
+import Arrow from "./Toolbar/Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
+import ObjectMenue from "./ObjectMenue.js";
 
-var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan,
-textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
-circleButton1, circleButton2,
-rectButton1, rectButton2,
-textboxButton1, textboxButton2,
-freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton,
-objectMenue = document.getElementById("objectMenue");
+var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
+//textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
 
 function init() {
-	//mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 	initUI();
 }
 
 function initUI(){
-
 	canvas = new Canvas;
 	canvas = canvas.drawCanvas();
 
+	zoom = new Zoom;
+	pan = new Pan;
+	pan.enablePan(canvas);
+
 	color = new Color;
-
-	freedraw = new FreeDraw (false); 
-	//color.init(freedraw);
-
-	colorpickerButton = document.getElementById("button-colorpicker");
-	colorpickerButton.addEventListener("click", function(){color.showMenue();});
-
-	colorButton1 = document.getElementById("button-color-1");
-	colorButton2 = document.getElementById("button-color-2");
-	colorButton3 = document.getElementById("button-color-3");
-	colorButton4 = document.getElementById("button-color-4");
-	colorButton5 = document.getElementById("button-color-5");
-	colorButton6 = document.getElementById("button-color-6");
-	colorButton7 = document.getElementById("button-color-7");
-
-	colorButton1.addEventListener("click", function(){color.selectColor(1, canvas, freedraw);});
-	colorButton2.addEventListener("click", function(){color.selectColor(2, canvas, freedraw);});
-	colorButton3.addEventListener("click", function(){color.selectColor(3, canvas, freedraw);});
-	colorButton4.addEventListener("click", function(){color.selectColor(4, canvas, freedraw);});
-	colorButton5.addEventListener("click", function(){color.selectColor(5, canvas, freedraw);});
-	colorButton6.addEventListener("click", function(){color.selectColor(6, canvas, freedraw);});
-	colorButton7.addEventListener("click", function(){color.selectColor(7, canvas, freedraw);});
-
+	freeDraw = new FreeDraw (false); 
 	textbox = new Textbox ("notFilled");
-
-	textboxButton = document.getElementById("button-textbox");
-	textboxButton.addEventListener("click", function(){textbox.showMenue(); textbox.drawTextbox(canvas, textbox);});
-
-	textboxButton1 = document.getElementById("button-textbox-1");
-	textboxButton2 = document.getElementById("button-textbox-2");
-	textboxButton1.addEventListener("click", function(){textbox.setType("notFilled");});
-	textboxButton2.addEventListener("click", function(){textbox.setType("filled");});
-
-	mouseButton = document.getElementById("button-mouse");
-	mouseButton.addEventListener("click", function(){freedraw.freeDrawing(canvas, freedraw, Config.COLORDEFAULT, false);});
-	
-	freeDrawButton = Config.FREEDRAWBUTTON;
-	freeDrawButton1 = document.getElementById("button-freedraw-1");
-	freeDrawButton2 = document.getElementById("button-freedraw-2");
-
-	freeDrawButton.addEventListener("click", function(){freedraw.showMenue(freedraw, canvas); freedraw.freeDrawing(canvas, freedraw, Config.COLORDEFAULT, true);});
-	freeDrawButton1.addEventListener("click", function(){freedraw.setType("pen"); freedraw.freeDrawing(canvas, freedraw, freedraw.getColor(), true);});
-	freeDrawButton2.addEventListener("click", function(){freedraw.setType("marker"); freedraw.freeDrawing(canvas, freedraw, freedraw.getColor(), true);});
-
 	circle = new Circle ("withBorder");
-
-	circleButton = document.getElementById("button-circle");
-	circleButton.addEventListener("click", function(){circle.showMenue(); circle.drawCircle(canvas, circle);});
-
-	circleButton1 = document.getElementById("button-circle-1");
-	circleButton2 = document.getElementById("button-circle-2");
-	circleButton1.addEventListener("click", function(){circle.setType("withBorder");});
-	circleButton2.addEventListener("click", function(){circle.setType("filled");});
-
 	rect = new Rect ("withBorder");
-
-	rectButton = document.getElementById("button-rect");
-	rectButton1 = document.getElementById("button-rect-1");
-	rectButton2 = document.getElementById("button-rect-2");
-
-	rectButton.addEventListener("click", function(){rect.showMenue(); rect.drawRect(canvas, rect);});
-	rectButton1.addEventListener("click", function(){rect.setType("withBorder");});
-	rectButton2.addEventListener("click", function(){rect.setType("filled");});
-
 	arrow = new Arrow;
-	arrowButton = document.getElementById("button-arrow");
-	arrowButton.addEventListener("click", function(){arrow.drawArrow(canvas);});
+	objMenue = new ObjectMenue;
 
-	downloadButton = document.getElementById("button-download");
+	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
+	ConfigUI.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON2.addEventListener("click", function(){color.selectColor(2, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON3.addEventListener("click", function(){color.selectColor(3, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON4.addEventListener("click", function(){color.selectColor(4, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON5.addEventListener("click", function(){color.selectColor(5, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON6.addEventListener("click", function(){color.selectColor(6, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON7.addEventListener("click", function(){color.selectColor(7, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON8.addEventListener("click", function(){color.selectColor(8, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON9.addEventListener("click", function(){color.selectColor(9, canvas, freeDraw);});
+	ConfigUI.COLORBUTTON10.addEventListener("click", function(){color.selectColor(10, canvas, freeDraw);});
+
+	ConfigUI.TEXTBOXBUTTON.addEventListener("click", function(){pan.disablePan(canvas); textbox.showMenue(); textbox.drawTextbox(canvas, textbox, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	ConfigUI.TEXTBOXBUTTON1.addEventListener("click", function(){textbox.setType("notFilled");});
+	ConfigUI.TEXTBOXBUTTON2.addEventListener("click", function(){textbox.setType("filled");});
+
+	ConfigUI.MOUSEBUTTON.addEventListener("click", function(){pan.enablePan(canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	
+	ConfigUI.FREEDRAWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); freeDraw.showMenue(freeDraw, canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, true);});
+	ConfigUI.FREEDRAWBUTTON1.addEventListener("click", function(){freeDraw.setType("pen"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
+	ConfigUI.FREEDRAWBUTTON2.addEventListener("click", function(){freeDraw.setType("marker"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
+
+	ConfigUI.CIRCLEBUTTON.addEventListener("click", function(){pan.disablePan(canvas); circle.showMenue(); circle.drawCircle(canvas, circle, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	ConfigUI.CIRCLEBUTTON1.addEventListener("click", function(){circle.setType("withBorder");});
+	ConfigUI.CIRCLEBUTTON2.addEventListener("click", function(){circle.setType("filled");});
+
+	ConfigUI.RECTBUTTON.addEventListener("click", function(){pan.disablePan(canvas); rect.showMenue(); rect.drawRect(canvas, rect, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	ConfigUI.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
+	ConfigUI.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
+
+	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas);arrow.drawArrow(canvas, pan);});
+
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
-	if(downloadButton) {
-		downloadButton.addEventListener("click", function(){
+	if(ConfigUI.DOWNLOADBUTTON) {
+		ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){
 			download = new Download; 
 			download.startDownlad(canvas);
 		});
 	}
 
-	zoom = new Zoom;
-	zoomInButton = document.getElementById("button-zoom-in");
-	zoomInitButton = document.getElementById("button-zoom-init");
-	zoomOutButton = document.getElementById("button-zoom-out");
-	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
+	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
 
-	pan = new Pan;
-	pan.enablePan(canvas);
-
-	canvas.on('selection:updated', function(o){
-		showObjMenue();
-	});
-
-	canvas.on('selection:created', function(o){
-		showObjMenue();
-	});
-
-	canvas.on('selection:cleared', function(o){
-		objectMenue.classList.add("hide");
-		showObjMenue();
-		//console.log("hide");
-	}); 
-	
-	canvas.on('object:modified', function(o){
-		showObjMenue();
-	}); 
-
-	canvas.on('object:moving', function(o){
-		showObjMenue();
-	}); 
-}
-
-function showObjMenue(){
-
-	var obj = canvas.getActiveObject();
-
-	if (obj) {
-	var top = obj.top, left = obj.left;
-	
-	objectMenue.style.top = (top-60)+"px";
-	objectMenue.style.left = left+"px";
-	objectMenue.style.display = "inline-Block";
-	
-	objectMenue.classList.remove("hide");} 
-	
-	else {objectMenue.classList.add("hide");}
+	objMenue.isObjMenue(canvas);
 }
 
 init();

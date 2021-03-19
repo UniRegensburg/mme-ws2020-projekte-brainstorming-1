@@ -1,14 +1,15 @@
 import {selectedColor} from "./Color.js";
-import Config from "./Config.js";
+import Config from "../Config.js";
+import ConfigUI from "../ConfigUI.js";
 
 var text = Config.TEXTBOXDEFAULTTEXT, 
-fontSize = Config.TEXTBOXDEFAULTSIZE,
+//fontSize = Config.TEXTBOXDEFAULTSIZE,
 font = Config.TEXTBOXDEFAULTFONT, 
-textbox1, origX, origY,
-textboxMenue = document.getElementById("textboxPicker"),
+textboxDraw, origX, origY,
 color = Config.COLORDEFAULT, textColor, backgroundColor,
-slider = document.getElementById("slider-textbox"),
-sliderOutput = document.getElementById("slider-textbox-output");
+textboxMenue = ConfigUI.TEXTBOXMENUE,
+slider = ConfigUI.TEXTBOXSLIDER,
+sliderOutput = ConfigUI.TEXTBOXSLIDEROUTPUT;
 
 class Textbox{
     
@@ -32,7 +33,7 @@ class Textbox{
         return this.type;
     }
 
-    drawTextbox(canvas, textbox){
+    drawTextbox(canvas, textbox, pan){
 
         canvas.on('mouse:down', function(o){
             textboxMenue.classList.add("hide");
@@ -40,14 +41,13 @@ class Textbox{
             var pointer = canvas.getPointer(o.e);
 
             if(selectedColor) {color = selectedColor;}
-            //textColor = color;
             if (textbox.getType() === "notFilled") {textColor = color; backgroundColor = "transparent";}
             else if (textbox.getType() === "filled") {textColor = "#EEEEEE"; backgroundColor = color;}
         
             origX = pointer.x;
             origY = pointer.y;
 
-            textbox1 = new fabric.Textbox(text, {
+            textboxDraw = new fabric.Textbox(text, {
                 fontSize: slider.value, 
                 fontFamily: font, 
                 left: origX - 260/2, 
@@ -57,12 +57,14 @@ class Textbox{
                 fill: textColor,
                 });
 
-            canvas.add(textbox1);
+            canvas.add(textboxDraw).setActiveObject(textboxDraw);
+            textboxDraw.enterEditing();
 
         });
 
         canvas.on('mouse:up', function(o){
             canvas.off('mouse:down');
+            pan.enablePan(canvas);
         });
     }
 }

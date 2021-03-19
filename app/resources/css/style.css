@@ -5,6 +5,7 @@
   --ui-light-transperent: #eeeeeee1;
   --ui-dark: #757575;
   --ui-semidark: #9E9E9E;
+  --ui-verydark: #616161;
   --transparent: #ffffff00;
   --default: #F3722C;
 }
@@ -58,7 +59,6 @@ h1 {
   background-color:var(--ui-dark) !important;
 }
 
-
 #icon-colorpicker{
 color:var(--default);
 }
@@ -101,6 +101,10 @@ color:var(--default);
 
 .button-color:hover {
   border-color: var(--ui-semidark);
+}
+
+#button-color-9:hover {
+  border-color: var(--ui-dark);
 }
 
 .button-freedraw {
@@ -298,7 +302,7 @@ color:var(--default);
     right: 0;
 }
 
-input {
+.input {
     font-size: 1em;
     text-align: center;
     width: 15em;

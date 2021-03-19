@@ -1,13 +1,11 @@
-import FreeDraw from "./FreeDraw.js";
+import ConfigUI from "../ConfigUI.js";
 
-var colorMenue = document.getElementById("colorPicker"), 
-icon = document.getElementById("icon-colorpicker"),
-selectedColor, freeDraw;
+var selectedColor;
 
 class Color{  
 
     showMenue(){
-        colorMenue.classList.remove("hide");
+        ConfigUI.COLORMENUE.classList.remove("hide");
     }
 
     selectColor(position, canvas, freeDraw){
@@ -34,13 +32,20 @@ class Color{
             case 7:
                 selectedColor = "#577590";
               break;
+            case 8:
+                selectedColor = "#E0E0E0";
+              break;
+            case 9:
+                selectedColor = "#9E9E9E";
+              break;
+            case 10:
+                selectedColor = "#616161";
+              break;
             default:
                 selectedColor = "#F94144";
-
         }
-
-        colorMenue.classList.add("hide");
-        icon.style.color = selectedColor;
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORICON.style.color = selectedColor;
 
         if(freeDraw.getIsActive()){freeDraw.freeDrawing(canvas, freeDraw, selectedColor, true);}
     }

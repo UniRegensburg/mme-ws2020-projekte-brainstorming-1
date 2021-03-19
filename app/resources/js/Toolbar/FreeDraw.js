@@ -1,19 +1,17 @@
 import {selectedColor} from "./Color.js";
-import Config from "./Config.js";
+import Config from "../Config.js";
+import ConfigUI from "../ConfigUI.js";
 
-var color1,
-slider = document.getElementById("slider-freedraw"),
-sliderOutput = document.getElementById("slider-freedraw-output"),
-freeDrawMenue = document.getElementById("freeDrawPicker");
+var colorDraw;
 
 class FreeDraw{
 
     showMenue(freeDraw, canvas){
-        freeDrawMenue.classList.remove("hide");
+        ConfigUI.FREEDRAWMENUE.classList.remove("hide");
 
-        sliderOutput.textContent = "Pen size: " + slider.value;
-        slider.oninput = function() {
-            sliderOutput.innerHTML = "Pen size: " + this.value;
+        ConfigUI.FREEDRAWSLIDEROUTPUT.textContent = "Pen size: " + ConfigUI.FREEDRAWSLIDER.value;
+        ConfigUI.FREEDRAWSLIDER.oninput = function() {
+            ConfigUI.FREEDRAWSLIDEROUTPUT.innerHTML = "Pen size: " + this.value;
             freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);
           };
     }
@@ -50,20 +48,20 @@ class FreeDraw{
     freeDrawing(canvas, freeDraw, color, isActive){
 
         canvas.on('mouse:down', function(o){
-            freeDrawMenue.classList.add("hide");});
+            ConfigUI.FREEDRAWMENUE.classList.add("hide");});
 
-        color1 = color;
-        if(selectedColor){color1 = selectedColor;}
+        colorDraw = color;
+        if(selectedColor){colorDraw = selectedColor;}
 
-        if(freeDraw.getType() === "pen"){canvas.freeDrawingBrush.color = color1;}
-        else if(freeDraw.getType() === "marker"){canvas.freeDrawingBrush.color = color1 + "80";} //80 = 50% transparent
+        if(freeDraw.getType() === "pen"){canvas.freeDrawingBrush.color = colorDraw;}
+        else if(freeDraw.getType() === "marker"){canvas.freeDrawingBrush.color = colorDraw + "80";} //80 = 50% transparent
     
-        canvas.freeDrawingBrush.width = parseInt(slider.value);
+        canvas.freeDrawingBrush.width = parseInt(ConfigUI.FREEDRAWSLIDER.value);
 
         canvas.isDrawingMode = isActive;
     
         this.setIsActive(isActive);
-        this.setColor(color1);
+        this.setColor(colorDraw);
 
     }   
 }

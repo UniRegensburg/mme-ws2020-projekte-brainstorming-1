@@ -7,6 +7,7 @@ const Config ={
     FREEDRAWBUTTON: document.getElementById("button-freedraw"),
 };
 
+//for Arrow
 function calculateAngle(origX, origY, pointerX, pointerY){
 
     var vecA1 = (origX-1)*(origY-pointerX), 
