@@ -5,7 +5,7 @@ function mouseZoom(canvas) {
         let delta, zoom;
         delta = opt.e.deltaY;
         zoom = canvas.getZoom();
-        zoom *= 0.999 ** delta;
+        zoom *= 0.999 * delta;
         if (zoom > 20) {
             zoom = 20;
         } 

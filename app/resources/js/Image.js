@@ -1,33 +1,33 @@
 import Config from "./Config.js";
-import ConfigUI from "./ConfigUI.js"
+import ConfigUI from "./ConfigUI.js";
 
-function addImage() {
-  IMAGEUPLOAD.imgObj.addEventListener("click", function(e) {
-    var file = e.target.files[0],
-      reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function(f) {
-      var data = f.target.result;
-      fabric.Image.fromURL(data, function(img) {
-        var oImg = img.set({
-          left: canvas.getCenter().left,
-          top: canvas.getCenter().top,
-          originX: "center",
-          originY: "center",
-        });
-        oImg.scaleToWidth(canvas.getWidth() / 2);
-        canvas.add(oImg).requestRenderAll();
-        canvas.setActiveObject(oImg);
-      });
-    };
-  });
-}
+// function addImage() {
+//   IMAGEUPLOAD.imgObj.addEventListener("click", function(e) {
+//     var file = e.target.files[0],
+//       reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = function(f) {
+//       var data = f.target.result;
+//       fabric.Image.fromURL(data, function(img) {
+//         var oImg = img.set({
+//           left: canvas.getCenter().left,
+//           top: canvas.getCenter().top,
+//           originX: "center",
+//           originY: "center",
+//         });
+//         oImg.scaleToWidth(canvas.getWidth() / 2);
+//         canvas.add(oImg).requestRenderAll();
+//         canvas.setActiveObject(oImg);
+//       });
+//     };
+//   });
+// }
 
-class Image {
-  addImage(canvas);
-}
+// class Image {
+//   addImage(canvas)
+// }
 
-export default Image;
+// export default Image;
 
 /* document.getElementById('imgLoader').onchange = function handleImage(e) {
   var reader = new FileReader();
