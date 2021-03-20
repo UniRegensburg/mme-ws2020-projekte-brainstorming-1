@@ -5,6 +5,7 @@ const Config ={
     COLORDEFAULT: "#F3722C",
     COLORCANVAS: "#F5F5F5",
     FREEDRAWBUTTON: document.getElementById("button-freedraw"),
+    
 };
 
 //for Arrow

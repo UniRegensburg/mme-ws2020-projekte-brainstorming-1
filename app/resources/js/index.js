@@ -12,6 +12,8 @@ import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 import ObjectMenue from "./ObjectMenue.js";
+import Image from "./Image.js";
+
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
 //textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
@@ -35,6 +37,7 @@ function initUI(){
 	rect = new Rect ("withBorder");
 	arrow = new Arrow;
 	objMenue = new ObjectMenue;
+	image = new Image;
 
 	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
 	ConfigUI.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
