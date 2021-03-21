@@ -20,7 +20,7 @@ class Canvas {
       room.onMessage("object:added", (message) => {
         console.log("new object received from server");
         fabric.util.enlivenObjects([message.object], function(
-        objects) {
+          objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false;
 
@@ -36,12 +36,13 @@ class Canvas {
       room.onMessage("object:modified", (message) => {
         console.log("modified object received from server");
         fabric.util.enlivenObjects([message.object], function(
-        objects) {
+          objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false;
 
           objects.forEach(function(o) {
-            canvas.getObjects().find(obj => obj.id == o.id).set(o);
+            canvas.getObjects().find(obj => obj.id == o.id)
+              .set(o);
           });
 
           canvas.renderOnAddRemove = origRenderOnAddRemove;
@@ -71,12 +72,19 @@ class Canvas {
     });
 
     canvas.on('object:modified', function(options) {
-        if (options.target) {
-          var obj = options.target;
-          console.log("modified")
-          room.send("object:modified", { object: obj.toJSON() });
-        }
-      });
+      if (options.target) {
+        var obj = options.target;
+        console.log("modified")
+        obj.toJSON = (function(toJSON) {
+          return function() {
+            return fabric.util.object.extend(toJSON.call(this), {
+              id: this.id
+            });
+          };
+        })(obj.toJSON);
+        room.send("object:modified", { object: obj.toJSON() });
+      }
+    });
 
     return canvas;
   }
