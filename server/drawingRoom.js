@@ -3,8 +3,7 @@ const colyseus = require('colyseus');
 class DrawingRoom extends colyseus.Room {
     // When room is initialized
     onCreate (options) {
-        console.log("hallo");
-        console.log(this.roomId);
+        console.log("new Drawing room ID:" , this.roomId, " Created.");
         this.onMessage("greeting", (client, message) => {
             console.log("blyt")
 			console.log(message);

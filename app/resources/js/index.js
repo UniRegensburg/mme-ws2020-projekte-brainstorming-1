@@ -26,11 +26,6 @@ function init() {
 
 function initClient(){
     Connect("ws://localhost:8001")
-	Instance.joinOrCreate("DrawingRoom").then(room => {
-		console.log(room.sessionId, "joined", room.name);
-	}).catch(e => {
-		console.log("JOIN ERROR", e);
-	});
 }
 
 function initUI(){
