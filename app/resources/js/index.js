@@ -20,8 +20,15 @@ var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, 
 //textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
 
 function init() {
+	eventListeners();
 	initUI();
 	initClient();
+}
+
+function eventListeners(){
+	document.addEventListener("RoomConnectEvent", function(e) {
+		console.log("connected to room " + e.detail.id);
+	}, true);
 }
 
 function initClient(){

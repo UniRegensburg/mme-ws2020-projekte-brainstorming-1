@@ -4,9 +4,21 @@ class DrawingRoom extends colyseus.Room {
     // When room is initialized
     onCreate (options) {
         console.log("new Drawing room ID:" , this.roomId, " Created.");
-        this.onMessage("greeting", (client, message) => {
-            console.log("blyt")
-			console.log(message);
+        this.onMessage("object:added", (client, message) => {
+			console.log("object added by ", client.id);
+            this.clients.forEach(element => {
+                if(client.id != element.id) {
+                    element.send("object:added", message);
+                }
+            });
+		});
+        this.onMessage("object:modified", (client, message) => {
+			console.log("object added by ", client.id);
+            this.clients.forEach(element => {
+                if(client.id != element.id) {
+                    element.send("object:modified", message);
+                }
+            });
 		});
     }
 

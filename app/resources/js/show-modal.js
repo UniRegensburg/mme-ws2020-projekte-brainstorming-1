@@ -16,6 +16,9 @@ document.getElementById('modal-create').addEventListener('click',
   function() {
     Instance.create("DrawingRoom").then(room => {
       console.log(room.sessionId, "joined new", room.name, " ", room.id);
+
+      document.dispatchEvent(new CustomEvent("RoomConnectEvent", {detail: room}));
+
       closeModal();
     }).catch(e => {
       console.log("JOIN ERROR", e);
@@ -29,6 +32,9 @@ document.getElementById('modal-join').addEventListener('click',
     console.log("connecting with room " + roomID);
     Instance.joinById(roomID).then(room => {
       console.log(room.sessionId, "joined", room.name, " ", room.id);
+
+      document.dispatchEvent(new CustomEvent("RoomConnectEvent", {detail: room}));
+
       closeModal();
     }).catch(e => {
       console.log("JOIN ERROR", e);

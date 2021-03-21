@@ -78,6 +78,7 @@ class Circle{
             } else {
                 ellipse.set({originY: 'top'});
             }
+            ellipse.dirty = true;
             canvas.renderAll();
         });
         
