@@ -1,4 +1,5 @@
 /* eslint-env browser */
+/* eslint-disable no-undef */
 import Canvas from "./Canvas.js";
 import Rect from "./Toolbar/Rect.js";
 import Circle from "./Toolbar/Circle.js";
@@ -12,6 +13,7 @@ import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 import ObjectMenue from "./ObjectMenue.js";
+import {Instance, Connect} from "./utilis/Client.js";
 
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
@@ -19,6 +21,16 @@ var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, 
 
 function init() {
 	initUI();
+	initClient();
+}
+
+function initClient(){
+    Connect("ws://localhost:8001")
+	Instance.joinOrCreate("DrawingRoom").then(room => {
+		console.log(room.sessionId, "joined", room.name);
+	}).catch(e => {
+		console.log("JOIN ERROR", e);
+	});
 }
 
 function initUI(){
@@ -36,6 +48,7 @@ function initUI(){
 	rect = new Rect ("withBorder");
 	arrow = new Arrow;
 	objMenue = new ObjectMenue;
+	
 
 	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
 	ConfigUI.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
@@ -68,6 +81,7 @@ function initUI(){
 	ConfigUI.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
 
 	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas);arrow.drawArrow(canvas, pan);});
+
 
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	if(ConfigUI.DOWNLOADBUTTON) {
