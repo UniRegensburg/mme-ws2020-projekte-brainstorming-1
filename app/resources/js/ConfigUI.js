@@ -1,5 +1,8 @@
 const ConfigUI ={
     OBJECTMENUE: document.getElementById("objectMenue"),
+    OBJECTBUTTON1: document.getElementById("button-objectMenue-1"),
+    OBJECTBUTTON2: document.getElementById("button-objectMenue-2"),
+    OBJECTBUTTON3: document.getElementById("button-objectMenue-3"),
 
     COLORPICKERBUTTON: document.getElementById("button-colorpicker"),
     COLORMENUE: document.getElementById("colorPicker"),
@@ -42,6 +45,10 @@ const ConfigUI ={
     RECTMENUE: document.getElementById("rectPicker"),
 
     ARROWBUTTON: document.getElementById("button-arrow"),
+    ARROWBUTTON1: document.getElementById("button-arrow-1"),
+	ARROWBUTTON2: document.getElementById("button-arrow-2"),
+    ARROWBUTTON3: document.getElementById("button-arrow-3"),
+    ARROWMENUE: document.getElementById("arrowPicker"),
 
 	DOWNLOADBUTTON: document.getElementById("button-download"),
 

@@ -33,7 +33,7 @@ function initUI(){
 	textbox = new Textbox ("notFilled");
 	circle = new Circle ("withBorder");
 	rect = new Rect ("withBorder");
-	arrow = new Arrow;
+	arrow = new Arrow ("single");
 	objMenue = new ObjectMenue;
 
 	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
@@ -66,7 +66,10 @@ function initUI(){
 	ConfigUI.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
 	ConfigUI.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
 
-	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas);arrow.drawArrow(canvas, pan);});
+	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); arrow.showMenue(); arrow.drawArrow(canvas, arrow, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
+	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
+	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
 
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	if(ConfigUI.DOWNLOADBUTTON) {
@@ -79,6 +82,9 @@ function initUI(){
 	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
 
 	objMenue.isObjMenue(canvas);
+	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.changeColor(canvas);});
+	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
+	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.delete(canvas);});
 }
 
 init();
