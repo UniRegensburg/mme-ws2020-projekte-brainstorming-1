@@ -322,3 +322,16 @@ input {
     transform: rotate(45deg);
     cursor: pointer;
 }
+
+.timer {
+  text-align: center;
+  /*
+  width: fit-content;
+  height:fit-content;
+  border: 2.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -10,15 +10,16 @@ import Arrow from "./Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
+import Timer from "./Timer.js";
 
-var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan,
+var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan, timer, 
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
 circleButton1, circleButton2,
 rectButton1, rectButton2,
 textboxButton1, textboxButton2,
 freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton,
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton,
 objectMenue = document.getElementById("objectMenue");
 
 function init() {
@@ -99,6 +100,12 @@ function initUI(){
 	arrow = new Arrow;
 	arrowButton = document.getElementById("button-arrow");
 	arrowButton.addEventListener("click", function(){arrow.drawArrow(canvas);});
+
+	timer = new Timer;
+	timerButton = document.getElementById("button-timer");
+	timerButton.addEventListener("click", timer.timer);
+	
+	//timerButton.addEventListener("click", function(){timer.startTimer();});
 
 	downloadButton = document.getElementById("button-download");
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
