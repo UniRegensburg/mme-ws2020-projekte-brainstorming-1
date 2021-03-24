@@ -67,6 +67,11 @@ const ConfigUI ={
     ZOOMINBUTTON: document.getElementById("button-zoom-in"),
 	ZOOMOUTBUTTON: document.getElementById("button-zoom-out"),
     ZOOMINITBUTTON: document.getElementById("button-zoom-init"),
+
+
+    // Image-Upload
+
+    IMAGEUPLOAD: document.getElementById("addImg"),
 };
 
 export default ConfigUI;

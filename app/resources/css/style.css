@@ -258,7 +258,7 @@ color:var(--default);
 
 .modal-content {
     width: 600px;
-    height: 400px;
+    height: auto;
     background-color: #FFF;
     border-radius: 15px;
     text-align: center;

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {selectedColor} from "./Color.js";
 import Config from "../Config.js";
 import ConfigUI from "../ConfigUI.js";
@@ -77,6 +78,7 @@ class Circle{
             } else {
                 ellipse.set({originY: 'top'});
             }
+            ellipse.dirty = true;
             canvas.renderAll();
         });
         

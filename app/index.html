@@ -75,7 +75,7 @@
             <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
         </button>
         <p />
-        <button class="mdc-button tooltip">
+        <button id="addImg" class="mdc-button tooltip">
             <span class="tooltiptext">upload picture</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
             <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
@@ -233,17 +233,18 @@
         <div class="modal-content">
             <div id="close">+</div>
             <img src="./resources/images/Brainboard_Logo.png" alt="Logo brainboard">
-            <form class="modal-form" action="">
+            <form class="modal-form">
                 <input class="input" id="board-name" type="text" placeholder="Name des Boards?">
                 <input class="input" id="user-name" type="text" placeholder="Name">
                 <input class="input" id="code" type="text" placeholder="Zugangscode">
-                <button class="modal-button" id="modal-join" style="vertical-align: middle;"><span> Beitreten </span> </button>
-                <button class="modal-button" id="modal-create" style="vertical-align: middle;"><span> Erstellen </span> </button>
+                <button class="modal-button" type="button" id="modal-join" style="vertical-align: middle;"><span> Beitreten </span> </button>
+                <button class="modal-button" type="button" id="modal-create" style="vertical-align: middle;"><span> Erstellen </span> </button>
             </form>
         </div>
     </div>
 
-    <script src="resources/js/fabric.min.js"></script>
+    <script src="resources/external/fabric.min.js"></script>
+    <script src="resources/external/colyseus.js"></script>
     <script type="module" src="resources/js/index.js"></script>
     <script type="module" src="resources/js/show-modal.js"></script>
     </script>

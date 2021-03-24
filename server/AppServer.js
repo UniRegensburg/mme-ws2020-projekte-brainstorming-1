@@ -1,7 +1,11 @@
 /* eslint-env node */
 
 const path = require("path"),
-  express = require("express");
+  express = require("express"),
+  colyseus = require("colyseus"),
+  http = require("http");
+
+const DrawingRoom = require("./drawingRoom");
 
 /**
  * AppServer
@@ -33,11 +37,19 @@ class AppServer {
    * @param  {Number} port Port to use for serving static files
    */
   start(port) {
+    const boardServer = new colyseus.Server({
+      server: http.createServer(this.app)
+    });
+
     this.server = this.app.listen(port, function() {
       console.log(
         `AppServer started. Client available at http://localhost:${port}/app`
       );
     });
+
+    boardServer.define("DrawingRoom", DrawingRoom);
+
+    boardServer.listen(8001);
   }
 
   /**

@@ -1,4 +1,5 @@
 /* eslint-env browser */
+/* eslint-disable no-undef */
 import Canvas from "./Canvas.js";
 import Rect from "./Toolbar/Rect.js";
 import Circle from "./Toolbar/Circle.js";
@@ -12,12 +13,26 @@ import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 import ObjectMenue from "./ObjectMenue.js";
+import {Instance, Connect} from "./utilis/Client.js";
+
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
 //textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
 
 function init() {
+	eventListeners();
 	initUI();
+	initClient();
+}
+
+function eventListeners(){
+	document.addEventListener("RoomConnectEvent", function(e) {
+		console.log("connected to room " + e.detail.id);
+	}, true);
+}
+
+function initClient(){
+    Connect("ws://localhost:8001")
 }
 
 function initUI(){
@@ -35,6 +50,7 @@ function initUI(){
 	rect = new Rect ("withBorder");
 	arrow = new Arrow ("single");
 	objMenue = new ObjectMenue;
+	
 
 	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
 	ConfigUI.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
@@ -70,6 +86,7 @@ function initUI(){
 	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
 	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
 	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
+
 
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	if(ConfigUI.DOWNLOADBUTTON) {
