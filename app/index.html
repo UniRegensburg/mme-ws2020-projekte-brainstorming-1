@@ -13,11 +13,16 @@
 </head>
 
 <body>
-
+<!-- alle style Attribute in css Datei -->
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
+<<<<<<< HEAD
     <div id="title" style="position: absolute; top:0; left:0;">
         <img src="./resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
+=======
+    <div id="title" style="position: absolute; top:0; left:0; text-align: center;">
+        <img src="app/resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
+>>>>>>> Dev-Anna
         <!-- <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
@@ -30,9 +35,30 @@
             <span class="mdc-button__ripple"></span>
             <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
         </button>
+        <div>
+            <div class="timer">
+                <p id="minutes">00</p>
+                <p>:</p>
+                <p id="seconds">00</p>
+            </div>
+            <button id="button-start-pause" class="mdc-button">
+                <span class="mdc-button__ripple"></span>
+                <i id="pauseIcon" class="material-icons mdc-button__icon" aria-hidden="true">pause</i>
+            </button>
+            <button id="button-reset" class="mdc-button">
+                <span class="mdc-button__ripple"></span>
+                <i class="material-icons mdc-button__icon" aria-hidden="true">restart_alt</i>
+            </button>
+        </div>
     </div>
 
+<<<<<<< HEAD
     <div class="menue" id="toolbar" style="position: absolute; top: 90px; left: 10px;">
+=======
+    <!-- style = "float: right" für timer div ohne buttons-->
+
+    <div class="menue" id="toolbar" style="position: absolute; top:15%; left:0.7%;">
+>>>>>>> Dev-Anna
         <button id="button-colorpicker" class="mdc-button tooltip">
             <span class="tooltiptext">color</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
@@ -220,13 +246,37 @@
         </button>
     </div>
 
-    <div id="timer" style="position: absolute; bottom:0; left:0;">
+    <div id="button-timer" style="position: absolute; bottom:0; left:0;">
         <button class="mdc-button">
             <span class="mdc-button__ripple"></span>
             <i class="material-icons mdc-button__icon" aria-hidden="true">alarm</i>
         </button>
     </div>
 
+<<<<<<< HEAD
+=======
+    <div class="timer1" style="position: absolute; bottom: 0%; left: 8%;">
+        <p id="minutes1">00</p>
+        <p>:</p>
+        <p id="seconds1">00</p>
+    </div>
+
+    <!-- insert code for timer modal here-->
+
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">delete</i>
+    </button>
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">undo</i>
+    </button>
+    <button class="mdc-button">
+        <span class="mdc-button__ripple"></span>
+        <i class="material-icons mdc-button__icon" aria-hidden="true">mode</i>
+    </button>
+
+>>>>>>> Dev-Anna
     <!-- Code für Modal-->
 
     <div class="bg-modal">

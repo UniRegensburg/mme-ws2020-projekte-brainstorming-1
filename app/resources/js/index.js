@@ -12,12 +12,18 @@ import Arrow from "./Toolbar/Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
+import Timer from "./Timer.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
 
-
-var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
-//textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
+var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan, timer, objMenue,
+textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
+colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
+circleButton1, circleButton2,
+rectButton1, rectButton2,
+textboxButton1, textboxButton2,
+freeDrawButton1, freeDrawButton2,
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton;
 
 function init() {
 	eventListeners();
@@ -88,6 +94,13 @@ function initUI(){
 	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
 
 
+	timer = new Timer;
+	timerButton = document.getElementById("button-timer");
+	timerButton.addEventListener("click", timer.timer);
+	
+	//timerButton.addEventListener("click", function(){timer.startTimer();});
+
+	downloadButton = document.getElementById("button-download");
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	if(ConfigUI.DOWNLOADBUTTON) {
 		ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){
