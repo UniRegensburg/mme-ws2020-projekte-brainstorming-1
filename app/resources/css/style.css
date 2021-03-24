@@ -89,6 +89,16 @@ color:var(--default);
   opacity: 1;
 }
 
+.colorPickerToolbar{
+  top: 90px; 
+  left: 110px;
+}
+
+.colorPickerObj{
+  top: 135px; 
+  left: 480px;
+}
+
 .button-color {
   height: 25px;
   width: 25px;

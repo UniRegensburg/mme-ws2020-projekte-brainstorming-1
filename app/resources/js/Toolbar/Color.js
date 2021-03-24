@@ -5,7 +5,7 @@ var selectedColor;
 class Color{  
 
     showMenue(){
-        ConfigUI.COLORMENUE.classList.remove("hide");
+      ConfigUI.COLORMENUE.classList.remove("hide");
     }
 
     selectColor(position, canvas, freeDraw){
@@ -18,7 +18,8 @@ class Color{
                 selectedColor = "#F3722C";
               break;
             case 3:
-                selectedColor = "#F8961E";
+              selectedColor = "#00ACC1";
+            //selectedColor = "#F8961E";
               break;
             case 4:
                 selectedColor = "#F9C74F";

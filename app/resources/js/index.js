@@ -82,7 +82,7 @@ function initUI(){
 	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
 
 	objMenue.isObjMenue(canvas);
-	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.changeColor(canvas);});
+	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
 	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
 	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.delete(canvas);});
 }
