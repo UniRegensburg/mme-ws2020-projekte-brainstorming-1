@@ -11,15 +11,16 @@ import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 import Timer from "./Timer.js";
+import Image from "./Image.js";
 
-var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan, timer, 
+var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan, timer, image,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
 circleButton1, circleButton2,
 rectButton1, rectButton2,
 textboxButton1, textboxButton2,
 freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton,
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton, imageUploadButton,
 objectMenue = document.getElementById("objectMenue");
 
 function init() {
@@ -115,6 +116,13 @@ function initUI(){
 			download.startDownlad(canvas);
 		});
 	}
+
+	image = new Image;
+	imageUploadButton = document.getElementById("button-image-upload");
+	imageUploadButton.addEventListener("click", function() {
+		document.querySelector("#uploaded-file").click();
+		image.loadImage(canvas);
+	});
 
 	zoom = new Zoom;
 	zoomInButton = document.getElementById("button-zoom-in");

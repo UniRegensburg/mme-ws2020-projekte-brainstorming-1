@@ -16,6 +16,8 @@
 <!-- alle style Attribute in css Datei -->
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
+    
+
     <div id="title" style="position: absolute; top:0; left:0; text-align: center;">
         <img src="app/resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
         <!-- <label class="mdc-text-field mdc-text-field--filled">
@@ -92,11 +94,14 @@
             <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
         </button>
         <p />
-        <button class="mdc-button tooltip">
-            <span class="tooltiptext">upload picture</span>
-            <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
-        </button>
+        <label for="uploaded-file">
+            <input class="hide" type="file" id="uploaded-file">
+            <button id="button-image-upload" class="mdc-button tooltip">
+                <span class="tooltiptext">upload picture</span>
+                <span class="mdc-button__ripple button-icon-ripple"></span>
+                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
+            </button> 
+        </label>
     </div>
 
     <div id="colorPicker" class="menue hide" style="position: absolute; top:15%; left:10%;">
