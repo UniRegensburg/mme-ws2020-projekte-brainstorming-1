@@ -59,8 +59,6 @@ function changeColor(canvas, obj, position) {
       selectedColor = "#F94144";
   }
 
-  //console.log(obj.stroke);
-
   obj.forEach(element => {
     if (element.fill !== "transparent" && element.fill !== "#EEEEEE" &&
       element.fill !== null) {
@@ -72,12 +70,12 @@ function changeColor(canvas, obj, position) {
     } else {
       element.set({ stroke: selectedColor });
     }
+    canvas.fire('object:modified', {target: element});
   });
 
   //obj.set({fill: selectedColor});
   canvas.renderAll();
   colorMenue.classList.add("hide");
-
 }
 
 class ObjectMenue {

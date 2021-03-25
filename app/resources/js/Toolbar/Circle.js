@@ -86,6 +86,7 @@ class Circle{
           isDown = false;
           canvas.off('mouse:down');
           pan.enablePan(canvas);
+          canvas.fire('object:modified', {target: ellipse});
         });
     }
 }

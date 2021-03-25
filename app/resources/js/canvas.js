@@ -17,6 +17,7 @@ class Canvas {
       room = e.detail;
       console.log("got room ", e.detail.id);
 
+
       room.onMessage("object:added", (message) => {
         console.log("new object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -48,7 +49,7 @@ class Canvas {
           canvas.renderOnAddRemove = origRenderOnAddRemove;
           canvas.renderAll();
         });
-      });
+      });  
     }, true);
 
     canvas.on('object:added', function(options) {
