@@ -153,6 +153,24 @@ class ObjectMenue {
     });
   }
 
+  toFront(canvas) {
+    obj = canvas.getActiveObjects();
+    obj.forEach(element => {
+      canvas.bringToFront(element);
+      canvas.fire('object:modified', {target: element});
+    });
+    canvas.discardActiveObject().renderAll();
+  }
+
+  toBack(canvas) {
+    obj = canvas.getActiveObjects();
+    obj.forEach(element => {
+      canvas.sendToBack(element);
+      canvas.fire('object:modified', {target: element});
+    });
+    canvas.discardActiveObject().renderAll();
+  }
+
   delete(canvas) {
     obj = canvas.getActiveObjects();
     obj.forEach(element => canvas.remove(element));

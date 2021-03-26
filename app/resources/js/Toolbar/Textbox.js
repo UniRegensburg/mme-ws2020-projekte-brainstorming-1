@@ -14,8 +14,17 @@ sliderOutput = ConfigUI.TEXTBOXSLIDEROUTPUT;
 
 class Textbox{
     
-    showMenue(){
-        textboxMenue.classList.remove("hide");
+    showMenue(canvas){
+        ConfigUI.RECTMENUE.classList.add("hide");
+        ConfigUI.CIRCLEMENUE.classList.add("hide");
+        ConfigUI.ARROWMENUE.classList.add("hide");
+        ConfigUI.TEXTBOXMENUE.classList.remove("hide");
+        ConfigUI.FREEDRAWMENUE.classList.add("hide");
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORMENUEOBJ.classList.add("hide");
+
+        canvas.discardActiveObject().renderAll();
+
         sliderOutput.textContent = "Text size: " + slider.value;
         slider.oninput = function() {
             sliderOutput.innerHTML = "Text size: " + this.value;
@@ -51,9 +60,9 @@ class Textbox{
             textboxDraw = new fabric.Textbox(text, {
                 fontSize: slider.value, 
                 fontFamily: font, 
-                left: origX - 260/2, 
+                width: slider.value*8,
+                left: origX - (slider.value*8)/2, 
                 top: origY, 
-                width: 260,
                 backgroundColor: backgroundColor,
                 fill: textColor,
                 shadow: shadow,
@@ -67,6 +76,12 @@ class Textbox{
         canvas.on('mouse:up', function(o){
             canvas.off('mouse:down');
             pan.enablePan(canvas);
+
+            //textboxes can not be scaled in height
+            textboxDraw.setControlsVisibility({
+                mt: false, 
+                mb: false, 
+            });
         });
     }
 }

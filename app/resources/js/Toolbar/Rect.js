@@ -7,8 +7,18 @@ var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT, fill, stroke;
 
 class Rect{
 
-    showMenue(){
+    showMenue(canvas){
+        
         ConfigUI.RECTMENUE.classList.remove("hide");
+        ConfigUI.CIRCLEMENUE.classList.add("hide");
+        ConfigUI.ARROWMENUE.classList.add("hide");
+        ConfigUI.TEXTBOXMENUE.classList.add("hide");
+        ConfigUI.FREEDRAWMENUE.classList.add("hide");
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORMENUEOBJ.classList.add("hide");
+        //ConfigUI.OBJECTMENUE.classList.add("hide");
+
+        canvas.discardActiveObject().renderAll();
     }
 
     constructor(type){
@@ -51,6 +61,7 @@ class Rect{
         });
         
         canvas.on('mouse:move', function(o){
+
             if (!isDown) return;
             var pointer = canvas.getPointer(o.e);
             if(origX>pointer.x){

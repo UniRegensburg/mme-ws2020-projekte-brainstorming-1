@@ -3,6 +3,8 @@ const ConfigUI ={
     OBJECTBUTTON1: document.getElementById("button-objectMenue-1"),
     OBJECTBUTTON2: document.getElementById("button-objectMenue-2"),
     OBJECTBUTTON3: document.getElementById("button-objectMenue-3"),
+    OBJECTBUTTON4: document.getElementById("button-objectMenue-4"),
+    OBJECTBUTTON5: document.getElementById("button-objectMenue-5"),
     COLORMENUEOBJ: document.getElementById("colorPickerObj"),
     COLORICONOBJ: document.getElementById("icon-colorpicker-obj"),
     COLORBUTTONOBJ1: document.getElementById("button-color-obj-1"),

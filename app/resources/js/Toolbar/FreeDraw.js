@@ -7,7 +7,15 @@ var colorDraw;
 class FreeDraw{
 
     showMenue(freeDraw, canvas){
+        ConfigUI.RECTMENUE.classList.add("hide");
+        ConfigUI.CIRCLEMENUE.classList.add("hide");
+        ConfigUI.ARROWMENUE.classList.add("hide");
+        ConfigUI.TEXTBOXMENUE.classList.add("hide");
         ConfigUI.FREEDRAWMENUE.classList.remove("hide");
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORMENUEOBJ.classList.add("hide");
+
+        canvas.discardActiveObject().renderAll();
 
         ConfigUI.FREEDRAWSLIDEROUTPUT.textContent = "Pen size: " + ConfigUI.FREEDRAWSLIDER.value;
         ConfigUI.FREEDRAWSLIDER.oninput = function() {

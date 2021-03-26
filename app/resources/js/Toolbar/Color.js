@@ -4,8 +4,16 @@ var selectedColor;
 
 class Color{  
 
-    showMenue(){
+    showMenue(canvas){
+      ConfigUI.RECTMENUE.classList.add("hide");
+      ConfigUI.CIRCLEMENUE.classList.add("hide");
+      ConfigUI.ARROWMENUE.classList.add("hide");
+      ConfigUI.TEXTBOXMENUE.classList.add("hide");
+      ConfigUI.FREEDRAWMENUE.classList.add("hide");
       ConfigUI.COLORMENUE.classList.remove("hide");
+      ConfigUI.COLORMENUEOBJ.classList.add("hide");
+
+      canvas.discardActiveObject().renderAll();
     }
 
     selectColor(position, canvas, freeDraw){

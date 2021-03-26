@@ -12,8 +12,16 @@ arrowMenue = ConfigUI.ARROWMENUE;
 
 class Arrow {
     
-    showMenue(){
-        arrowMenue.classList.remove("hide");
+    showMenue(canvas){
+        ConfigUI.RECTMENUE.classList.add("hide");
+        ConfigUI.CIRCLEMENUE.classList.add("hide");
+        ConfigUI.ARROWMENUE.classList.remove("hide");
+        ConfigUI.TEXTBOXMENUE.classList.add("hide");
+        ConfigUI.FREEDRAWMENUE.classList.add("hide");
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORMENUEOBJ.classList.add("hide");
+
+        canvas.discardActiveObject().renderAll();
     }
 
     constructor(type){
@@ -50,7 +58,7 @@ class Arrow {
             origY = pointer.y;
 
             arrowDraw = new fabric.Path(path);
-            arrowDraw.set({fill: color, top: origY, left: origX});
+            arrowDraw.set({fill: color, top: origY, left: origX - 120});
 
             canvas.add(arrowDraw.scale(0.5));
 

@@ -7,8 +7,16 @@ var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT,fill, stroke;
 
 class Circle{
 
-    showMenue(){
+    showMenue(canvas){
+        ConfigUI.RECTMENUE.classList.add("hide");
         ConfigUI.CIRCLEMENUE.classList.remove("hide");
+        ConfigUI.ARROWMENUE.classList.add("hide");
+        ConfigUI.TEXTBOXMENUE.classList.add("hide");
+        ConfigUI.FREEDRAWMENUE.classList.add("hide");
+        ConfigUI.COLORMENUE.classList.add("hide");
+        ConfigUI.COLORMENUEOBJ.classList.add("hide");
+
+        canvas.discardActiveObject().renderAll();
     }
 
     constructor(type){
