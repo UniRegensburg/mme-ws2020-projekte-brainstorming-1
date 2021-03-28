@@ -7,7 +7,7 @@ var text = Config.TEXTBOXDEFAULTTEXT,
 //fontSize = Config.TEXTBOXDEFAULTSIZE,
 font = Config.TEXTBOXDEFAULTFONT, 
 textboxDraw, origX, origY,
-color = Config.COLORDEFAULT, textColor, backgroundColor,
+color = Config.COLORDEFAULT, textColor, backgroundColor, shadow,
 textboxMenue = ConfigUI.TEXTBOXMENUE,
 slider = ConfigUI.TEXTBOXSLIDER,
 sliderOutput = ConfigUI.TEXTBOXSLIDEROUTPUT;
@@ -42,8 +42,8 @@ class Textbox{
             var pointer = canvas.getPointer(o.e);
 
             if(selectedColor) {color = selectedColor;}
-            if (textbox.getType() === "notFilled") {textColor = color; backgroundColor = "transparent";}
-            else if (textbox.getType() === "filled") {textColor = "#EEEEEE"; backgroundColor = color;}
+            if (textbox.getType() === "notFilled") {textColor = color; backgroundColor = "transparent"; shadow = "transpatent";}
+            else if (textbox.getType() === "filled") {textColor = "#EEEEEE"; backgroundColor = color; shadow = "#9E9E9E 4px 4px 10px";} //shadow: "color, offsetX, offsetY, blur"
         
             origX = pointer.x;
             origY = pointer.y;
@@ -56,6 +56,7 @@ class Textbox{
                 width: 260,
                 backgroundColor: backgroundColor,
                 fill: textColor,
+                shadow: shadow,
                 });
 
             canvas.add(textboxDraw).setActiveObject(textboxDraw);

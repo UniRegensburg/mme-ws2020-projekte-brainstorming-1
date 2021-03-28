@@ -1,5 +1,20 @@
 const ConfigUI ={
     OBJECTMENUE: document.getElementById("objectMenue"),
+    OBJECTBUTTON1: document.getElementById("button-objectMenue-1"),
+    OBJECTBUTTON2: document.getElementById("button-objectMenue-2"),
+    OBJECTBUTTON3: document.getElementById("button-objectMenue-3"),
+    COLORMENUEOBJ: document.getElementById("colorPickerObj"),
+    COLORICONOBJ: document.getElementById("icon-colorpicker-obj"),
+    COLORBUTTONOBJ1: document.getElementById("button-color-obj-1"),
+	COLORBUTTONOBJ2: document.getElementById("button-color-obj-2"),
+	COLORBUTTONOBJ3: document.getElementById("button-color-obj-3"),
+	COLORBUTTONOBJ4: document.getElementById("button-color-obj-4"),
+	COLORBUTTONOBJ5: document.getElementById("button-color-obj-5"),
+	COLORBUTTONOBJ6: document.getElementById("button-color-obj-6"),
+	COLORBUTTONOBJ7: document.getElementById("button-color-obj-7"),
+    COLORBUTTONOBJ8: document.getElementById("button-color-obj-8"),
+    COLORBUTTONOBJ9: document.getElementById("button-color-obj-9"),
+    COLORBUTTONOBJ10: document.getElementById("button-color-obj-10"),
 
     COLORPICKERBUTTON: document.getElementById("button-colorpicker"),
     COLORMENUE: document.getElementById("colorPicker"),
@@ -42,6 +57,10 @@ const ConfigUI ={
     RECTMENUE: document.getElementById("rectPicker"),
 
     ARROWBUTTON: document.getElementById("button-arrow"),
+    ARROWBUTTON1: document.getElementById("button-arrow-1"),
+	ARROWBUTTON2: document.getElementById("button-arrow-2"),
+    ARROWBUTTON3: document.getElementById("button-arrow-3"),
+    ARROWMENUE: document.getElementById("arrowPicker"),
 
 	DOWNLOADBUTTON: document.getElementById("button-download"),
 

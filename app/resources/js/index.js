@@ -12,12 +12,18 @@ import Arrow from "./Toolbar/Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
+import Timer from "./Timer.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
 
-
-var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, objMenue;
-//textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,circleButton1, circleButton2,rectButton1, rectButton2,textboxButton1, textboxButton2,freeDrawButton1, freeDrawButton2,downloadButton, zoomInButton, zoomInitButton, zoomOutButton;
+var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, objMenue,
+textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
+colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
+circleButton1, circleButton2,
+rectButton1, rectButton2,
+textboxButton1, textboxButton2,
+freeDrawButton1, freeDrawButton2,
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton;
 
 function init() {
 	eventListeners();
@@ -48,7 +54,7 @@ function initUI(){
 	textbox = new Textbox ("notFilled");
 	circle = new Circle ("withBorder");
 	rect = new Rect ("withBorder");
-	arrow = new Arrow;
+	arrow = new Arrow ("single");
 	objMenue = new ObjectMenue;
 	
 
@@ -82,9 +88,19 @@ function initUI(){
 	ConfigUI.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
 	ConfigUI.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
 
-	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas);arrow.drawArrow(canvas, pan);});
+	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); arrow.showMenue(); arrow.drawArrow(canvas, arrow, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
+	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
+	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
 
 
+	timer = new Timer;
+	timerButton = document.getElementById("button-timer");
+	timerButton.addEventListener("click", timer.timer);
+	
+	//timerButton.addEventListener("click", function(){timer.startTimer();});
+
+	downloadButton = document.getElementById("button-download");
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	if(ConfigUI.DOWNLOADBUTTON) {
 		ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){
@@ -96,6 +112,9 @@ function initUI(){
 	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
 
 	objMenue.isObjMenue(canvas);
+	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
+	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
+	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.delete(canvas);});
 }
 
 init();
