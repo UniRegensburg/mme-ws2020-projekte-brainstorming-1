@@ -31,8 +31,7 @@ class DrawingRoom extends colyseus.Room {
     onAuth (client, options, request) { return true }
 
     // When client successfully join the room
-    onJoin (client, options, auth) 
-    {
+    onJoin (client, options, auth)  {   
         for (let element of this.objects.values()) {
             client.send("object:added", {object: element})
                   }
