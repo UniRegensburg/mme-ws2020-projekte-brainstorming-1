@@ -5,8 +5,8 @@ class DrawingRoom extends colyseus.Room {
     // When room is initialized
     onCreate (options) {
         console.log("new Drawing room ID:" , this.roomId, " Created.");
-        this.Timer = new Timer(this.onTimerTick, this.onTimerEnd);
-
+        this.Timer = new Timer(this.onTimerTick.bind(this), this.onTimerEnd.bind(this));
+        this.Timer.setSeconds(0);
         this.objects = new Map();
 
         this.onMessage("object:added", (client, message) => {
@@ -28,11 +28,17 @@ class DrawingRoom extends colyseus.Room {
             this.objects.set(message.object.id, message.object);
 		});
         this.onMessage("timer:start", (client, message) => {
-            this.Timer.setSeconds(message.seconds);
             this.Timer.start();
+            this.broadcast("timer:start");
+            this.broadcast("timer:tick", {seconds: this.Timer.seconds});
         });
         this.onMessage("timer:stop", (client, message) => {
             this.Timer.stop();
+            this.broadcast("timer:stop");
+        });
+        this.onMessage("timer:set", (client, message) => {
+            this.Timer.setSeconds(message.seconds);
+            this.broadcast("timer:tick", {seconds: message.seconds});
         });
     }
 
@@ -43,7 +49,8 @@ class DrawingRoom extends colyseus.Room {
     onJoin (client, options, auth)  {   
         for (let element of this.objects.values()) {
             client.send("object:added", {object: element})
-                  }
+        }
+        client.send("timer:tick", {seconds: this.Timer.seconds});
     }
 
     // When a client leaves the room

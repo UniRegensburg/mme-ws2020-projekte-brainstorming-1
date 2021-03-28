@@ -9,7 +9,7 @@ class Timer {
     }
 
     start() {
-        this.countdown = setInterval(this.onTick, 1000)
+        this.countdown = setInterval(this.onTick.bind(this), 1000)
     }
 
     stop() {
@@ -17,10 +17,14 @@ class Timer {
     }
 
     onTick() {
-        this.seconds--;
-        this.onTickCb(seconds);
-        if(seconds == 0) {
-            this.onEndCb();
+        if(this.seconds > 0) {            
+            this.seconds -= 1;
+            this.onTickCb(this.seconds);
+            if(this.seconds == 0) {
+                this.onEndCb();
+                this.stop();
+            }
+        } else {
             this.stop();
         }
     }

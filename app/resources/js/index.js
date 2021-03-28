@@ -12,7 +12,6 @@ import Arrow from "./Toolbar/Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
-import Timer from "./Timer.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
 
@@ -92,11 +91,6 @@ function initUI(){
 	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
 	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
 	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
-
-
-	timer = new Timer;
-	timerButton = document.getElementById("button-timer");
-	timerButton.addEventListener("click", timer.timer);
 	
 	//timerButton.addEventListener("click", function(){timer.startTimer();});
 
