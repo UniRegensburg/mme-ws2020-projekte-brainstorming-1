@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<!-- alle style Attribute in css Datei -->
+    <!-- alle style Attribute in css Datei -->
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
     <div id="title" style="position: absolute; top:0; left:0;">
@@ -169,7 +169,7 @@
         </button>
         <button id="button-arrow-3" class="button-freedraw tooltip">
             <span class="tooltiptext">angled arrow</span>
-            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(45deg)"  aria-hidden="true">trending_up</i>
+            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(45deg)" aria-hidden="true">trending_up</i>
         </button>
     </div>
 
@@ -244,40 +244,43 @@
         <p id="seconds1">00</p>
     </div>
 
-    <div class="TimerButtons"> 
-        
+    <div class="TimerButtons">
 
-    </div> 
 
-    <!-- insert code for invite-modal modal here-->
-<div id="invite-modal" class="modal">
-    <div class="invite-modal-content">
-        <p>Zugangscode: </p>
-        <p id="inviteCode">xxxxxxxx</p>
-        <button onclick="copyToClipboard('inviteCode')" id="copybutton">In Zwischenablage kopieren
-            <script type="text/javascript">
-                function copyToClipboard(elementId) {
-
-                    document
-                    var aux = document.createElement("input");
-                    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
-                    document.body.appendChild(aux);
-                    aux.select();
-                    document.execCommand("copy");
-                    document.body.removeChild(aux)
-
-                    alert('Zugangscode wurde in die Zwischenablage kopiert.');
-
-                    document.querySelector('.modal').style.display = 'none';
-
-                }
-            </script>
-        </button>
     </div>
-</div>
+
+    <!-- code for invite-modal modal here-->
+
+    <div id="invite-modal" class="modal">
+        <div class="invite-modal-content">
+            <p>Zugangscode: </p>
+            <p id="inviteCode">xxxxxxxx</p>
+            <button onclick="copyToClipboard('inviteCode')" id="copybutton">In Zwischenablage kopieren
+
+                <!-- Funktion um Daten in Zwischenablage kopieren und Modal wieder zu schließen-->
+                <script type="text/javascript">
+                    function copyToClipboard(elementId) {
+
+                        document
+                        var aux = document.createElement("input");
+                        aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+                        document.body.appendChild(aux);
+                        aux.select();
+                        document.execCommand("copy");
+                        document.body.removeChild(aux)
+
+                        alert('Zugangscode wurde in die Zwischenablage kopiert.');
+
+                        document.querySelector('.modal').style.display = 'none';
+
+                    }
+                </script>
+            </button>
+        </div>
+    </div>
 
 
-    <!-- Code für Modal-->
+    <!-- Code for Modal-->
 
     <div class="bg-modal">
         <div class="modal-content">
