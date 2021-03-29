@@ -12,7 +12,7 @@ function loadFile(canvas, file) {
 
         reader.addEventListener("load", function() {
             //console.log(this.result);
-            fabiric.Image.fromURL(this.result, function(loadedImage) {
+            fabric.Image.fromURL(this.result, function(loadedImage) {
                 loadedImage.scale(0.5);
                 // Bild verändern
                 canvas.add(loadedImage); 
