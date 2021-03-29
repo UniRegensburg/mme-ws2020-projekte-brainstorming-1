@@ -90,11 +90,14 @@
             <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
         </button>
         <p />
-        <button class="mdc-button tooltip">
-            <span class="tooltiptext">upload picture</span>
-            <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
-        </button>
+        <label for="uploaded-file">
+            <input class="hide" type="file" id="uploaded-file">
+            <button id="button-image-upload" class="mdc-button tooltip">
+                <span class="tooltiptext">upload picture</span>
+                <span class="mdc-button__ripple button-icon-ripple"></span>
+                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
+            </button> 
+        </label>
     </div>
 
     <div id="colorPicker" class="menue hide" style="position: absolute; top: 90px; left: 110px;">
@@ -300,6 +303,7 @@
     <script type="module" src="resources/js/index.js"></script>
     <script type="module" src="resources/js/show-modal.js"></script>
     <script type="module" src="resources/js/Timer.js"></script>
+    
     </script>
 </body>
 

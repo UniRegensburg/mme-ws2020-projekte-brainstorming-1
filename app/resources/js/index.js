@@ -14,6 +14,7 @@ import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
+import Image from "./Image.js";
 
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, objMenue,
@@ -56,6 +57,7 @@ function initUI(){
 	rect = new Rect ("withBorder");
 	arrow = new Arrow ("single");
 	objMenue = new ObjectMenue;
+	image = new Image;
 	
 
 	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue();});
@@ -104,7 +106,6 @@ function initUI(){
 		});
 	}
 
-	image = new Image;
 	imageUploadButton = document.getElementById("button-image-upload");
 	imageUploadButton.addEventListener("click", function() {
 		document.querySelector("#uploaded-file").click();
