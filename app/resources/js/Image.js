@@ -1,83 +1,36 @@
-import Config from "./Config.js";
-import ConfigUI from "./ConfigUI.js";
+/* eslint-env browser */
+/* eslint-disable no-undef */
+var uploadedFile = document.getElementById("uploaded-file"), file;
 
-// function addImage() {
-//   IMAGEUPLOAD.imgObj.addEventListener("click", function(e) {
-//     var file = e.target.files[0],
-//       reader = new FileReader();
-//     reader.readAsDataURL(file);
-//     reader.onload = function(f) {
-//       var data = f.target.result;
-//       fabric.Image.fromURL(data, function(img) {
-//         var oImg = img.set({
-//           left: canvas.getCenter().left,
-//           top: canvas.getCenter().top,
-//           originX: "center",
-//           originY: "center",
-//         });
-//         oImg.scaleToWidth(canvas.getWidth() / 2);
-//         canvas.add(oImg).requestRenderAll();
-//         canvas.setActiveObject(oImg);
-//       });
-//     };
-//   });
-// }
+function loadFile(canvas, file) {
+    let imageType = /image.*/;
 
-// class Image {
-//   addImage(canvas)
-// }
+    if(file.type.match(imageType)) {
+        const reader = new FileReader();
+        console.log("passed type test");
 
-// export default Image;
-
-/* document.getElementById('imgLoader').onchange = function handleImage(e) {
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    console.log('fdsf');
-    var imgObj = new Image();
-    imgObj.src = event.target.result;
-    imgObj.onload = function() {
-      // start fabricJS stuff
-
-      var image = new fabric.Image(imgObj);
-      image.set({
-        left: 250,
-        top: 250,
-        angle: 20,
-        padding: 10,
-        cornersize: 10
-      });
-      //image.scale(getRandomNum(0.1, 0.25)).setCoords();
-      canvas.add(image);
-
-      // end fabricJS stuff
+        reader.addEventListener("load", function() {
+            //console.log(this.result);
+            
+            fabric.Image.fromURL(this.result, function(loadedImage) {
+                //loadedImage.scale(0.5);
+                // Bild verändern
+                canvas.add(loadedImage); 
+            });
+        }); 
+            reader.readAsDataURL(file);
     }
-
-  }
-  reader.readAsDataURL(e.target.files[0]);
 }
 
- */
+class Image {
 
-
-  /* addImage() {
-        imgObj.addEventListener("change", function(e) {
-            var file = e.target.files[0],
-                reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function(f) {
-                var data = f.target.result;
-                fabric.Image.fromURL(data, function(img) {
-                    var oImg = img.set({
-                        left: canvas.getCenter().left,
-                        top: canvas.getCenter().top,
-                        angle: Config.ANGLE,
-                        originX: "center",
-                        originY: "center",
-                    });
-                    oImg.scaleToWidth(canvas.getWidth() / Config.HALF);
-                    canvas.add(oImg).requestRenderAll();
-                    canvas.setActiveObject(oImg);
-                });
-            };
+    loadImage(canvas) {
+        uploadedFile.addEventListener("change", function() {
+            file = this.files[0];
+            console.log(file);
+            loadFile(canvas, file);
         });
-    } */
+    }
+}
+
+export default Image;
