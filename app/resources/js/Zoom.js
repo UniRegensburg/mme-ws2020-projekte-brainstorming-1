@@ -1,11 +1,12 @@
 /* eslint-env browser */
+var zoom = 1;
 
 function mouseZoom(canvas) {
     canvas.on("mouse:wheel", function(opt) {
-        let delta, zoom;
+        let delta; 
         delta = opt.e.deltaY;
         zoom = canvas.getZoom();
-        zoom *= 0.999 * delta;
+        zoom *= Math.pow(0.999, delta);
         if (zoom > 20) {
             zoom = 20;
         } 
@@ -19,9 +20,7 @@ function mouseZoom(canvas) {
 }
 
 function buttonZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas) {
-    let zoom = 1;
-		
-		zoomInButton.addEventListener('click', function(){
+    zoomInButton.addEventListener('click', function(){
 			zoom += 0.1;
 			canvas.setZoom(zoom);
 		});
