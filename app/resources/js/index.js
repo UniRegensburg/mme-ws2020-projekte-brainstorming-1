@@ -12,7 +12,6 @@ import Arrow from "./Toolbar/Arrow.js";
 import Download from "./Download.js";
 import Zoom from "./Zoom.js";
 import Pan from "./Pan.js";
-import Timer from "./Timer.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
 

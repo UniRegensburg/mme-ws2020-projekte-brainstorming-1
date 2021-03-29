@@ -1,8 +1,4 @@
-var minutes = 10,
-seconds = 30,
-countdownInterval,
-initalSeconds = 30,
-initalMinutes = 10;
+var room;
 
 const minutesView = document.getElementById("minutes"),
  secondsView = document.getElementById("seconds"),
@@ -10,58 +6,43 @@ const minutesView = document.getElementById("minutes"),
  startPauseIcon = document.getElementById("pauseIcon"),
  resetButton = document.getElementById("button-reset");
 
-minutesView.innerHTML = minutes;
-secondsView.innerHTML = seconds;
+document.addEventListener("RoomConnectEvent", function(e) {
+    room = e.detail;
+    console.log("timer got room ", e.detail.id);
+    room.onMessage("timer:start", (message) => {
+        startPauseIcon.innerHTML = "pause";
+    });
+    room.onMessage("timer:stop", (message) => {
+        startPauseIcon.innerHTML = "play_arrow";
+    });
+    room.onMessage("timer:tick", (message) => {
+        updateViews(message.seconds);
+    });
+    room.onMessage("timer:end", (message) => {
+        // todo: what happens if timer is done?
+    });
+});
 
 startPauseButton.addEventListener("click", function() {
     if(startPauseIcon.innerHTML === "pause") {
-        startPauseIcon.innerHTML = "play_arrow";
-        clearInterval(countdownInterval);
+        room.send("timer:stop");
     } else {
-        startPauseIcon.innerHTML = "pause";
-        countdownInterval = setInterval(startTimer, 1000);
+        room.send("timer:start");
     }
 });
 
 resetButton.addEventListener("click", function(){
-    clearInterval(countdownInterval);
-    startPauseIcon.innerHTML = "play_arrow";
-    seconds = initalSeconds;
-    minutes = initalMinutes;
-    minutesView.innerHTML = minutes;
-    secondsView.innerHTML = seconds;
+    room.send("timer:set", {seconds: 120})
 });
 
-// Unterteilung in function reduceMinutes() und reduceSeconds() ?
-function startTimer() {
-    seconds = seconds - 1;
-    if(seconds < 10) {
-        secondsView.innerHTML = "0"+ seconds;
-    } else {
-        secondsView.innerHTML = seconds;
-    }
-
-    if(seconds === 59 && minutes > 0) {
-        minutes = minutes - 1;
-        if(minutes < 10) {
-            minutesView.innerHTML = "0" + minutes;
-        } else {
-            minutesView.innerHTML = minutes;
-        }  
-    }
-
-    if(seconds <= 0) {
-        if(minutes <= 0) {
-            clearInterval(countdownInterval);
-        }
-        seconds = 60;
-    }
+function updateViews(sec_num) {
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+    
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    minutesView.innerHTML = minutes;
+    secondsView.innerHTML = seconds;
 }
-
-class Timer {
-    timer() { 
-        countdownInterval = setInterval(startTimer, 1000); 
-    }
-}
-
-export default Timer;
