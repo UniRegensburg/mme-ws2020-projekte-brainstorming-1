@@ -18,13 +18,18 @@ import Image from "./Image.js";
 
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, objMenue,
+import Timer from "./Timer.js";
+import Image from "./Image.js";
+
+var textbox, rect, circle, color, canvas, freedraw, arrow, download, zoom, pan, timer, image,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
 circleButton1, circleButton2,
 rectButton1, rectButton2,
 textboxButton1, textboxButton2,
 freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton;
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton, imageUploadButton,
+objectMenue = document.getElementById("objectMenue");
 
 function init() {
 	eventListeners();
@@ -106,10 +111,24 @@ function initUI(){
 		});
 	}
 
+	image = new Image;
 	imageUploadButton = document.getElementById("button-image-upload");
 	imageUploadButton.addEventListener("click", function() {
 		document.querySelector("#uploaded-file").click();
 		image.loadImage(canvas);
+	});
+
+	zoom = new Zoom;
+	zoomInButton = document.getElementById("button-zoom-in");
+	zoomInitButton = document.getElementById("button-zoom-init");
+	zoomOutButton = document.getElementById("button-zoom-out");
+	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
+
+	pan = new Pan;
+	pan.enablePan(canvas);
+
+	canvas.on('selection:updated', function(o){
+		showObjMenue();
 	});
 
 	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
