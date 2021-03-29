@@ -104,6 +104,13 @@ function initUI(){
 		});
 	}
 
+	image = new Image;
+	imageUploadButton = document.getElementById("button-image-upload");
+	imageUploadButton.addEventListener("click", function() {
+		document.querySelector("#uploaded-file").click();
+		image.loadImage(canvas);
+	});
+
 	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
 
 	objMenue.isObjMenue(canvas);
