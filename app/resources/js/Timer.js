@@ -19,7 +19,7 @@ document.addEventListener("RoomConnectEvent", function(e) {
         updateViews(message.seconds);
     });
     room.onMessage("timer:end", (message) => {
-        // todo: what happens if timer is done?
+        alert('Keine Zeit mehr Dude!')
     });
 });
 
@@ -32,7 +32,7 @@ startPauseButton.addEventListener("click", function() {
 });
 
 resetButton.addEventListener("click", function(){
-    room.send("timer:set", {seconds: 120})
+    room.send("timer:set", {seconds: 10})
 });
 
 function updateViews(sec_num) {

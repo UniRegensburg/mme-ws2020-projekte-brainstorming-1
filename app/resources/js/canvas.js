@@ -32,20 +32,21 @@ class Canvas {
           canvas.renderAll();
         });
       });
-      
+
       room.onMessage("object:removed", (message) => {
         console.log("removed object received from server");
         fabric.util.enlivenObjects([message.object], function(
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false;
-  
+
           objects.forEach(function(o) {
-            if ( canvas.getObjects().includes(obj.id) == false) {
+            if (canvas.getObjects().includes(obj.id) ==
+              false) {
               canvas.getObjects().remove(o);
               canvas.remove(o);
             }
-            
+
             canvas.renderOnAddRemove = origRenderOnAddRemove;
             canvas.renderAll();
           });
