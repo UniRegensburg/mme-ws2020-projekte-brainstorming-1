@@ -23,7 +23,8 @@ circleButton1, circleButton2,
 rectButton1, rectButton2,
 textboxButton1, textboxButton2,
 freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton, imageUploadButton;
+downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton, imageUploadButton,
+objectMenue = document.getElementById("objectMenue");
 
 function init() {
 	eventListeners();
@@ -110,7 +111,39 @@ function initUI(){
 		});
 	}
 
-	zoom.enableZoom(ConfigUI.ZOOMINBUTTON, ConfigUI.ZOOMINITBUTTON, ConfigUI.ZOOMOUTBUTTON, canvas);
+	image = new Image;
+	imageUploadButton = document.getElementById("button-image-upload");
+	imageUploadButton.addEventListener("click", function() {
+		document.querySelector("#uploaded-file").click();
+		image.loadImage(canvas);
+	});
+
+	zoom = new Zoom;
+	zoomInButton = document.getElementById("button-zoom-in");
+	zoomInitButton = document.getElementById("button-zoom-init");
+	zoomOutButton = document.getElementById("button-zoom-out");
+	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
+
+	pan = new Pan;
+	pan.enablePan(canvas);
+
+	canvas.on('selection:updated', function(o){
+		showObjMenue();
+	});
+
+	canvas.on('selection:created', function(o){
+		showObjMenue();
+	});
+
+	canvas.on('selection:cleared', function(o){
+		objectMenue.classList.add("hide");
+		showObjMenue();
+		//console.log("hide");
+	}); 
+	
+	canvas.on('object:modified', function(o){
+		showObjMenue();
+	}); 
 
 	objMenue.isObjMenue(canvas);
 	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
