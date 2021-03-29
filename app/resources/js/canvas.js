@@ -34,6 +34,26 @@ class Canvas {
         });
       });
 
+      room.onMessage("object:removed", (message) => {
+        console.log("removed object received from server");
+        fabric.util.enlivenObjects([message.object], function(
+          objects) {
+          var origRenderOnAddRemove = canvas.renderOnAddRemove;
+          canvas.renderOnAddRemove = false;
+
+          objects.forEach(function(o) {
+            if (canvas.getObjects().includes(obj.id) ==
+              false) {
+              canvas.getObjects().remove(o);
+              canvas.remove(o);
+            }
+
+            canvas.renderOnAddRemove = origRenderOnAddRemove;
+            canvas.renderAll();
+          });
+        });
+      }, true);
+
       room.onMessage("object:modified", (message) => {
         console.log("modified object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -51,6 +71,8 @@ class Canvas {
         });
       });  
     }, true);
+
+
 
     canvas.on('object:added', function(options) {
       if (options.target) {
@@ -84,6 +106,26 @@ class Canvas {
           };
         })(obj.toJSON);
         room.send("object:modified", { object: obj.toJSON() });
+      }
+    });
+
+    canvas.on('object:removed', function(options) {
+      if (options.target) {
+        var obj = options.target;
+        if (obj.removed)
+          return; //Object already removed
+
+        obj.set('removed', true);
+        obj.toJSON = (function(toJSON) {
+          return function() {
+            return fabric.util.object.extend(toJSON.call(this), {
+              id: this.id,
+              uid: this.uid,
+              removed: this.removed
+            });
+          };
+        })(obj.toJSON);
+        room.send("object:removed", { object: obj.toJSON() });
       }
     });
 

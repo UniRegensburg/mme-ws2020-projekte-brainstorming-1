@@ -1,5 +1,7 @@
 import { Instance } from "./utilis/Client.js"
 
+const inviteCode = document.getElementById('inviteCode');
+
 function closeModal() {
   document.querySelector('.bg-modal').style.display = 'none';
 }
@@ -17,7 +19,7 @@ document.getElementById('modal-create').addEventListener('click',
 
     Instance.create("DrawingRoom").then(room => {
       console.log(room.sessionId, "joined new", room.name, " ", room.id);
-
+      inviteCode.innerText = room.id;
       document.dispatchEvent(new CustomEvent(
       "RoomConnectEvent", { detail: room }));
 
@@ -46,7 +48,23 @@ document.getElementById('modal-join').addEventListener('click',
   }
 );
 
+
+function openInviteModal() {
+  document.querySelector('.modal').style.display = 'flex';
+
+}
+
+function closeInviteModal() {
+  document.querySelector('.modal').style.display = 'none';
+}
+
+document.getElementById('user').addEventListener('click', openInviteModal);
+
+
+
+
 openModal();
+
 
 
 

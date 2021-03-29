@@ -232,14 +232,10 @@
 
 
     <div id="user" style="position: absolute; top:0; right:0;">
-        <text id="user_count"> 0 von 5 </text>
-        <button class="mdc-button">
-            <span class="mdc-button__ripple"></span>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">account_circle</i>
-        </button>
         <button class="mdc-button">
             <span class="mdc-button__ripple"></span>
             <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
+
         </button>
     </div>
 
@@ -250,13 +246,39 @@
         </button>
     </div>
 
-    <div class="timer1" style="position: absolute; bottom: 0%; left: 8%;">
+    <div class="timer1" style="position: absolute; bottom: 0%; left: 25%;">
         <p id="minutes1">00</p>
         <p>:</p>
         <p id="seconds1">00</p>
     </div>
 
-    <!-- insert code for timer modal here-->
+    <!-- insert code for invite-modal modal here-->
+<div id="invite-modal" class="modal">
+    <div class="invite-modal-content">
+        <p>Zugangscode: </p>
+        <p id="inviteCode">xxxxxxxx</p>
+        <button onclick="copyToClipboard('inviteCode')" id="copybutton">In Zwischenablage kopieren
+            <script type="text/javascript">
+                function copyToClipboard(elementId) {
+
+                    document
+                    var aux = document.createElement("input");
+                    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+                    document.body.appendChild(aux);
+                    aux.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(aux)
+
+                    alert('Zugangscode wurde in die Zwischenablage kopiert.');
+
+                    document.querySelector('.modal').style.display = 'none';
+
+                }
+            </script>
+        </button>
+    </div>
+</div>
+
 
     <!-- Code für Modal-->
 
@@ -265,7 +287,6 @@
             <div id="close">+</div>
             <img src="./resources/images/Brainboard_Logo.png" alt="Logo brainboard">
             <form class="modal-form">
-                <input class="input" id="board-name" type="text" placeholder="Name des Boards?">
                 <input class="input" id="user-name" type="text" placeholder="Name">
                 <input class="input" id="code" type="text" placeholder="Zugangscode">
                 <button class="modal-button" type="button" id="modal-join" style="vertical-align: middle;"><span> Beitreten </span> </button>

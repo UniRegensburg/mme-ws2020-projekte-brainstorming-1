@@ -15,6 +15,7 @@ import Pan from "./Pan.js";
 import ObjectMenue from "./ObjectMenue.js";
 import {Instance, Connect} from "./utilis/Client.js";
 
+
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, objMenue,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
 colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
@@ -115,6 +116,8 @@ function initUI(){
 	ConfigUI.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
 	ConfigUI.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
 }
+
+
 
 init();
 
