@@ -6,8 +6,8 @@
 | **Whiteboard** | Das Whiteboard wird über das Eingabefenster, das beim Öffnen der Anwendung eingeblendet wird, angelegt. Der Nutzer beginnt das Brainstorming auf einem leeren Whiteboard.| kritisch | 7 Tage | Frontend, Canvas Rendering, User Interface |
 | **Zugangscode** | Der Nutzer kann über einen Button den Zugangscode in die Zwischenablage kopieren, um anderen Nutzern den Zugang zum Whiteboard zu ermöglichen. | kritisch | 3 Tage | Backend, User Interface |
 | **Textboxen** | Auf dem Whiteboard können Textboxen eingefügt werden. Die Textboxen können erstellt, editiert (Größe, Text, Farbe) und gelöscht werden und mit verschiedenen Farben hinterlegt werden. | kritisch | 4 Tage | Frontend, Canvas Rendering, User Interface |
-| **Benutzername** | Der Nutzer gibt sich einen Namen. Die anderen Nutzer sehen die Namen der Nutzer, die gerade am Whiteboard arbeiten | mittel | 2 Tage | Backend, Frontend, Canvas Rendering, User Interface |
-| **Export** | Das erstellte Whiteboard kann als JPG exportiert werden. | hoch | 5 Tage | Backend, User Interface |
+| **Benutzername** | Der Nutzer gibt sich einen Namen. Die anderen Nutzer sehen die Namen der Nutzer, die gerade am Whiteboard arbeiten. | mittel | 2 Tage | Backend, Frontend, Canvas Rendering, User Interface |
+| **Export** | Das erstellte Whiteboard kann als PNG exportiert werden. | hoch | 5 Tage | Backend, User Interface |
 | **Timer** | Der Nutzer hat die Möglichkeit, für die laufende Session einen Timer zu stellen. Nach Ablauf des Timers wird ein Pop-up angezeigt, das den Nutzer informiert, dass die Zeit abgelaufen ist. | mittel | 3 Tage | Frontend, Canvas Rendering, User Interface |
 | **Bilder einfügen** | Der Nutzer hat die Möglichkeit, Bilder auf das Whiteboard zu importieren. | nice-to-have | 3 Tage | Frontend, Backend, Canvas Rendering, User Interface |
 | **Formen (Kreis, Rechtecke, Pfeile)** | Der Nutzer kann zur Strukturierung der Gedanken Kreise, Rechtecke und Pfeile in verschiedenen Farben einfügen. | nice-to-have | 4 Tage | Frontend, Canvas Rendering, User Interface |
