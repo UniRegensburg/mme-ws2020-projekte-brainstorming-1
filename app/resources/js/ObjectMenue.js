@@ -89,13 +89,6 @@ class ObjectMenue {
     canvas.on('selection:cleared', function(o) {
       showObjMenue(canvas);
     });
-    /*
-    canvas.on('object:modified', function(o){
-    	showObjMenue(canvas);
-    }); 
-    canvas.on('object:moving', function(o){
-    	showObjMenue(canvas);
-    }); */
   }
 
   showColorMenue(canvas) {

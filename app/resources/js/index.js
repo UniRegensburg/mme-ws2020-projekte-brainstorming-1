@@ -115,32 +115,12 @@ function initUI(){
 	pan = new Pan;
 	pan.enablePan(canvas);
 
-	/*
-	canvas.on('selection:updated', function(o){
-		showObjMenue();
-	});
-
-	canvas.on('selection:created', function(o){
-		showObjMenue();
-	});
-
-	canvas.on('selection:cleared', function(o){
-		objectMenue.classList.add("hide");
-		showObjMenue();
-		//console.log("hide");
-	}); 
-	
-	canvas.on('object:modified', function(o){
-		showObjMenue();
-	}); 
-
 	objMenue.isObjMenue(canvas);
-	Config.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
-	Config.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
-	Config.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
-	Config.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
-	Config.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
-	*/
+	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
+	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
+	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
+	ConfigUI.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
+	ConfigUI.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
 }
 
 init();

@@ -19,7 +19,7 @@ document.addEventListener("RoomConnectEvent", function(e) {
         updateViews(message.seconds);
     });
     room.onMessage("timer:end", (message) => {
-        alert('Keine Zeit mehr Dude!')
+        alert('Time is up!')
     });
 });
 
