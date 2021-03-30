@@ -58,7 +58,7 @@ class Canvas {
         fabric.util.enlivenObjects([message.object], function(
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
-          canvas.renderOnAddRemove = false
+          canvas.renderOnAddRemove = false;
           objects.forEach(function(o) {
             if (obj.removed) {
               if (canvas.getObjects().find(obj => obj.id == o.id)) {

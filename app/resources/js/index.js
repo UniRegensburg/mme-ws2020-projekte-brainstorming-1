@@ -123,6 +123,16 @@ function initUI(){
 	Config.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
 	Config.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
 	Config.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
+
+	var t = document.getElementById("timerbutton"),
+	b = document.getElementById("button-start-pause");
+
+	b.onmouseover = function(){t.classList.remove("hide");};
+	//b.onmouseleave = function(){t.classList.add("hide");};
+	t.onmouseleave = function(){t.classList.add("hide");};
+	//b.onmouseleave = function(){t.classList.add("hide");};
+
+	//b.addEventListener("mouseover", function(){t.classList.remove("hide");});
 }
 
 init();
