@@ -9,8 +9,8 @@
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="shortcut icon" href="./resources/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./resources/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resources/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="resources/images/favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -44,7 +44,7 @@
             <button id="button-start-pause" class="mdc-button tooltip">
                 <span class="tooltiptext">play</span>
                 <span class="mdc-button__ripple button-icon-ripple"></span>
-                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">play_arrow</i>
+                <i id="pauseIcon" class="material-icons mdc-button__icon button-icon" aria-hidden="true">play_arrow</i>
             </button>
             <button id="button-reset" class="mdc-button tooltip">
                 <span class="tooltiptext">restart timer</span>
@@ -57,8 +57,8 @@
 
     <div class="timerbutton" style="position: absolute; top: 60px; right: 10px;">
         <button id="timer20" class="button-with-text">20 Minuten</button>
+        <button id="timer30" class="button-with-text">30 Minuten</button>
         <button id="timer40" class="button-with-text">40 Minuten</button>
-        <button id="timer60" class="button-with-text">60 Minuten</button>
     </div>
 
     <div class="menue" id="toolbar" style="position: absolute; top: 90px; left: 10px;">
