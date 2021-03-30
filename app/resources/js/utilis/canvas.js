@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import Config from "./config.js";
+import Config from "./utilis/config.js";
 
 var canvas, room;
 
@@ -51,6 +51,7 @@ class Canvas {
         });
       }, true);
 
+
       room.onMessage("object:removed", (message) => {
         console.log("removed object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -59,7 +60,7 @@ class Canvas {
           canvas.renderOnAddRemove = false
           objects.forEach(function(o) {
             if (canvas.getObjects().includes(obj.id == o
-              .id)) {
+                .id)) {
               canvas.delete(obj).set(o);
             }
           });

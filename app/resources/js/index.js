@@ -1,20 +1,19 @@
 /* eslint-env browser */
 /* eslint-disable no-undef */
-import Canvas from "./canvas.js";
-import Rect from "./toolbar/rect.js";
-import Circle from "./toolbar/circle.js";
-import Textbox from "./toolbar/textbox.js";
-import Color from "./toolbar/color.js";
-import FreeDraw from "./toolbar/freeDraw.js";
-import Config from "./config.js";
-import ConfigUI from "./configUI.js";
-import Arrow from "./toolbar/arrow.js";
-import Download from "./download.js";
-import Zoom from "./zoom.js";
-import Pan from "./pan.js";
+import Canvas from "./utilis/canvas.js";
+import Rect from "./tools/rect.js";
+import Circle from "./tools/circle.js";
+import Textbox from "./tools/textbox.js";
+import Color from "./tools/color.js";
+import FreeDraw from "./tools/freeDraw.js";
+import Config from "./utilis/config.js";
+import Arrow from "./tools/arrow.js";
+import Download from "./tools/download.js";
+import Zoom from "./tools/zoom.js";
+import Pan from "./tools/pan.js";
 import ObjectMenue from "./objectMenue.js";
 import {Instance, Connect} from "./utilis/client.js";
-import Image from "./image.js";
+import Image from "./tools/image.js";
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, image, objMenue,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
@@ -58,47 +57,47 @@ function initUI(){
 	arrow = new Arrow ("single");
 	objMenue = new ObjectMenue;
 	
-	ConfigUI.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue(canvas);});
-	ConfigUI.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON2.addEventListener("click", function(){color.selectColor(2, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON3.addEventListener("click", function(){color.selectColor(3, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON4.addEventListener("click", function(){color.selectColor(4, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON5.addEventListener("click", function(){color.selectColor(5, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON6.addEventListener("click", function(){color.selectColor(6, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON7.addEventListener("click", function(){color.selectColor(7, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON8.addEventListener("click", function(){color.selectColor(8, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON9.addEventListener("click", function(){color.selectColor(9, canvas, freeDraw);});
-	ConfigUI.COLORBUTTON10.addEventListener("click", function(){color.selectColor(10, canvas, freeDraw);});
+	Config.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue(canvas);});
+	Config.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
+	Config.COLORBUTTON2.addEventListener("click", function(){color.selectColor(2, canvas, freeDraw);});
+	Config.COLORBUTTON3.addEventListener("click", function(){color.selectColor(3, canvas, freeDraw);});
+	Config.COLORBUTTON4.addEventListener("click", function(){color.selectColor(4, canvas, freeDraw);});
+	Config.COLORBUTTON5.addEventListener("click", function(){color.selectColor(5, canvas, freeDraw);});
+	Config.COLORBUTTON6.addEventListener("click", function(){color.selectColor(6, canvas, freeDraw);});
+	Config.COLORBUTTON7.addEventListener("click", function(){color.selectColor(7, canvas, freeDraw);});
+	Config.COLORBUTTON8.addEventListener("click", function(){color.selectColor(8, canvas, freeDraw);});
+	Config.COLORBUTTON9.addEventListener("click", function(){color.selectColor(9, canvas, freeDraw);});
+	Config.COLORBUTTON10.addEventListener("click", function(){color.selectColor(10, canvas, freeDraw);});
 
-	ConfigUI.TEXTBOXBUTTON.addEventListener("click", function(){pan.disablePan(canvas); textbox.showMenue(canvas); textbox.drawTextbox(canvas, textbox, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	ConfigUI.TEXTBOXBUTTON1.addEventListener("click", function(){textbox.setType("notFilled");});
-	ConfigUI.TEXTBOXBUTTON2.addEventListener("click", function(){textbox.setType("filled");});
+	Config.TEXTBOXBUTTON.addEventListener("click", function(){pan.disablePan(canvas); textbox.showMenue(canvas); textbox.drawTextbox(canvas, textbox, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	Config.TEXTBOXBUTTON1.addEventListener("click", function(){textbox.setType("notFilled");});
+	Config.TEXTBOXBUTTON2.addEventListener("click", function(){textbox.setType("filled");});
 
-	ConfigUI.MOUSEBUTTON.addEventListener("click", function(){pan.enablePan(canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	Config.MOUSEBUTTON.addEventListener("click", function(){pan.enablePan(canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
 	
-	ConfigUI.FREEDRAWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); freeDraw.showMenue(freeDraw, canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, true);});
-	ConfigUI.FREEDRAWBUTTON1.addEventListener("click", function(){freeDraw.setType("pen"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
-	ConfigUI.FREEDRAWBUTTON2.addEventListener("click", function(){freeDraw.setType("marker"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
+	Config.FREEDRAWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); freeDraw.showMenue(freeDraw, canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, true);});
+	Config.FREEDRAWBUTTON1.addEventListener("click", function(){freeDraw.setType("pen"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
+	Config.FREEDRAWBUTTON2.addEventListener("click", function(){freeDraw.setType("marker"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
 
-	ConfigUI.CIRCLEBUTTON.addEventListener("click", function(){pan.disablePan(canvas); circle.showMenue(canvas); circle.drawCircle(canvas, circle, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	ConfigUI.CIRCLEBUTTON1.addEventListener("click", function(){circle.setType("withBorder");});
-	ConfigUI.CIRCLEBUTTON2.addEventListener("click", function(){circle.setType("filled");});
+	Config.CIRCLEBUTTON.addEventListener("click", function(){pan.disablePan(canvas); circle.showMenue(canvas); circle.drawCircle(canvas, circle, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	Config.CIRCLEBUTTON1.addEventListener("click", function(){circle.setType("withBorder");});
+	Config.CIRCLEBUTTON2.addEventListener("click", function(){circle.setType("filled");});
 
-	ConfigUI.RECTBUTTON.addEventListener("click", function(){pan.disablePan(canvas); rect.showMenue(canvas); rect.drawRect(canvas, rect, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	ConfigUI.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
-	ConfigUI.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
+	Config.RECTBUTTON.addEventListener("click", function(){pan.disablePan(canvas); rect.showMenue(canvas); rect.drawRect(canvas, rect, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	Config.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
+	Config.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
 
-	ConfigUI.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); arrow.showMenue(canvas); arrow.drawArrow(canvas, arrow, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
-	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
-	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
+	Config.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); arrow.showMenue(canvas); arrow.drawArrow(canvas, arrow, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
+	Config.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
+	Config.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
+	Config.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
 	
 	//timerButton.addEventListener("click", function(){timer.startTimer();});
 
 	downloadButton = document.getElementById("button-download");
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	
-	ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){download = new Download; download.startDownlad(canvas);});
+	Config.DOWNLOADBUTTON.addEventListener("click", function(){download = new Download; download.startDownlad(canvas);});
 
 	image = new Image;
 	imageUploadButton = document.getElementById("button-image-upload");
@@ -136,11 +135,11 @@ function initUI(){
 	}); 
 
 	objMenue.isObjMenue(canvas);
-	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
-	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
-	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
-	ConfigUI.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
-	ConfigUI.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
+	Config.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
+	Config.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
+	Config.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
+	Config.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
+	Config.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
 	*/
 }
 

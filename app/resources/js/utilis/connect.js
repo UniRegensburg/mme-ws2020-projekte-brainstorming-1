@@ -21,7 +21,7 @@ document.getElementById('modal-create').addEventListener('click',
       console.log(room.sessionId, "joined new", room.name, " ", room.id);
       inviteCode.innerText = room.id;
       document.dispatchEvent(new CustomEvent(
-      "RoomConnectEvent", { detail: room }));
+        "RoomConnectEvent", { detail: room }));
 
       closeModal();
     }).catch(e => {
@@ -33,13 +33,13 @@ document.getElementById('modal-create').addEventListener('click',
 document.getElementById('modal-join').addEventListener('click',
   function() {
     let roomID = document.getElementById("code").value;
-    
+
     console.log("connecting with room " + roomID);
     Instance.joinById(roomID).then(room => {
       console.log(room.sessionId, "joined", room.name, " ", room.id);
 
       document.dispatchEvent(new CustomEvent(
-      "RoomConnectEvent", { detail: room }));
+        "RoomConnectEvent", { detail: room }));
 
       closeModal();
     }).catch(e => {

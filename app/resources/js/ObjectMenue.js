@@ -1,6 +1,6 @@
-import ConfigUI from "./configUI.js";
+import Config from "./utilis/config.js";
 
-var top, left, obj, _clipboard, colorMenue = ConfigUI.COLORMENUEOBJ,
+var top, left, obj, _clipboard, colorMenue = Config.COLORMENUEOBJ,
   selectedColor;
 
 function showObjMenue(canvas) {
@@ -9,15 +9,15 @@ function showObjMenue(canvas) {
   if (obj) {
     //top = obj.top; left = obj.left;
 
-    //ConfigUI.OBJECTMENUE.style.top = (top-60)+"px";
-    //ConfigUI.OBJECTMENUE.style.left = left+"px";
-    ConfigUI.OBJECTMENUE.style.top = 20 + "px";
-    ConfigUI.OBJECTMENUE.style.left = 480 + "px";
-    ConfigUI.OBJECTMENUE.style.display = "inline-Block";
+    //Config.OBJECTMENUE.style.top = (top-60)+"px";
+    //Config.OBJECTMENUE.style.left = left+"px";
+    Config.OBJECTMENUE.style.top = 20 + "px";
+    Config.OBJECTMENUE.style.left = 480 + "px";
+    Config.OBJECTMENUE.style.display = "inline-Block";
 
-    ConfigUI.OBJECTMENUE.classList.remove("hide");
+    Config.OBJECTMENUE.classList.remove("hide");
   } else {
-    ConfigUI.OBJECTMENUE.classList.add("hide");
+    Config.OBJECTMENUE.classList.add("hide");
     colorMenue.classList.add("hide");
   }
 }
@@ -102,25 +102,25 @@ class ObjectMenue {
     obj = canvas.getActiveObjects();
     colorMenue.classList.remove("hide");
 
-    ConfigUI.COLORBUTTONOBJ1.addEventListener("click",
+    Config.COLORBUTTONOBJ1.addEventListener("click",
   function() { changeColor(canvas, obj, 1); });
-    ConfigUI.COLORBUTTONOBJ2.addEventListener("click",
+    Config.COLORBUTTONOBJ2.addEventListener("click",
   function() { changeColor(canvas, obj, 2); });
-    ConfigUI.COLORBUTTONOBJ3.addEventListener("click",
+    Config.COLORBUTTONOBJ3.addEventListener("click",
   function() { changeColor(canvas, obj, 3); });
-    ConfigUI.COLORBUTTONOBJ4.addEventListener("click",
+    Config.COLORBUTTONOBJ4.addEventListener("click",
   function() { changeColor(canvas, obj, 4); });
-    ConfigUI.COLORBUTTONOBJ5.addEventListener("click",
+    Config.COLORBUTTONOBJ5.addEventListener("click",
   function() { changeColor(canvas, obj, 5); });
-    ConfigUI.COLORBUTTONOBJ6.addEventListener("click",
+    Config.COLORBUTTONOBJ6.addEventListener("click",
   function() { changeColor(canvas, obj, 6); });
-    ConfigUI.COLORBUTTONOBJ7.addEventListener("click",
+    Config.COLORBUTTONOBJ7.addEventListener("click",
   function() { changeColor(canvas, obj, 7); });
-    ConfigUI.COLORBUTTONOBJ8.addEventListener("click",
+    Config.COLORBUTTONOBJ8.addEventListener("click",
   function() { changeColor(canvas, obj, 8); });
-    ConfigUI.COLORBUTTONOBJ9.addEventListener("click",
+    Config.COLORBUTTONOBJ9.addEventListener("click",
   function() { changeColor(canvas, obj, 9); });
-    ConfigUI.COLORBUTTONOBJ10.addEventListener("click",
+    Config.COLORBUTTONOBJ10.addEventListener("click",
   function() { changeColor(canvas, obj, 10); });
   }
 
@@ -174,7 +174,7 @@ class ObjectMenue {
   delete(canvas) {
     obj = canvas.getActiveObjects();
     obj.forEach(element => canvas.remove(element));
-    ConfigUI.OBJECTMENUE.classList.add("hide");
+    Config.OBJECTMENUE.classList.add("hide");
   }
 }
 
