@@ -352,7 +352,7 @@ h1 {
     align-items: center;
 }
 
-.button-with-text{
+.button-with-text {
     margin: 5px;
     border-radius: 5%;
     border-color: var(--transparent);
@@ -395,4 +395,3 @@ h1 {
     cursor: pointer;
     margin: 10px auto;
 }
-

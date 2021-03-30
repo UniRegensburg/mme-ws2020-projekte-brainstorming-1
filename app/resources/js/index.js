@@ -1,19 +1,23 @@
 /* eslint-env browser */
 /* eslint-disable no-undef */
-import Canvas from "./utilis/canvas.js";
+import Image from "./tools/image.js";
 import Rect from "./tools/rect.js";
 import Circle from "./tools/circle.js";
 import Textbox from "./tools/textbox.js";
 import Color from "./tools/color.js";
 import FreeDraw from "./tools/freeDraw.js";
-import Config from "./utilis/config.js";
 import Arrow from "./tools/arrow.js";
 import Download from "./tools/download.js";
 import Zoom from "./tools/zoom.js";
 import Pan from "./tools/pan.js";
-import ObjectMenue from "./objectMenue.js";
+
 import {Instance, Connect} from "./utilis/client.js";
-import Image from "./tools/image.js";
+import Config from "./utilis/config.js";
+import Canvas from "./utilis/canvas.js";
+
+import ObjectMenue from "./objectMenue.js";
+
+
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, image, objMenue,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
@@ -116,11 +120,11 @@ function initUI(){
 	pan.enablePan(canvas);
 
 	objMenue.isObjMenue(canvas);
-	ConfigUI.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
-	ConfigUI.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
-	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
-	ConfigUI.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
-	ConfigUI.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
+	Config.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
+	Config.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
+	Config.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
+	Config.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
+	Config.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
 }
 
 init();
