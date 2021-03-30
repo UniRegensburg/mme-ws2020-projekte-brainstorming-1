@@ -14,5 +14,12 @@
 
 ## Zusätzliche Übereinkünfte
 
-[Notieren Sie hier alle team-internen Übereinkünfte zur Verwendung des Repositorys, z.B. spezielle Überlegungen zur Codequalität oder zur Formulierung von *Commit Messages*]
+-  Jede/r Projektbeteiligte bearbeitet die ihm/ihr zugeteilten Aufgaben in einem nach der Struktur "Dev-Name" benannten Branch.
 
+-  In regelmäßig abgehaltenen Meetings, die über Discord stattfinden, werden die Fortschritte der Projektbeteiligten per Screensharing präsentiert und in den Dev-Branch gemerged.
+
+-  Nachdem eine neue Version der Anwendung in den Dev-Branch gemerged wurde, wird die Anwendung im noch laufenden Meeting auf Fehler getestet. Treten Fehler in der Benutzung auf, wird versucht, diese sofort zu beheben. Ist die Lösung eines Problems augenscheinlich mit größerem Aufwand verbunden, wird festgelegt, welche/r Projektbeteiligte sich mit der Lösung befasst.
+
+- Commit-Messages müssen aussagekräftig sein. Sie beschreiben, an welchem Teil des Projekts gearbeitet wurde und müssen (v.a. für die anderen Projektbeteiligten) verständlich formuliert sein.
+
+- Vorüberlegungen zur Benennung von Modulen, Variablen, etc. wurden getroffen. Gegen Ende des Projekts wird auf die Einhaltung hin überprüft und es werden ggf. Anpassungen vorgenommen.
