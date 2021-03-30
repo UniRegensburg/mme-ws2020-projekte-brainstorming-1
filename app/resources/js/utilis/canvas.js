@@ -59,19 +59,13 @@ class Canvas {
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false;
+
           objects.forEach(function(o) {
-            if (obj.removed) {
-              if (canvas.getObjects().find(obj => obj.id == o.id)) {
-                canvas.remove(o);
-              }
-              return;
-            }
-
-            if (canvas.getObjects().find(obj => obj.id == o.id)) {
-              canvas.set(o);
-            }
-
+            canvas.remove(canvas.getObjects().find(obj => obj.id == o.id));
+            
+              
           });
+
           canvas.renderOnAddRemove = origRenderOnAddRemove;
           canvas.renderAll();
         });
