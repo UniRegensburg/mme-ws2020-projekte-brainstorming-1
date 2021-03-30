@@ -11,8 +11,8 @@ function showObjMenue(canvas) {
 
     //ConfigUI.OBJECTMENUE.style.top = (top-60)+"px";
     //ConfigUI.OBJECTMENUE.style.left = left+"px";
-    ConfigUI.OBJECTMENUE.style.top = 20 + "px";
-    ConfigUI.OBJECTMENUE.style.left = 480 + "px";
+    //ConfigUI.OBJECTMENUE.style.top = 20 + "px";
+    //ConfigUI.OBJECTMENUE.style.left = 480 + "px";
     ConfigUI.OBJECTMENUE.style.display = "inline-Block";
 
     ConfigUI.OBJECTMENUE.classList.remove("hide");
