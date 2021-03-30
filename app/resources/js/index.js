@@ -92,24 +92,13 @@ function initUI(){
 	ConfigUI.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
 	ConfigUI.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
 	ConfigUI.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
-
-	image = new Image;
-	imageUploadButton = document.getElementById("button-image-upload");
-	imageUploadButton.addEventListener("click", function() {
-		document.querySelector("#uploaded-file").click();
-		image.loadImage(canvas);
-	});
 	
 	//timerButton.addEventListener("click", function(){timer.startTimer();});
 
 	downloadButton = document.getElementById("button-download");
 	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
-	if(ConfigUI.DOWNLOADBUTTON) {
-		ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){
-			download = new Download; 
-			download.startDownlad(canvas);
-		});
-	}
+	
+	ConfigUI.DOWNLOADBUTTON.addEventListener("click", function(){download = new Download; download.startDownlad(canvas);});
 
 	image = new Image;
 	imageUploadButton = document.getElementById("button-image-upload");
@@ -127,6 +116,7 @@ function initUI(){
 	pan = new Pan;
 	pan.enablePan(canvas);
 
+	/*
 	canvas.on('selection:updated', function(o){
 		showObjMenue();
 	});
@@ -151,9 +141,8 @@ function initUI(){
 	ConfigUI.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
 	ConfigUI.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
 	ConfigUI.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
+	*/
 }
-
-
 
 init();
 
