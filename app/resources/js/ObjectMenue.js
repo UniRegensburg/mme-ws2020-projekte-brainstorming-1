@@ -7,12 +7,6 @@ function showObjMenue(canvas) {
   obj = canvas.getActiveObject();
 
   if (obj) {
-    //top = obj.top; left = obj.left;
-
-    //Config.OBJECTMENUE.style.top = (top-60)+"px";
-    //Config.OBJECTMENUE.style.left = left+"px";
-    //Config.OBJECTMENUE.style.top = 20 + "px";
-    //Config.OBJECTMENUE.style.left = 480 + "px";
     Config.OBJECTMENUE.style.display = "inline-Block";
 
     Config.OBJECTMENUE.classList.remove("hide");

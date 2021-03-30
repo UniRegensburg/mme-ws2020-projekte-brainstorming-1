@@ -4,7 +4,8 @@ const minutesView = document.getElementById("minutes"),
   secondsView = document.getElementById("seconds"),
   startPauseButton = document.getElementById("button-start-pause"),
   startPauseIcon = document.getElementById("pauseIcon"),
-  resetButton = document.getElementById("button-reset"),
+  startPauseTooltip = document.getElementById("startPauseTooltip"),
+ //resetButton = document.getElementById("button-reset"),
   timer15 = document.getElementById("timer15"),
   timer30 = document.getElementById("timer30"),
   timer45 = document.getElementById("timer45");
@@ -14,9 +15,11 @@ document.addEventListener("RoomConnectEvent", function(e) {
   console.log("timer got room ", e.detail.id);
   room.onMessage("timer:start", (message) => {
     startPauseIcon.innerHTML = "pause";
+    startPauseTooltip.innerHTML = "pause";
   });
   room.onMessage("timer:stop", (message) => {
     startPauseIcon.innerHTML = "play_arrow";
+    startPauseTooltip.innerHTML = "start";
   });
   room.onMessage("timer:tick", (message) => {
     updateViews(message.seconds);
@@ -34,9 +37,11 @@ startPauseButton.addEventListener("click", function() {
   }
 });
 
+/*
 resetButton.addEventListener("click", function() {
   room.send("timer:set", { seconds: 0 })
 });
+*/
 
 timer15.addEventListener("click", function() {
   room.send("timer:set", { seconds: 900 })
