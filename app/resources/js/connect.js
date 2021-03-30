@@ -10,9 +10,9 @@ function openModal() {
   document.querySelector('.bg-modal').style.display = 'flex';
 }
 
-document.getElementById('modal-new').addEventListener('click', openModal);
+//document.getElementById('modal-new').addEventListener('click', openModal);
 
-document.getElementById('close').addEventListener('click', closeModal);
+//document.getElementById('close').addEventListener('click', closeModal);
 
 document.getElementById('modal-create').addEventListener('click',
   function() {

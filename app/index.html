@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainBoard</title>
+    <title>brainboard</title>
     <link rel="stylesheet" href="resources/css/style.css">
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -17,40 +17,46 @@
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
     <div id="title" style="position: absolute; top:0; left:0;">
-        <img src="./resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
-        <!-- <label class="mdc-text-field mdc-text-field--filled">
-            <span class="mdc-text-field__ripple"></span>
-            <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
-            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-            <span class="mdc-line-ripple"></span>
-        </label> -->
-
-        <button class="modal-button" id="modal-new" style="vertical-align: middle;"><span> Einstellungen </span> </button>
-        <button id="button-download" class="mdc-button">
-            <span class="mdc-button__ripple"></span>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">download</i>
+        <img src="./resources/images/brainboard-Logo-vector.svg" alt="brainboard" width="135px" height="auto"></img>
+        <!--<button class="modal-button" id="modal-new" style="vertical-align: middle;"><span> Einstellungen </span> </button>-->
+        
+        <button id="user" class="mdc-button tooltip">
+            <span class="tooltiptext">invite</span>
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">person_add</i>
         </button>
-        <div>
-            <div class="timer">
-                <p id="minutes">00</p>
-                <p>:</p>
-                <p id="seconds">00</p>
-                <div class="timerbutton" style="position: absolute; bottom: 0%;">
-                    <button id="timer15">15 Minuten</button>
-                    <button id="timer30">30 Minuten</button>
-                    <button id="timer45">45 Minuten</button>
+        <button id="button-download" class="mdc-button tooltip">
+            <span class="tooltiptext">export</span>
+            <span class="mdc-button__ripple button-icon-ripple"></span>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">download</i>
+        </button>
+    
+    </div>
 
-                </div>
-            </div>
-            <button id="button-start-pause" class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i id="pauseIcon" class="material-icons mdc-button__icon" aria-hidden="true">play_arrow</i>
+    <div style="position: absolute; top:0; right:0;">
+            <div class="timer">
+                <p id="minutes" style="font-size: medium; color: gray">00</p>
+                <p>:</p>
+                <p id="seconds" style="font-size: medium; color: gray">00</p>
+
+            <button id="button-start-pause" class="mdc-button tooltip">
+                <span class="tooltiptext">play</span>
+                <span class="mdc-button__ripple button-icon-ripple"></span>
+                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">play_arrow</i>
             </button>
-            <button id="button-reset" class="mdc-button">
-                <span class="mdc-button__ripple"></span>
-                <i class="material-icons mdc-button__icon" aria-hidden="true">restart_alt</i>
+            <button id="button-reset" class="mdc-button tooltip">
+                <span class="tooltiptext">restart timer</span>
+                <span class="mdc-button__ripple button-icon-ripple"></span>
+                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">restart_alt</i>
             </button>
+        
         </div>
+    </div>
+
+    <div class="timerbutton" style="position: absolute; top: 60px; right: 10px;">
+        <button id="timer15" class="button-with-text">15 Minuten</button>
+        <button id="timer30" class="button-with-text">30 Minuten</button>
+        <button id="timer45" class="button-with-text">45 Minuten</button>
     </div>
 
     <div class="menue" id="toolbar" style="position: absolute; top: 90px; left: 10px;">
@@ -240,14 +246,7 @@
     </div>
 
 
-    <div id="user" style="position: absolute; top:0; right:0;">
-        <button class="mdc-button">
-            <span class="mdc-button__ripple"></span>
-            <i class="material-icons mdc-button__icon" aria-hidden="true">person_add</i>
-
-        </button>
-    </div>
-
+    <!--
     <div id="button-timer" style="position: absolute; bottom:0; left:0;">
         <button class="mdc-button">
             <span class="mdc-button__ripple"></span>
@@ -263,17 +262,18 @@
 
     <div class="TimerButtons">
 
-
     </div>
+    -->
 
     <!-- code for invite-modal modal here-->
 
-    <div id="invite-modal" class="modal">
+    <div id="invite-modal" class="modal" style="position: absolute; top:80px; left:45px;">
         <div class="invite-modal-content">
-            <p>Zugangscode: </p>
-            <p id="inviteCode">xxxxxxxx</p>
-            <button onclick="copyToClipboard('inviteCode')" id="copybutton">In Zwischenablage kopieren
-
+            <p style="font-size: medium; color: gray">Access code: </p>
+            <p id="inviteCode" style="font-size: large; color: gray">xxxxxxxx</p>
+            <button onclick="copyToClipboard('inviteCode')" id="copybutton" class="button-with-text">
+                <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">content_copy</i>
+                Copy to clipboard
                 <!-- Funktion um Daten in Zwischenablage kopieren und Modal wieder zu schließen-->
                 <script type="text/javascript">
                     function copyToClipboard(elementId) {
@@ -286,7 +286,7 @@
                         document.execCommand("copy");
                         document.body.removeChild(aux)
 
-                        alert('Zugangscode wurde in die Zwischenablage kopiert.');
+                        alert('Copied access code to clipboard');
 
                         document.querySelector('.modal').style.display = 'none';
 
@@ -301,13 +301,16 @@
 
     <div class="bg-modal">
         <div class="modal-content">
-            <div id="close">+</div>
-            <img src="./resources/images/brainboard_Logo.png" alt="Logo brainboard">
+            <!--<div id="close">+</div>-->
+            <img src="./resources/images/brainboard-Logo-vector.svg" alt="Logo brainboard">
             <form class="modal-form">
-                <input class="input" id="user-name" type="text" placeholder="Name">
-                <input class="input" id="code" type="text" placeholder="Zugangscode">
-                <button class="modal-button" type="button" id="modal-join" style="vertical-align: middle;"><span> Beitreten </span> </button>
-                <button class="modal-button" type="button" id="modal-create" style="vertical-align: middle;"><span> Erstellen </span> </button>
+                <!--<input class="input" id="user-name" type="text" placeholder="Name">-->
+                <!--<p style="font-size: large; color: gray">Create a new board</p>-->
+                <button class="modal-button" type="button" id="modal-create" style="vertical-align: middle;"><span> Create a new board </span> </button>
+                <!--<p style="font-size: large; color: gray">Or join an existing board</p>-->
+                <p/>
+                <button class="modal-button" type="button" id="modal-join"><span> Or join an existing board </span> </button>
+                <input class="input" id="code" type="text" placeholder="access code">
             </form>
         </div>
     </div>
