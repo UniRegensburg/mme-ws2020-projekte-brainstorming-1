@@ -17,7 +17,7 @@ class Canvas {
       room = e.detail;
       console.log("got room ", e.detail.id);
 
-
+      //task to do if object is added by other users
       room.onMessage("object:added", (message) => {
         console.log("new object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -34,6 +34,7 @@ class Canvas {
         });
       });
 
+      //task to do if object is modified by other users
       room.onMessage("object:modified", (message) => {
         console.log("modified object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -51,7 +52,7 @@ class Canvas {
         });
       }, true);
 
-
+      //task to do if object was removed by other users
       room.onMessage("object:removed", (message) => {
         console.log("removed object received from server");
         fabric.util.enlivenObjects([message.object], function(
@@ -59,10 +60,8 @@ class Canvas {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false
           objects.forEach(function(o) {
-            if (canvas.getObjects().includes(obj.id == o
-                .id)) {
-              canvas.delete(obj).set(o);
-            }
+            canvas.getObjects().find(obj => obj.id == o.id)
+              .remove(o);
           });
           canvas.renderOnAddRemove = origRenderOnAddRemove;
           canvas.renderAll();

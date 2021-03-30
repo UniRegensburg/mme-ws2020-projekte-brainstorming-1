@@ -6,18 +6,18 @@ document.addEventListener("RoomConnectEvent", function(e) {
   room = e.detail;
   console.log("timer got room ", e.detail.id);
   room.onMessage("timer:start", (message) => {
-    startPauseIcon.innerHTML = "pause";
+    Config.STARTPAUSEBUTTON.innerHTML = "pause";
     startPauseTooltip.innerHTML = "pause";
   });
   room.onMessage("timer:stop", (message) => {
-    startPauseIcon.innerHTML = "play_arrow";
+    Config.STARTPAUSEBUTTON.innerHTML = "play_arrow";
     startPauseTooltip.innerHTML = "start";
   });
   room.onMessage("timer:tick", (message) => {
     updateViews(message.seconds);
   });
-  room.onMessage("timer:end", (message) => {
-    alert('Time is up!')
+  room.onMessage("timer:end", (message) => { 
+    alert('Time is up!')   
   });
 });
 
