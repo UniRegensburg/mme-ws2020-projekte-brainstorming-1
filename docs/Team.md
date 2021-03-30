@@ -1,3 +1,22 @@
 # Team
 
-[Beschreiben Sie hier die einzelnen Teammitglieder mit Namen, E-Mail-Adresse, Github-Nutzer und Foto. Nennen Sie mindestens eine Komponenten der Anwendung, die in wesentlichen Teilen vom jeweiligen Teammitglied entwickelt wurde.]
+Name: Anna-Lena Babl 
+E-Mail: anna-lena.babl@stud.uni-regensburg.de  
+Github: baa43136  
+Zuständigkeit: Bilder einfügen, Zoom, Pan, Export, Dokumentation
+
+![](AnnaLena_Babl.jpg)
+
+Name: Theresa Kuck
+E-Mail: theresa.kuck@stud.uni-regensburg.de  
+Github: TheresaKuck
+Zuständigkeit: User Interface, Textboxen, Formen, Freihand zeichnen, Objektmenü
+
+![](Theresa_Kuck.jpg)
+
+Name: Fabian Ziegler  
+E-Mail: fabian.ziegler@stud.uni-regensburg.de  
+Github: Abeullus 
+Zuständigkeit: Logo, kollaboratives Arbeiten, Zugangscode, Timer
+
+![](Fabian_Ziegler.jpg)
