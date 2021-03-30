@@ -7,11 +7,11 @@ function mouseZoom(canvas) {
         delta = opt.e.deltaY;
         zoom = canvas.getZoom();
         zoom *= Math.pow(0.999, delta);
-        if (zoom > 20) {
-            zoom = 20;
+        if (zoom > 4) {
+            zoom = 4;
         } 
-        if (zoom < 0.01) {
-            zoom = 0.01;
+        if (zoom < 0.2) {
+            zoom = 0.2;
         } 
         canvas.setZoom(zoom);
         opt.e.preventDefault();

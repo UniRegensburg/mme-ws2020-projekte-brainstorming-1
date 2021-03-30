@@ -3,12 +3,10 @@
 function onMouseDown(canvas) {
     canvas.on("mouse:down", function(opt) {
         let evt = opt.e;
-        if (evt.ctrlKey === true) {
-            this.isDragging = true;
-            this.selection = false;
-            this.lastPosX = evt.clientX;
-            this.lastPosY = evt.clientY;
-        }
+        this.isDragging = true;
+        this.selection = false;
+        this.lastPosX = evt.clientX;
+        this.lastPosY = evt.clientY;
     });
 }
 
