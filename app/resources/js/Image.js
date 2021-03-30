@@ -1,36 +1,47 @@
 /* eslint-env browser */
 /* eslint-disable no-undef */
-var uploadedFile = document.getElementById("uploaded-file"),
-  file;
+var fileReader = document.getElementById("uploaded-file"), reader, inputForUpload, imgElement;
 
-function loadFile(canvas, file) {
-  let imageType = /image.*/;
-
-  if (file.type.match(imageType)) {
-    const reader = new FileReader();
-    console.log("passed type test");
-
+function loadFile(canvas, inputForUpload) {
+    reader = new FileReader(); 
+    
     reader.addEventListener("load", function() {
-      //console.log(this.result);
-      fabric.Image.fromURL(this.result, function(loadedImage) {
-        loadedImage.scale(0.5);
-        // Bild verändern
-        canvas.add(loadedImage);
-      });
-    });
-    reader.readAsDataURL(file);
-  }
+
+        imgElement = document.createElement("img");
+        imgElement.src = reader.result;
+
+        imgElement.onload = function() {
+            let imageInstance, cw, ch;
+            imageInstance = new fabric.Image(imgElement);
+            
+            // checks if canvas is landscape or portrait and scale image
+            cw = canvas.getWidth();
+            ch = canvas.getHeight();
+
+            if (cw > ch) {
+                // canvas is landscape
+                imageInstance.scaleToWidth(canvas.getWidth() - 200);
+                imageInstance.scaleToHeight(canvas.getHeight() - 200);
+            } else {
+                // canvas is portrait
+                imageInstance.scaleToHeight(canvas.getHeight() - 200);
+                imageInstance.scaleToWidth(canvas.getWidth() - 200);
+            }
+
+                canvas.add(imageInstance); 
+                canvas.centerObject(imageInstance);
+        };        
+    }); 
+    reader.readAsDataURL(inputForUpload.files[0]);
 }
 
 class Image {
-
-  loadImage(canvas) {
-    uploadedFile.addEventListener("change", function() {
-      file = this.files[0];
-      console.log(file);
-      loadFile(canvas, file);
-    });
-  }
+    loadImage(canvas) {
+        fileReader.addEventListener("change", function(e) {
+            inputForUpload = e.target;
+            loadFile(canvas, inputForUpload); 
+        });
+    }
 }
 
 export default Image;

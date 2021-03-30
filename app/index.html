@@ -16,10 +16,8 @@
     <!-- alle style Attribute in css Datei -->
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
 
-    
-
-    <div id="title" style="position: absolute; top:0; left:0; text-align: center;">
-        <img src="app/resources/images/brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
+    <div id="title" style="position: absolute; top:0; left:0;">
+        <img src="./resources/images/Brainboard_Logo.png" alt="brainboard" width="150px" height="auto"></img>
         <!-- <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="my-label-id">Name des Boards</span>
@@ -93,7 +91,7 @@
         </button>
         <p />
         <label for="uploaded-file">
-            <input class="hide" type="file" id="uploaded-file">
+            <input class="hide" type="file" accept="image/*" id="uploaded-file">
             <button id="button-image-upload" class="mdc-button tooltip">
                 <span class="tooltiptext">upload picture</span>
                 <span class="mdc-button__ripple button-icon-ripple"></span>
@@ -255,12 +253,6 @@
         <p id="minutes1">00</p>
         <p>:</p>
         <p id="seconds1">00</p>
-        <div class="timerbutton" style="position: absolute; bottom: 0%;">
-            <button id="timer15">15 Minuten</button>
-            <button id="timer30">30 Minuten</button>
-            <button id="timer45">45 Minuten</button>
-        
-        </div>
     </div>
 
     <div class="TimerButtons">
@@ -304,7 +296,7 @@
     <div class="bg-modal">
         <div class="modal-content">
             <div id="close">+</div>
-            <img src="./resources/images/brainboard_Logo.png" alt="Logo brainboard">
+            <img src="./resources/images/Brainboard_Logo.png" alt="Logo brainboard">
             <form class="modal-form">
                 <input class="input" id="user-name" type="text" placeholder="Name">
                 <input class="input" id="code" type="text" placeholder="Zugangscode">
@@ -317,7 +309,7 @@
     <script src="resources/external/fabric.min.js"></script>
     <script src="resources/external/colyseus.js"></script>
     <script type="module" src="resources/js/index.js"></script>
-    <script type="module" src="resources/js/Connect.js"></script>
+    <script type="module" src="resources/js/show-modal.js"></script>
     <script type="module" src="resources/js/Timer.js"></script>
     </script>
 </body>
