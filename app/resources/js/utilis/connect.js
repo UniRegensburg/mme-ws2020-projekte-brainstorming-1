@@ -49,6 +49,11 @@ function openInviteModal() {
 
 }
 
+function closeInviteModal() {
+  document.querySelector('.modal').style.display = 'none';
+
+}
+
 document.getElementById('user').addEventListener('click', openInviteModal);
 
 
