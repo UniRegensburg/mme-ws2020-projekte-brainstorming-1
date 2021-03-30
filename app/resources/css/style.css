@@ -8,6 +8,7 @@
     --ui-verydark: #616161;
     --transparent: #ffffff00;
     --default: #F3722C;
+    --default-light: #f89a68;
 }
 
 html {
@@ -72,7 +73,7 @@ h1 {
     visibility: hidden;
     width: 100px;
     height: 30px;
-    background-color: #f5f5f500;
+    background-color: var(--transparent);
     color: var(--ui-dark);
     text-align: center;
     border-radius: 3px;
@@ -117,19 +118,19 @@ h1 {
     border-color: var(--ui-dark);
 }
 
-.button-freedraw {
+.button-with-icon {
     border-color: var(--transparent);
     background-color: var(--transparent);
 }
 
-.button-freedraw:hover {
+.button-with-icon:hover {
     border-color: var(--ui-semidark);
     border-style: solid;
     border-width: small;
     border-radius: 10%;
 }
 
-.button-freedraw .tooltiptext {
+.button-with-icon .tooltiptext {
     bottom: 50%;
 }
 
@@ -273,8 +274,8 @@ h1 {
 
 .modal-button {
     display: inline-block;
-    border-radius: 15px;
-    background-color: #577590;
+    border-radius: 10px;
+    background-color: var(--default);
     border: none;
     color: white;
     font-size: 1em;
@@ -293,7 +294,7 @@ h1 {
 }
 
 .modal-button:hover {
-    background-color: #688daf;
+    background-color: var(--default-light);
 }
 
 .modal-button span::after {
@@ -321,8 +322,9 @@ h1 {
     /*display: block;*/
     margin: 15px auto;
     padding: 1.2em;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1px solid;
+    border-color: var(--ui-semidark);
 }
 
 .bg-modal img {
@@ -352,13 +354,27 @@ h1 {
     align-items: center;
 }
 
+.timerbutton {
+    opacity: 0;
+}
+
+.timerbutton:hover {
+    opacity: 1;
+}
+
 .button-with-text {
-    margin: 5px;
+    height: 30px;
     border-radius: 5%;
     border-color: var(--transparent);
     background-color: var(--ui-semilight);
     color: var(--ui-dark);
 }
+
+.button-with-text:hover {
+    background-color: var(--ui-semidark);
+    color: rgb(8, 8, 8);
+}
+
 
 /* Code für Invite Modal */
 .modal {

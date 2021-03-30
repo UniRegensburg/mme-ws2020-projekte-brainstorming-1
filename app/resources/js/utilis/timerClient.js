@@ -6,10 +6,12 @@ document.addEventListener("RoomConnectEvent", function(e) {
   room = e.detail;
   console.log("timer got room ", e.detail.id);
   room.onMessage("timer:start", (message) => {
-    Config.STARTPAUSEICON.innerHTML = "pause";
+    startPauseIcon.innerHTML = "pause";
+    startPauseTooltip.innerHTML = "pause";
   });
   room.onMessage("timer:stop", (message) => {
-    Config.STARTPAUSEICON.innerHTML = "play_arrow";
+    startPauseIcon.innerHTML = "play_arrow";
+    startPauseTooltip.innerHTML = "start";
   });
   room.onMessage("timer:tick", (message) => {
     updateViews(message.seconds);
@@ -27,9 +29,11 @@ Config.STARTPAUSEBUTTON.addEventListener("click", function() {
   }
 });
 
-Config.RESETBUTTON.addEventListener("click", function() {
+/*
+resetButton.addEventListener("click", function() {
   room.send("timer:set", { seconds: 0 })
 });
+*/
 
 Config.TIMER15.addEventListener("click", function() {
   room.send("timer:set", { seconds: 900 })
