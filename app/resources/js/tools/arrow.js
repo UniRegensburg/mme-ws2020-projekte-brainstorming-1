@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { selectedColor } from "./tools/color.js";
+import { selectedColor } from "./color.js";
 import Config from "../utilis/config.js";
 
 // Arrows from Microsoft Word

@@ -1,4 +1,4 @@
-import { Instance } from "./utilis/client.js"
+import { Instance } from "./client.js";
 
 const inviteCode = document.getElementById('inviteCode');
 
