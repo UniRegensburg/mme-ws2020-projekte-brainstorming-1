@@ -35,6 +35,12 @@
                 <p id="minutes">00</p>
                 <p>:</p>
                 <p id="seconds">00</p>
+                <div class="timerbutton" style="position: absolute; bottom: 0%;">
+                    <button id="timer15">15 Minuten</button>
+                    <button id="timer30">30 Minuten</button>
+                    <button id="timer45">45 Minuten</button>
+
+                </div>
             </div>
             <button id="button-start-pause" class="mdc-button">
                 <span class="mdc-button__ripple"></span>
@@ -96,7 +102,7 @@
                 <span class="tooltiptext">upload picture</span>
                 <span class="mdc-button__ripple button-icon-ripple"></span>
                 <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
-            </button> 
+            </button>
         </label>
     </div>
 
@@ -296,7 +302,7 @@
     <div class="bg-modal">
         <div class="modal-content">
             <div id="close">+</div>
-            <img src="./resources/images/Brainboard_Logo.png" alt="Logo brainboard">
+            <img src="./resources/images/brainboard_Logo.png" alt="Logo brainboard">
             <form class="modal-form">
                 <input class="input" id="user-name" type="text" placeholder="Name">
                 <input class="input" id="code" type="text" placeholder="Zugangscode">
@@ -309,7 +315,7 @@
     <script src="resources/external/fabric.min.js"></script>
     <script src="resources/external/colyseus.js"></script>
     <script type="module" src="resources/js/index.js"></script>
-    <script type="module" src="resources/js/show-modal.js"></script>
+    <script type="module" src="resources/js/Connect.js"></script>
     <script type="module" src="resources/js/Timer.js"></script>
     </script>
 </body>
