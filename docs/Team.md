@@ -5,7 +5,7 @@ E-Mail: anna-lena.babl@stud.uni-regensburg.de
 Github: baa43136   
 Zuständigkeit: Bilder einfügen, Zoom, Pan, Export, Dokumentation  
 
-![](AnnaLena_Babl.jpg)
+![./team images/](AnnaLena_Babl.jpg)
 
 Name: Theresa Kuck  
 E-Mail: theresa.kuck@stud.uni-regensburg.de  
