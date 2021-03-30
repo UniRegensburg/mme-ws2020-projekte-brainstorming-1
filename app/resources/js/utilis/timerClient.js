@@ -6,12 +6,12 @@ document.addEventListener("RoomConnectEvent", function(e) {
   room = e.detail;
   console.log("timer got room ", e.detail.id);
   room.onMessage("timer:start", (message) => {
-    Config.STARTPAUSEBUTTON.innerHTML = "pause";
-    startPauseTooltip.innerHTML = "pause";
+    Config.STARTPAUSEICON.innerHTML = "pause";
+    Config.STARTPAUSETOOLTIP.innerHTML = "pause";
   });
   room.onMessage("timer:stop", (message) => {
-    Config.STARTPAUSEBUTTON.innerHTML = "play_arrow";
-    startPauseTooltip.innerHTML = "start";
+    Config.STARTPAUSEICON.innerHTML = "play_arrow";
+    Config.STARTPAUSETOOLTIP.innerHTML = "start";
   });
   room.onMessage("timer:tick", (message) => {
     updateViews(message.seconds);

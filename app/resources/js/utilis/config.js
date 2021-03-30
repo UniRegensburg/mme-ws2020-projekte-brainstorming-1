@@ -94,8 +94,9 @@ const Config = {
   SECONDSVIEW: document.getElementById("seconds"),
   STARTPAUSEBUTTON: document.getElementById("button-start-pause"),
   STARTPAUSEICON: document.getElementById("pauseIcon"),
+  STARTPAUSETOOLTIP: document.getElementById("startPauseTooltip"),
   RESETBUTTON: document.getElementById("button-reset"),
-  TIMER15: document.getElementById("button-reset"),
+  TIMER15: document.getElementById("timer15"),
   TIMER30: document.getElementById("timer30"),
   TIMER45: document.getElementById("timer45"),
 
