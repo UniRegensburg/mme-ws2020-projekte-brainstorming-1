@@ -5,9 +5,9 @@ const minutesView = document.getElementById("minutes"),
   startPauseButton = document.getElementById("button-start-pause"),
   startPauseIcon = document.getElementById("pauseIcon"),
   resetButton = document.getElementById("button-reset"),
-  timer20 = document.getElementById("timer20"),
+  timer15 = document.getElementById("timer15"),
   timer30 = document.getElementById("timer30"),
-  timer40 = document.getElementById("timer40");
+  timer45 = document.getElementById("timer45");
 
 document.addEventListener("RoomConnectEvent", function(e) {
   room = e.detail;
@@ -38,16 +38,16 @@ resetButton.addEventListener("click", function() {
   room.send("timer:set", { seconds: 0 })
 });
 
-timer20.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 1200 })
+timer15.addEventListener("click", function() {
+  room.send("timer:set", { seconds: 900 })
 })
 
 timer30.addEventListener("click", function() {
   room.send("timer:set", { seconds: 1800 })
 })
 
-timer40.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 2400 })
+timer45.addEventListener("click", function() {
+  room.send("timer:set", { seconds: 2700 })
 })
 
 function updateViews(sec_num) {
