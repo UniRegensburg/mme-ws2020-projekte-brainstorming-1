@@ -1,6 +1,6 @@
 const Config = {
 
-    
+  // Const for all in Tools
   TEXTBOXDEFAULTTEXT: "Add Your Text!",
   TEXTBOXDEFAULTSIZE: 35,
   TEXTBOXDEFAULTFONT: "Lucida Sans Unicode",
@@ -81,6 +81,23 @@ const Config = {
   // Image-Upload
 
   IMAGEUPLOAD: document.getElementById("addImg"),
+
+
+  // Const for Connect.js
+
+  INVITECODE: document.getElementById('inviteCode'),
+
+
+  // Const for timerClient.js
+
+  MINUTESVIEW: document.getElementById("minutes"),
+  SECONDSVIEW: document.getElementById("seconds"),
+  STARTPAUSEBUTTON: document.getElementById("button-start-pause"),
+  STARTPAUSEICON: document.getElementById("pauseIcon"),
+  RESETBUTTON: document.getElementById("button-reset"),
+  TIMER15: document.getElementById("button-reset"),
+  TIMER30: document.getElementById("timer30"),
+  TIMER45: document.getElementById("timer45"),
 
 };
 

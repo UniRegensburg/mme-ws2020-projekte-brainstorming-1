@@ -96,10 +96,8 @@ function initUI(){
 	Config.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
 	Config.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
 	
-	//timerButton.addEventListener("click", function(){timer.startTimer();});
 
 	downloadButton = document.getElementById("button-download");
-	// if-Abfrage wg. Problem mit UI-Element button-download, später entfernen
 	
 	Config.DOWNLOADBUTTON.addEventListener("click", function(){download = new Download; download.startDownlad(canvas);});
 
