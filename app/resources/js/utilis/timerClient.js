@@ -35,11 +35,11 @@ startPauseButton.addEventListener("click", function() {
 });
 
 resetButton.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 500 })
+  room.send("timer:set", { seconds: 0 })
 });
 
 timer20.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 0 })
+  room.send("timer:set", { seconds: 1200 })
 })
 
 timer40.addEventListener("click", function() {
