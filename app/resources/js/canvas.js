@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import Config from "./Config.js";
+import Config from "./config.js";
 
 var canvas, room;
 

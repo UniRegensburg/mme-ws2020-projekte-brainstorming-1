@@ -1,5 +1,5 @@
 const colyseus = require('colyseus');
-const Timer = require('./timer');
+const Timer = require('./timerServer');
 
 class DrawingRoom extends colyseus.Room {
   // When room is initialized

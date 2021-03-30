@@ -3,7 +3,7 @@
 var Instance;
 
 function Connect(server) {
-    Instance = new Colyseus.Client(server);
+  Instance = new Colyseus.Client(server);
 }
 
-export {Instance, Connect};
+export { Instance, Connect };

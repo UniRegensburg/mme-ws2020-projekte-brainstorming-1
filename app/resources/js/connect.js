@@ -1,4 +1,4 @@
-import { Instance } from "./utilis/Client.js"
+import { Instance } from "./utilis/client.js"
 
 const inviteCode = document.getElementById('inviteCode');
 
@@ -64,16 +64,3 @@ document.getElementById('user').addEventListener('click', openInviteModal);
 
 
 openModal();
-
-
-
-
-
-/*function addWordToList(frequencyOfWord, inputString) {
-  var results = document.querySelector(".result-list"),
-  newListEl = document.createElement("li");
-  
-  newListEl.innerHTML = `<span class="count">${frequencyOfWord}</span><span class="word">${inputString}</span>`;
-
-  results.appendChild(newListEl);
-} */

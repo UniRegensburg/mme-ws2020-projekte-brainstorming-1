@@ -1,6 +1,6 @@
-import {selectedColor} from "./Color.js";
-import Config from "../Config.js";
-import ConfigUI from "../ConfigUI.js";
+import {selectedColor} from "./color.js";
+import Config from "../config.js";
+import ConfigUI from "../configUI.js";
 
 var colorDraw;
 

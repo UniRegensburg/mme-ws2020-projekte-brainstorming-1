@@ -1,4 +1,4 @@
-import ConfigUI from "./ConfigUI.js";
+import ConfigUI from "./configUI.js";
 
 var top, left, obj, _clipboard, colorMenue = ConfigUI.COLORMENUEOBJ,
   selectedColor;

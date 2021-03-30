@@ -1,4 +1,4 @@
-class Timer {
+class TimerServer {
   constructor(onTickCb, onEndCb) {
     this.onTickCb = onTickCb;
     this.onEndCb = onEndCb;
@@ -31,4 +31,4 @@ class Timer {
 
 }
 
-module.exports = Timer
+module.exports = TimerServer

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import {selectedColor} from "./Color.js";
-import Config from "../Config.js";
-import ConfigUI from "../ConfigUI.js";
+import {selectedColor} from "./color.js";
+import Config from "../config.js";
+import ConfigUI from "../configUI.js";
 
 // Arrows from Microsoft Word
 var pathSingleArrow = "M461 505.844 913.26 505.844 913.26 516.157 461 516.156ZM908.104 495.532 939.042 511.001 908.104 526.469Z",

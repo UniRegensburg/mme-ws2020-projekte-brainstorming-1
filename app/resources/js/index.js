@@ -1,20 +1,20 @@
 /* eslint-env browser */
 /* eslint-disable no-undef */
-import Canvas from "./Canvas.js";
-import Rect from "./Toolbar/Rect.js";
-import Circle from "./Toolbar/Circle.js";
-import Textbox from "./Toolbar/Textbox.js";
-import Color from "./Toolbar/Color.js";
-import FreeDraw from "./Toolbar/FreeDraw.js";
-import Config from "./Config.js";
-import ConfigUI from "./ConfigUI.js";
-import Arrow from "./Toolbar/Arrow.js";
-import Download from "./Download.js";
-import Zoom from "./Zoom.js";
-import Pan from "./Pan.js";
-import ObjectMenue from "./ObjectMenue.js";
-import {Instance, Connect} from "./utilis/Client.js";
-import Image from "./Image.js";
+import Canvas from "./canvas.js";
+import Rect from "./toolbar/rect.js";
+import Circle from "./toolbar/circle.js";
+import Textbox from "./toolbar/textbox.js";
+import Color from "./toolbar/color.js";
+import FreeDraw from "./toolbar/freeDraw.js";
+import Config from "./config.js";
+import ConfigUI from "./configUI.js";
+import Arrow from "./toolbar/arrow.js";
+import Download from "./download.js";
+import Zoom from "./zoom.js";
+import Pan from "./pan.js";
+import ObjectMenue from "./objectMenue.js";
+import {Instance, Connect} from "./utilis/client.js";
+import Image from "./image.js";
 
 var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, image, objMenue,
 textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
