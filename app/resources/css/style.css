@@ -94,7 +94,7 @@ h1 {
 #button-info .tooltiptext {
     top: 105%;
     background-color: var(--ui-semilight);
-    height: 50px;
+    height: 25px;
     padding: 10px;
 }
 
