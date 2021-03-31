@@ -9,13 +9,15 @@ Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzli
 ![image of modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/screenshots/modal.jpg)
 
 Die Nutzer und Nutzerinnen starten beim Öffnen der Anwendung bei dem im Bild oben angezeigten Fenster. Über die Betätigung des "Create a new board"-Buttons wird ein neues Whiteboard erstellt. Um zur Bearbeitung eines bereits existierenden Boards hinzuzustoßen, wird der Zugangscode in das dafür vorgesehene Feld "access code" eingegeben und anschließend der Button "Join an existing board" geklickt.
-<br />
-<br />
+
+
+
 ![gif of access code modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/access-code.gif)
 
 Über den "invite"-Button neben dem Logo öffnet sich ein Fenster, in dem der Zugangscode für den Beitritt zum Whiteboard angezeigt wird. Mithilfe des Buttons "copy to clipboard" wird der Zugangscode in die Zwischenablage gespeichert.
-<br />
-<br />
+
+
+
 ![gif of toolbar and submenus](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/toolbar.gif)
 
 Über den obersten Button legt der Nutzer bzw. die Nutzerin die Farbe fest, in der die anschließend erstellten Elemente (Textboxen, Formen, ...) dargestellt werden sollen. Der "selection"-Button dient dazu, in den Selektionsmodus des Cursors zurückzukehren, nachdem z.B. eine Freihandzeichnung erstellt wurde. Mit dem Klick auf die Buttons "textbox", "draw", "circle", "rectangle" und "arrow" öffnen sich Untermenüs, in denen verschiedenste Aktionen zur Erstellung von Textboxen, Freihandzeichnungen und Formen ausgewählt werden können. Über den untersten Button können Bilder aus den lokalen Dateien des Nutzers bzw. der Nutzerin auf das Whiteboard importiert werden. 
