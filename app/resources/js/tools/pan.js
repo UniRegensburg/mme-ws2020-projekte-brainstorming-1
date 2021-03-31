@@ -29,8 +29,7 @@ function onMouseMove(canvas) {
 
 function onMouseRelease(canvas) {
   canvas.on("mouse:up", function(opt) {
-    // on mouse up we want to recalculate new interaction
-    // for all objects, so we call setViewportTransform
+    // on mouse up recalculate new interaction for all objects, so setViewportTransform is called
     this.setViewportTransform(this.viewportTransform);
     this.isDragging = false;
     this.selection = true;
