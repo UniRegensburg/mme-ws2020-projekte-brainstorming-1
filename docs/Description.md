@@ -10,21 +10,31 @@ Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzli
 
 Die Nutzer und Nutzerinnen starten beim Öffnen der Anwendung bei dem im Bild oben angezeigten Fenster. Über die Betätigung des "Create a new board"-Buttons wird ein neues Whiteboard erstellt. Um zur Bearbeitung eines bereits existierenden Boards hinzuzustoßen, wird der Zugangscode in das vorgesehene Feld "access code" eingegeben und anschließend der Button "Join an existing board" geklickt.
 
-gif Whiteboard ("invite"-Button geklickt, Fenster geöffnet)
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/access-code.gif)
 
 Über den "invite"-Button neben dem Logo öffnet sich ein Fenster, in dem der Zugangscode für den Beitritt zum Whiteboard angezeigt wird. Mithilfe des Buttons "copy to clipboard" kann der Zugangscode in die Zwischenablage gespeichert werden, um ihn anschließend zu verschicken.
 
-Screenshot Werkzeugleiste
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/toolbar.gif)
 
 Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe in der
 
-![]()
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/textbox.gif)
+
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/draw.gif)
+
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/form.gif)
 
 ![image of image import](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/screenshots/image%20import.jpg)
 
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/object-menue.gif)
+
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/timer.gif)
+
+![](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/zoom-and-pan.gif)
+
 ## Anwendungsbeispiel
 
-
+![]()
 
 [Beschreiben Sie hier in einer kurzen Zusammenfassung Hintergrund, Ziele und Funktionen Ihrer Anwendung. Fügen Sie einen repräsentativen Screenshot ein. Dokumentieren Sie anschließend ausführlich alle Funktionen der Anwendung. Verwenden Sie Screenshots und ggf. auch Gif-Dateien um zentrale Elemente und Abläufe zu beschreiben.]
 
