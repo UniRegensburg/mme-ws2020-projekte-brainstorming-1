@@ -180,12 +180,8 @@ function initUI() {
   Config.OBJECTBUTTON5.addEventListener("click", function() { objMenue.delete(
       canvas); });
 
-  var t = document.getElementById("timerbutton"),
-    b = document.getElementById("button-start-pause");
-
-  b.onmouseover = function() { t.classList.remove("hide"); };
-  
-  t.onmouseleave = function() { t.classList.add("hide"); };
+  Config.STARTPAUSEBUTTON.onmouseover = function() { Config.TIMERBUTTONS.classList.remove("hide"); };
+  Config.TIMERBUTTONS.onmouseleave = function() { Config.TIMERBUTTONS.classList.add("hide"); };
   
 }
 

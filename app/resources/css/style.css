@@ -90,6 +90,13 @@ h1 {
     opacity: 1;
 }
 
+#button-info .tooltiptext {
+    top: 105%;
+    background-color: var(--ui-semilight);
+    height: 50px;
+    padding: 10px;
+}
+
 .colorPickerToolbar {
     top: 90px;
     left: 110px;
@@ -357,7 +364,7 @@ h1 {
 
 .button-with-text {
     height: 30px;
-    /*width: 70px;*/
+    width: 70px;
     border-radius: 5%;
     border-color: var(--transparent);
     background-color: var(--ui-semilight);
