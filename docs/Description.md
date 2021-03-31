@@ -1,6 +1,6 @@
 ## App
 
-Im Rahmen dieses Projekts wurde eine Webanwendung entworfen, die Nutzer und Nutzerinnen beim gemeinsamen Brainstorming unterstützt. Der Fokus der Anwendung liegt auf der Intuitivität in der Verwendung, sowie dem schnellen und unbeschwerlichen Zugang zur Anwendung (da z.B. keine Anmeldung erforderlich ist). Die Zielgruppe bilden die Casual User, die bei der spontanen, gemeinschaftlichen Ideenfindung auf ein unterstützendes Tool zurückgreifen wollen.
+Im Rahmen dieses Projekts wurde eine Webanwendung entworfen, die Nutzer und Nutzerinnen beim gemeinsamen Brainstorming unterstützt. Der Fokus der Anwendung liegt auf der Intuitivität in der Verwendung, sowie dem schnellen und unbeschwerlichen Zugang zur Anwendung (da z.B. keine Anmeldung erforderlich ist). Die Usability und Gestaltung standen ebenfalls im Zentrum der Überlegungen. Die Zielgruppe bilden die Casual User, die bei der spontanen, gemeinschaftlichen Ideenfindung auf ein unterstützendes Tool zurückgreifen wollen.
 
 Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzlich eine externe Plattform zur Kommunikation via Voice- bzw. Video-Chat genutzt wird. Dies bietet erst die Möglichkeit zum effektiven Brainstorming, da Denkanstöße gegeben und Ideen von Nutzern und Nutzerinnen diskutiert werden können. Es kann daher von einer gewissen Technikaffinität der Zielgruppe ausgegangen werden. 
 <br>
