@@ -7,6 +7,10 @@ Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzli
 <br>
 ## Umgesetzte Funktionen
 
+Die Anwendung wird über den Befehl "npm start" gestartet. 
+<br>
+<br>
+<br>
 ![image of modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/screenshots/modal.jpg)
 
 Die Nutzer und Nutzerinnen starten beim Öffnen der Anwendung bei dem im Bild oben angezeigten Fenster. Über die Betätigung des "Create a new board"-Buttons wird ein neues Whiteboard erstellt. Um zur Bearbeitung eines bereits existierenden Boards hinzuzustoßen, wird der Zugangscode in das dafür vorgesehene Feld "access code" eingegeben und anschließend der Button "Join an existing board" geklickt.
