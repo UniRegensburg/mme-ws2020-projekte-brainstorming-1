@@ -27,49 +27,36 @@
         <button id="user" class="mdc-button tooltip ">
             <span class="tooltiptext">invite</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">person_add</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">person_add</i>
         </button>
         <button id="button-download" class="mdc-button tooltip">
             <span class="tooltiptext">export</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">download</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">download</i>
         </button>
     </div>
 
 
-    <div style="position: absolute; top:0; right:0;">
-        <div class="timer">
-            <p style="font-size: medium; color: gray; margin-right: 20px;">Timer</p>
-            <p />
-            <p id="minutes" style="font-size: medium; color: gray">00</p>
-            <p>:</p>
-            <p id="seconds" style="font-size: medium; color: gray">00</p>
-
-            <div id="timerbutton" class="hide" style="position: absolute; top: 10px; right: 10px; height: 170px; width: 40px;">
-                <div style="position: absolute; top: 50px; right: 0; width: 70px;">
-                    <button id="timer15" class="button-with-text">15 Min</button>
-                    <p />
-                    <button id="timer30" class="button-with-text">30 Min</button>
-                    <p />
-                    <button id="timer45" class="button-with-text">45 Min</button>
-                </div>
-            </div>
-
-            <button id="button-start-pause" class="mdc-button tooltip" style="margin-left: 20px;">
-                <span id="startPauseTooltip" class="tooltiptext">start</span>
-                <span class="mdc-button__ripple button-icon-ripple"></span>
-                <i id="pauseIcon" class="material-icons mdc-button__icon button-icon" aria-hidden="true">play_arrow</i>
-            </button>
-            <!--
-            <button id="button-reset" class="mdc-button tooltip">
-                <span class="tooltiptext">restart timer</span>
-                <span class="mdc-button__ripple button-icon-ripple"></span>
-                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">restart_alt</i>
-            </button>
-        -->
-
+    <div class="timer" style="position: absolute; top:0; right:0; display: table-cell; vertical-align: middle; padding-right: 25px;">
+        <p style="font-size: medium; color: gray; margin-bottom: 20%;">Timer</p>
+        <div class="time display" style="display: flex; justify-content: center; margin: 0; padding: 0; border: 2px solid gray; border-radius: 10rem;">
+            <p id="minutes" style="font-size: medium; color: gray; margin: 0; padding: 0;">00</p>
+            <p style="margin: 0; padding: 0;">:</p>
+            <p id="seconds" style="font-size: medium; color: gray; margin: 0; padding: 0;">00</p>
         </div>
-    </div>
+        <div style="vertical-align: middle; padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 10%;">
+            <button id="button-start-pause" class="mdc-button tooltip">
+                <span  id="startPauseTooltip" class="tooltiptext">start</span>
+                <span class="mdc-button__ripple button-icon-ripple"></span>
+                <i id="pauseIcon" class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">play_arrow</i>
+            </button>
+        </div>
+        <div id="timerbutton" class="hide" style="margin: 0; padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 10;">
+            <button id="timer15" class="button-with-text">15 Min</button><p/>
+            <button id="timer30" class="button-with-text">30 Min</button><p/>
+            <button id="timer45" class="button-with-text">45 Min</button>   
+        </div>
+    </div>  
 
     <!--<i  class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="position: absolute; top: 65px; right: 35px; color: #E0E0E0">arrow_drop_down</i>-->
     <!--<p style="position: absolute; top: 50px; right: 15px; color:gray; font-size: small;">Select time</p>-->
@@ -79,43 +66,43 @@
         <button id="button-colorpicker" class="mdc-button tooltip">
             <span class="tooltiptext">color</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i id="icon-colorpicker" class="material-icons mdc-button__icon button-icon" aria-hidden="true">palette</i>
+            <i id="icon-colorpicker" class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">palette</i>
         </button>
         <p />
         <button id="button-mouse" class="mdc-button tooltip">
             <span class="tooltiptext">selection</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">near_me</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">near_me</i>
         </button>
         <p />
         <button id="button-textbox" class="mdc-button tooltip">
             <span class="tooltiptext">textbox</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">sticky_note_2</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">sticky_note_2</i>
         </button>
         <p />
         <button id="button-freedraw" class="mdc-button tooltip">
             <span class="tooltiptext">draw</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">gesture</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">gesture</i>
         </button>
         <p />
         <button id="button-circle" class="mdc-button tooltip">
             <span class="tooltiptext">circle</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">panorama_fish_eye</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">panorama_fish_eye</i>
         </button>
         <p />
         <button id="button-rect" class="mdc-button tooltip">
             <span class="tooltiptext">rectangle</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">crop_16_9</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">crop_16_9</i>
         </button>
         <p />
         <button id="button-arrow" class="mdc-button tooltip">
             <span class="tooltiptext">arrow</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">trending_flat</i>
         </button>
         <p />
         <label for="uploaded-file">
@@ -123,7 +110,7 @@
             <button id="button-image-upload" class="mdc-button tooltip">
                 <span class="tooltiptext">upload picture</span>
                 <span class="mdc-button__ripple button-icon-ripple"></span>
-                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">add_photo_alternate</i>
+                <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">add_photo_alternate</i>
             </button>
         </label>
     </div>
@@ -159,11 +146,11 @@
     <div id="freeDrawPicker" class="menue hide" style="position: absolute; top: 285px; left: 7%;">
         <button id="button-freedraw-1" class="button-with-icon tooltip">
             <span class="tooltiptext">pen</span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">edit</i>
         </button>
         <button id="button-freedraw-2" class="button-with-icon tooltip">
             <span class="tooltiptext">marker</span>
-            <i id="icon-freedraw-marker" class="material-icons mdc-button__icon button-icon" aria-hidden="true">edit</i>
+            <i id="icon-freedraw-marker" class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">edit</i>
         </button>
         <div>
             <p id="slider-freedraw-output" style="font-size: small; color: gray">Pen size: </p>
@@ -192,39 +179,39 @@
     <div id="arrowPicker" class="menue hide" style="position: absolute; top: 440px; left: 7%;">
         <button id="button-arrow-1" class="button-with-icon tooltip">
             <span class="tooltiptext">single arrow</span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">trending_flat</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">trending_flat</i>
         </button>
         <button id="button-arrow-2" class="button-with-icon tooltip">
             <span class="tooltiptext">double arrow</span>
-            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(90deg);" aria-hidden="true">height</i>
+            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(90deg);" aria-hidden="true" style="margin-right: 0;">height</i>
         </button>
         <button id="button-arrow-3" class="button-with-icon tooltip">
             <span class="tooltiptext">angled arrow</span>
-            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(45deg)" aria-hidden="true">trending_up</i>
+            <i class="material-icons mdc-button__icon button-icon" style="transform: rotate(45deg)" aria-hidden="true" style="margin-right: 0;">trending_up</i>
         </button>
     </div>
 
     <div id="objectMenue" class="menue hide" style="position: absolute; top:10px; left: 290px;">
-        <p style="font-size: small; color: gray;">Edit Object</p>
+        <p style="font-size: small; color: gray; margin-top: 0;">Edit Object</p>
         <button id="button-objectMenue-1" class="button-objectMenue tooltip">
             <span class="tooltiptext">change color</span>
-            <i id="icon-colorpicker-obj" class="material-icons  button-icon icon-objectMenue" aria-hidden="true">palette</i>
+            <i id="icon-colorpicker-obj" class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="margin-right: 0;">palette</i>
         </button>
         <button id="button-objectMenue-2" class="button-objectMenue tooltip">
             <span class="tooltiptext">dublicate</span>
-            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">content_copy</i>
+            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="margin-right: 0;">content_copy</i>
         </button>
         <button id="button-objectMenue-3" class="button-objectMenue tooltip">
             <span class="tooltiptext">bring to Front</span>
-            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">flip_to_front</i>
+            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="margin-right: 0;">flip_to_front</i>
         </button>
         <button id="button-objectMenue-4" class="button-objectMenue tooltip">
             <span class="tooltiptext">bring to Back</span>
-            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true">flip_to_back</i>
+            <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="margin-right: 0;">flip_to_back</i>
         </button>
         <button id="button-objectMenue-5" class="button-objectMenue tooltip">
             <span class="tooltiptext">delete</span>
-            <i class="material-icons button-icon icon-objectMenue" aria-hidden="true">delete</i>
+            <i class="material-icons button-icon icon-objectMenue" aria-hidden="true" style="margin-right: 0;">delete</i>
         </button>
 
     </div>
@@ -246,19 +233,19 @@
         <button id="button-zoom-in" class="mdc-button tooltip">
             <span class="tooltiptext">zoom in</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">zoom_in</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">zoom_in</i>
         </button>
         <p></p>
         <button id="button-zoom-out" class="mdc-button tooltip">
             <span class="tooltiptext">zoom out</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">zoom_out</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">zoom_out</i>
         </button>
         <p></p>
         <button id="button-zoom-init" class="mdc-button tooltip">
             <span class="tooltiptext">zoom 100%</span>
             <span class="mdc-button__ripple button-icon-ripple"></span>
-            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true">open_in_full</i>
+            <i class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">open_in_full</i>
         </button>
     </div>
 
@@ -289,7 +276,7 @@
             <p style="font-size: medium; color: gray">Access code: </p>
             <p id="inviteCode" style="font-size: medium; color: gray">xxxxxxxx</p>
             <button onclick="copyToClipboard('inviteCode')" id="copybutton" class="button-with-text">
-                <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="vertical-align: middle;">content_copy</i>
+                <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="vertical-align: middle; margin-right: 0;">content_copy</i>
                 Copy to clipboard
                 <!-- Funktion um Daten in Zwischenablage kopieren und Modal wieder zu schließen-->
                 <script type="text/javascript">
