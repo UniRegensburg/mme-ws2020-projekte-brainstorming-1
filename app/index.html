@@ -15,12 +15,10 @@
 </head>
 
 <body>
-    <!-- alle style Attribute in css Datei -->
     <canvas id="canvas" style="position: absolute; top:0; left:0;"></canvas>
-
+    
     <div id="title" style="position: absolute; top:0; left:0;">
         <img src="./resources/images/brainboard-Logo-vector.svg" alt="brainboard" width="135px" height="auto"></img>
-        <!--<button class="modal-button" id="modal-new" style="vertical-align: middle;"><span> Einstellungen </span> </button>-->
     </div>
 
     <!--Invite, Export and Info Buttons-->
@@ -64,7 +62,6 @@
             <button id="timer45" class="button-with-text">45 Min</button>   
         </div>
         </div>
-    </div>
     </div>  
 
     <!--Toolbar-->
@@ -263,8 +260,7 @@
         </button>
     </div>
 
-    <!-- code for invite-modal modal here-->
-
+    <!-- Code for invite modal-->
     <div id="invite-modal" class="modal" style="position: absolute; top:80px; left:45px;">
         <div class="invite-modal-content">
             <p style="font-size: medium; color: gray">Access code: </p>
@@ -272,7 +268,7 @@
             <button onclick="copyToClipboard('inviteCode')" id="copybutton" class="button-with-text">
                 <i class="material-icons  button-icon icon-objectMenue" aria-hidden="true" style="vertical-align: middle; margin-right: 0;">content_copy</i>
                 Copy to clipboard
-                <!-- Funktion um Daten in Zwischenablage kopieren und Modal wieder zu schließen-->
+                <!-- function to save access code to clipboard and to close modal-->
                 <script type="text/javascript">
                     function copyToClipboard(elementId) {
 
@@ -296,16 +292,11 @@
 
 
     <!-- Code for Modal-->
-
     <div class="bg-modal">
         <div class="modal-content">
-            <!--<div id="close">+</div>-->
             <img src="./resources/images/brainboard-Logo-vector.svg" alt="Logo brainboard" width="300px" height="auto">
             <form class="modal-form">
-                <!--<input class="input" id="user-name" type="text" placeholder="Name">-->
-                <!--<p style="font-size: large; color: gray">Create a new board</p>-->
                 <button class="modal-button" type="button" id="modal-create" style="vertical-align: middle;"><span> Create a new board </span> </button>
-                <!--<p style="font-size: large; color: gray">Or join an existing board</p>-->
                 <p />
                 <button class="modal-button" type="button" id="modal-join"><span> Join an existing board </span> </button>
                 <input class="input" id="code" type="text" placeholder="access code">
@@ -318,7 +309,6 @@
     <script type="module" src="resources/js/index.js"></script>
     <script type="module" src="resources/js/utilis/connect.js"></script>
     <script type="module" src="resources/js/utilis/timerClient.js"></script>
-    </script>
 </body>
 
 </html>
