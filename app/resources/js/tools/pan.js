@@ -45,9 +45,9 @@ class Pan {
   }
 
   disablePan(canvas) {
-    canvas.off('mouse:down');
-    canvas.off('mouse:move');
-    canvas.off('mouse:up');
+    canvas.off("mouse:down");
+    canvas.off("mouse:move");
+    canvas.off("mouse:up");
   }
 }
 

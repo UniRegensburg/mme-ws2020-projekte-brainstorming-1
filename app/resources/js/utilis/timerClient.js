@@ -41,7 +41,6 @@ Config.TIMER45.addEventListener("click", function() {
   room.send("timer:set", { seconds: 2700 }) //45 minutes
 })
 
-
 //function to calculate seconds and fill the html-tag
 function updateViews(sec_num) {
   var hours = Math.floor(sec_num / 3600);

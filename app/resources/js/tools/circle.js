@@ -3,7 +3,7 @@ import { selectedColor } from "./color.js";
 import Config from "../utilis/config.js";
 
 var isDown, origX, origY, ellipse, color = Config.COLORDEFAULT,
-  fill, stroke;
+  fill, stroke, pointer, rx, ry;
 
 class Circle {
 
@@ -35,11 +35,11 @@ class Circle {
   //circles are created by clicking and draging on the canvas
   drawCircle(canvas, circle, pan) {
 
-    canvas.on('mouse:down', function(o) {
+    canvas.on("mouse:down", function(o) {
 
       Config.CIRCLEMENUE.classList.add("hide");
 
-      var pointer = canvas.getPointer(o.e);
+      pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
       if (circle.getType() === "withBorder") {
@@ -58,8 +58,8 @@ class Circle {
       ellipse = new fabric.Ellipse({
         left: origX,
         top: origY,
-        originX: 'left',
-        originY: 'top',
+        originX: "left",
+        originY: "top",
         rx: pointer.x - origX,
         ry: pointer.y - origY,
         angle: 0,
@@ -70,11 +70,11 @@ class Circle {
       canvas.add(ellipse);
     });
 
-    canvas.on('mouse:move', function(o) {
-      if (!isDown) return;
-      var pointer = canvas.getPointer(o.e);
-      var rx = Math.abs(origX - pointer.x) / 2;
-      var ry = Math.abs(origY - pointer.y) / 2;
+    canvas.on("mouse:move", function(o) {
+      if (!isDown) {return;}
+      pointer = canvas.getPointer(o.e);
+      rx = Math.abs(origX - pointer.x) / 2;
+      ry = Math.abs(origY - pointer.y) / 2;
       if (rx > ellipse.strokeWidth) {
         rx -= ellipse.strokeWidth / 2
       }
@@ -84,24 +84,24 @@ class Circle {
       ellipse.set({ rx: rx, ry: ry });
 
       if (origX > pointer.x) {
-        ellipse.set({ originX: 'right' });
+        ellipse.set({ originX: "right" });
       } else {
-        ellipse.set({ originX: 'left' });
+        ellipse.set({ originX: "left" });
       }
       if (origY > pointer.y) {
-        ellipse.set({ originY: 'bottom' });
+        ellipse.set({ originY: "bottom" });
       } else {
-        ellipse.set({ originY: 'top' });
+        ellipse.set({ originY: "top" });
       }
       ellipse.dirty = true;
       canvas.renderAll();
     });
 
-    canvas.on('mouse:up', function(o) {
+    canvas.on("mouse:up", function(o) {
       isDown = false;
-      canvas.off('mouse:down');
+      canvas.off("mouse:down");
       pan.enablePan(canvas);
-      canvas.fire('object:modified', { target: ellipse });
+      canvas.fire("object:modified", { target: ellipse });
     });
   }
 }

@@ -10,7 +10,7 @@ var pathSingleArrow =
   pathAngledArrow =
   "M469 786.844 713.177 786.844 713.177 1021.4 708.021 1016.24 921.26 1016.24 921.26 1026.55 702.864 1026.55 702.864 792 708.021 797.156 469 797.156ZM916.104 1005.93 947.042 1021.4 916.104 1036.86Z",
   path, arrowDraw,
-  origX, origY,
+  origX, origY, pointer,
   color = Config.COLORDEFAULT,
   arrowMenue = Config.ARROWMENUE;
 
@@ -43,10 +43,10 @@ class Arrow {
   //draws the selected arrow on the place where user clicked
   drawArrow(canvas, arrow, pan) {
 
-    canvas.on('mouse:down', function(o) {
+    canvas.on("mouse:down", function(o) {
       arrowMenue.classList.add("hide");
 
-      var pointer = canvas.getPointer(o.e);
+      pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
 
@@ -71,8 +71,8 @@ class Arrow {
 
     });
 
-    canvas.on('mouse:up', function(o) {
-      canvas.off('mouse:down');
+    canvas.on("mouse:up", function(o) {
+      canvas.off("mouse:down");
       pan.enablePan(canvas);
     });
   }

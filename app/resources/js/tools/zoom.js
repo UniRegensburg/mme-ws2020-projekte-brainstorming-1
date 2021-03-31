@@ -20,15 +20,15 @@ function mouseZoom(canvas) {
 }
 
 function buttonZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas) {
-  zoomInButton.addEventListener('click', function() {
+  zoomInButton.addEventListener("click", function() {
     zoom += 0.1;
     canvas.setZoom(zoom);
   });
-  zoomInitButton.addEventListener('click', function() {
+  zoomInitButton.addEventListener("click", function() {
     zoom = 1;
     canvas.setZoom(zoom);
   });
-  zoomOutButton.addEventListener('click', function() {
+  zoomOutButton.addEventListener("click", function() {
     zoom -= 0.1;
     canvas.setZoom(zoom);
   });

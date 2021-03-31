@@ -2,7 +2,8 @@
 import { selectedColor } from "./color.js";
 import Config from "../utilis/config.js";
 
-var text = Config.TEXTBOXDEFAULTTEXT,
+var pointer,
+  text = Config.TEXTBOXDEFAULTTEXT,
   font = Config.TEXTBOXDEFAULTFONT,
   textboxDraw, origX, origY,
   color = Config.COLORDEFAULT,
@@ -48,7 +49,7 @@ class Textbox {
     canvas.on('mouse:down', function(o) {
       textboxMenue.classList.add("hide");
 
-      var pointer = canvas.getPointer(o.e);
+      pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
       if (textbox.getType() === "notFilled") {

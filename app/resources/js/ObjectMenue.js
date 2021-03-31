@@ -62,7 +62,7 @@ function changeColor(canvas, obj, position) {
     } else {
       element.set({ stroke: selectedColor });
     }
-    canvas.fire('object:modified', { target: element });
+    canvas.fire("object:modified", { target: element });
   });
 
   canvas.renderAll();
@@ -72,13 +72,13 @@ function changeColor(canvas, obj, position) {
 class ObjectMenue {
   //ObjectMenue is only shown when an object (or more) is selected
   isObjMenue(canvas) {
-    canvas.on('selection:updated', function(o) {
+    canvas.on("selection:updated", function(o) {
       showObjMenue(canvas);
     });
-    canvas.on('selection:created', function(o) {
+    canvas.on("selection:created", function(o) {
       showObjMenue(canvas);
     });
-    canvas.on('selection:cleared', function(o) {
+    canvas.on("selection:cleared", function(o) {
       showObjMenue(canvas);
     });
   }
@@ -123,7 +123,7 @@ class ObjectMenue {
         top: clonedObj.top + 15,
         evented: true,
       });
-      if (clonedObj.type === 'activeSelection') {
+      if (clonedObj.type === "activeSelection") {
         clonedObj.canvas = canvas;
         clonedObj.forEachObject(function(obj) {
           canvas.add(obj);
@@ -143,7 +143,7 @@ class ObjectMenue {
     obj = canvas.getActiveObjects();
     obj.forEach(element => {
       canvas.bringToFront(element);
-      canvas.fire('object:modified', { target: element });
+      canvas.fire("object:modified", { target: element });
     });
     canvas.discardActiveObject().renderAll();
   }
@@ -152,7 +152,7 @@ class ObjectMenue {
     obj = canvas.getActiveObjects();
     obj.forEach(element => {
       canvas.sendToBack(element);
-      canvas.fire('object:modified', { target: element });
+      canvas.fire("object:modified", { target: element });
     });
     canvas.discardActiveObject().renderAll();
   }

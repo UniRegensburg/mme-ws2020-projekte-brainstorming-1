@@ -77,14 +77,11 @@ const Config = {
   ZOOMOUTBUTTON: document.getElementById("button-zoom-out"),
   ZOOMINITBUTTON: document.getElementById("button-zoom-init"),
 
-
   // Image-Upload
   IMAGEUPLOAD: document.getElementById("addImg"),
 
-
   // Const for Connect.js
-  INVITECODE: document.getElementById('inviteCode'),
-
+  INVITECODE: document.getElementById("inviteCode"),
 
   // Const for timerClient.js
   MINUTESVIEW: document.getElementById("minutes"),
@@ -98,7 +95,6 @@ const Config = {
   TIMER15: document.getElementById("timer15"),
   TIMER30: document.getElementById("timer30"),
   TIMER45: document.getElementById("timer45"),
-
 };
 
 export default Config;
