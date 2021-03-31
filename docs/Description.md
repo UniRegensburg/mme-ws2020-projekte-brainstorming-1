@@ -3,7 +3,9 @@
 Im Rahmen dieses Projektes wurde eine Webanwendung entworfen, die Nutzer und Nutzerinnen beim gemeinsamen Brainstorming unterstützt. Der Fokus der Anwendung liegt auf der Intuitivität in der Verwendung, sowie dem schnellen und unbeschwerlichen Zugang zur Anwendung (da z.B. keine Anmeldung erforderlich ist). Die Zielgruppe bilden die Casual User, die bei der spontanen, gemeinschaftlichen Ideenfindung auf ein unterstützendes Tool zurückgreifen wollen.
 
 Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzlich eine externe Plattform zur Kommunikation via Voice- bzw. Video-Chat genutzt wird. Dies bietet erst die Möglichkeit zum effektiven Brainstorming, da Denkanstöße gegeben und Ideen von Nutzern und Nutzerinnen diskutiert werden können. Es kann daher von einer gewissen Technikaffinität der Zielgruppe ausgegangen werden. 
-
+<br>
+<br>
+<br>
 ## Umgesetzte Funktionen
 
 ![image of modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/screenshots/modal.jpg)
@@ -66,7 +68,6 @@ Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gez
 <br>
 <br>
 <br>
-
 ## Abweichungen von den geplanten Funktionen
 
 Die ursprünglich geplanten Funktionen wurden mit Ausnahme des Benutzernamens umgesetzt. Im Verlauf des Projekts wurde deutlich, dass die Vergabe und Anzeige von Benutzernamen initial zu hoch priorisiert wurde. Da - wie oben bereits erwähnt - davon ausgegangen wird, dass während der Verwendung parallel ein externer Kommunikationskanal zum Austausch genutzt wird, ist bekannt, welche Teilnehmer sich in der laufenden Brainstorming-Session befinden. Die Anzeige der Benutzernamen würde zudem weiteren Platz auf dem Bildschirm beanspruchen, der stattdessen für die Bearbeitung genutzt werden kann. 
