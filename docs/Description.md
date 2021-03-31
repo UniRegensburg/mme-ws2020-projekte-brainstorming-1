@@ -16,7 +16,7 @@ Screenshot Whiteboard ("invite"-Button geklickt, Fenster geöffnet)
 
 Screenshot Werkzeugleiste
 
-Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe in der
+Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe aus, in der die später erzeugten Elemente (Textboxen, Formen, ...) eingefärbt werden sollen.Abgesehen vom Image Import (unterster Button) 
 
 
 
