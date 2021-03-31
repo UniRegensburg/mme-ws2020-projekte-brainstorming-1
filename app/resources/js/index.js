@@ -181,7 +181,7 @@ function initUI() {
       canvas); });
 
   Config.STARTPAUSEBUTTON.onmouseover = function() { Config.TIMERBUTTONS.classList.remove("hide"); };
-  Config.TIMERBUTTONS.onmouseleave = function() { Config.TIMERBUTTONS.classList.add("hide"); };
+  Config.TIMERBUTTONSHOVER.onmouseleave = function() { Config.TIMERBUTTONS.classList.add("hide"); };
   
 }
 

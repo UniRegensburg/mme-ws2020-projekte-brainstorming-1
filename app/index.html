@@ -49,6 +49,7 @@
             <p style="margin: 0; padding: 0;">:</p>
             <p id="seconds" style="font-size: medium; color: gray; margin: 0; padding: 0;">00</p>
         </div>
+        <div id="timerbutton-hover" style="width: 60px;">
         <div style="vertical-align: middle; padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 10%;">
             <button id="button-start-pause" class="mdc-button tooltip">
                 <span  id="startPauseTooltip" class="tooltiptext">start</span>
@@ -56,13 +57,22 @@
                 <i id="pauseIcon" class="material-icons mdc-button__icon button-icon" aria-hidden="true" style="margin-right: 0;">play_arrow</i>
             </button>
         </div>
-        <div id="timerbutton" class="hide" style="position: absolute; top: 90px; right: 25px; height: 160px; width: 40px;">
+
+        <div id="timerbutton" class="hide" style="margin: 0; padding-left: 0; padding-right: 0; padding-bottom: 0; padding-top: 10;">
+            <button id="timer15" class="button-with-text">15 Min</button><p/>
+            <button id="timer30" class="button-with-text">30 Min</button><p/>
+            <button id="timer45" class="button-with-text">45 Min</button>   
+        </div>
+        </div>
+    </div>
+
+        <!--<div id="timerbutton" class="hide" style="position: absolute; top: 90px; right: 25px; height: 160px; width: 40px; border-style: solid;">
             <div style="position: absolute; top: 40px; left: -15px; width: 70px;">
                 <button id="timer15" class="button-with-text">15 Min</button><p/>
                 <button id="timer30" class="button-with-text">30 Min</button><p/>
                 <button id="timer45" class="button-with-text">45 Min</button>   
             </div>
-        </div>
+        </div>-->
     </div>  
 
 
