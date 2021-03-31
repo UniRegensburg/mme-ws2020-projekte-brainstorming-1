@@ -16,7 +16,7 @@ Screenshot Whiteboard ("invite"-Button geklickt, Fenster geöffnet)
 
 ![gif of toolbar](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/toolbar.gif)
 
-Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe aus, in der die später erzeugten Elemente (Textboxen, Formen, ...) eingefärbt werden sollen.Abgesehen vom Image Import (unterster Button) 
+Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe aus, in der die später erzeugten Elemente (Textboxen, Formen, ...) eingefärbt werden sollen. Abgesehen vom Image Import (letzter Button) und dem "selection"-Button (zweiter Button von oben) öffnet sich jeweils ein Untermenü zur Auswahl der folgenden Aktion.
 
 
 
