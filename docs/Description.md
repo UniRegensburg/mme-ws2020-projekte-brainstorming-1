@@ -15,7 +15,7 @@ Die Nutzer und Nutzerinnen starten beim Öffnen der Anwendung bei dem im Bild ob
 <br>
 ![gif of access code modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/access-code.gif)
 
-Über den "invite"-Button neben dem Logo öffnet sich ein Fenster, in dem der Zugangscode für den Beitritt zum Whiteboard angezeigt wird. Mithilfe des Buttons "copy to clipboard" wird der Zugangscode in die Zwischenablage gespeichert.
+Über den "invite"-Button neben dem Logo öffnet sich ein Fenster, in dem der Zugangscode für den Beitritt zum Whiteboard angezeigt wird. Mithilfe des Buttons "copy to clipboard" wird der Zugangscode in die Zwischenablage gespeichert. Mit dem Klick auf den "export"-Button startet automatisch der Download des Whiteboards als PNG. Das Informationsfeld, das beim Hovern über den "info"-Button erscheint, enthält die Erklärung zur Verwendung der Pan-Funktion.
 <br>
 <br>
 <br>
@@ -63,7 +63,7 @@ Der Nutzer bzw. die Nutzerin hat die Möglichkeit einen Timer während des Brain
 <br>
 ![gif of zoom and pan usage](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/zoom-and-pan.gif)
 
-Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gezoomt werden kann mit dem Mausrad bzw. mit dem Touchpad oder über den Klick auf die Zoom-Buttons unten rechts. Der Pan funktioniert über das Gedrückthalten von strg + Maus (die Information zur Funktionsweise ist im Informationsfeld neben dem "export"-Button festgehalten).
+Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gezoomt werden kann mit dem Mausrad bzw. mit dem Touchpad oder über den Klick auf die Zoom-Buttons unten rechts. Der unterste Button lässt den Nutzer bzw. die Nutzerin zur ursprünglichen Zoom-Einstellung (100%) zurückkehren. Der Pan funktioniert über das Gedrückthalten von strg + Maus (die Information zur Funktionsweise ist im Informationsfeld neben dem "export"-Button festgehalten).
 <br>
 <br>
 ## Abweichungen von den geplanten Funktionen
