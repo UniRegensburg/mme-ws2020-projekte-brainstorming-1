@@ -5,7 +5,6 @@ Im Rahmen dieses Projektes wurde eine Webanwendung entworfen, die Nutzer und Nut
 Für eine sinnvolle Nutzung der Anwendung wird davon ausgegangen, dass zusätzlich eine externe Plattform zur Kommunikation via Voice- bzw. Video-Chat genutzt wird. Dies bietet erst die Möglichkeit zum effektiven Brainstorming, da Denkanstöße gegeben und Ideen von Nutzern und Nutzerinnen diskutiert werden können. Es kann daher von einer gewissen Technikaffinität der Zielgruppe ausgegangen werden. 
 <br>
 <br>
-<br>
 ## Umgesetzte Funktionen
 
 ![image of modal](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/screenshots/modal.jpg)
@@ -65,7 +64,6 @@ Der Nutzer bzw. die Nutzerin hat die Möglichkeit einen Timer während des Brain
 ![gif of zoom and pan usage](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/zoom-and-pan.gif)
 
 Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gezoomt werden kann mit dem Mausrad bzw. mit dem Touchpad oder über den Klick auf die Zoom-Buttons unten rechts. Der Pan funktioniert über das Gedrückthalten von strg + Maus (die Information zur Funktionsweise ist in dem Informationsfeld neben dem "export"-Button festgehalten).
-<br>
 <br>
 <br>
 ## Abweichungen von den geplanten Funktionen
