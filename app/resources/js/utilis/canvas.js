@@ -62,8 +62,6 @@ class Canvas {
           canvas.renderOnAddRemove = false;
           objects.forEach(function(o) {
             canvas.remove(canvas.getObjects().find(obj => obj.id == o.id));
-            
-              
           });
 
           canvas.renderOnAddRemove = origRenderOnAddRemove;
@@ -72,17 +70,14 @@ class Canvas {
       });
     }, true);
 
-
-
-
-    canvas.on('object:added', function(options) {
+    canvas.on("object:added", function(options) {
       if (options.target) {
         var obj = options.target;
         //console.log("created")
         if (!obj.id) {
           // If object created by you, initially id will be undefined
           // Set the id and sync object
-          obj.set('id', Date.now() + '-' + room.sessionId);
+          obj.set("id", Date.now() + '-' + room.sessionId);
           obj.toJSON = (function(toJSON) {
             return function() {
               return fabric.util.object.extend(toJSON.call(this), {
@@ -95,7 +90,7 @@ class Canvas {
       }
     });
 
-    canvas.on('object:modified', function(options) {
+    canvas.on("object:modified", function(options) {
       if (options.target) {
         var obj = options.target;
         //console.log("modified")
@@ -110,13 +105,13 @@ class Canvas {
       }
     });
 
-    canvas.on('object:removed', function(options) {
+    canvas.on("object:removed", function(options) {
       if (options.target) {
         var obj = options.target;
         if (obj.removed)
           return; //Object already removed
 
-        obj.set('removed', true);
+        obj.set("removed", true);
         obj.toJSON = (function(toJSON) {
           return function() {
             return fabric.util.object.extend(toJSON.call(this), {
@@ -132,12 +127,6 @@ class Canvas {
 
     return canvas;
   }
-
-  /*
-  update(element) {
-    canvas.add(element);
-    canvas.renderAll();
-  }*/
 }
 
 export default Canvas;

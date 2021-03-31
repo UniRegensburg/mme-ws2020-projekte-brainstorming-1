@@ -1,6 +1,7 @@
 /* eslint-env browser */
 var zoom = 1;
 
+// zoom via mouse or touchpad
 function mouseZoom(canvas) {
   canvas.on("mouse:wheel", function(opt) {
     let delta;
@@ -19,16 +20,17 @@ function mouseZoom(canvas) {
   });
 }
 
+// zoom via button click
 function buttonZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas) {
-  zoomInButton.addEventListener('click', function() {
+  zoomInButton.addEventListener("click", function() {
     zoom += 0.1;
     canvas.setZoom(zoom);
   });
-  zoomInitButton.addEventListener('click', function() {
+  zoomInitButton.addEventListener("click", function() {
     zoom = 1;
     canvas.setZoom(zoom);
   });
-  zoomOutButton.addEventListener('click', function() {
+  zoomOutButton.addEventListener("click", function() {
     zoom -= 0.1;
     canvas.setZoom(zoom);
   });

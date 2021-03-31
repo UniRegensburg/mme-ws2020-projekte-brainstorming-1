@@ -1,19 +1,18 @@
 import { Instance } from "./client.js";
 import Config from "./config.js";
 
-
 //function to close modal, when task is done
 function closeModal() {
-  document.querySelector('.bg-modal').style.display = 'none';
+  document.querySelector(".bg-modal").style.display = "none";
 }
 
 //function to open modal, when task is done
 function openModal() {
-  document.querySelector('.bg-modal').style.display = 'flex';
+  document.querySelector(".bg-modal").style.display = "flex";
 }
 
 //create room, when create button is clicked
-document.getElementById('modal-create').addEventListener('click',
+document.getElementById("modal-create").addEventListener("click",
   function() {
 
     Instance.create("DrawingRoom").then(room => {
@@ -30,7 +29,7 @@ document.getElementById('modal-create').addEventListener('click',
 );
 
 //joind room, when join button is clicked and code is paste
-document.getElementById('modal-join').addEventListener('click',
+document.getElementById("modal-join").addEventListener("click",
   function() {
     let roomID = document.getElementById("code").value;
 
@@ -48,26 +47,21 @@ document.getElementById('modal-join').addEventListener('click',
   }
 );
 
-
 //function to open the inviteModal
 function openInviteModal() {
-  document.querySelector('.modal').style.display = 'flex';
+  document.querySelector(".modal").style.display = "flex";
 
 }
 
 //function to close the iviteModal
 function closeInviteModal() {
-  document.querySelector('.modal').style.display = 'none';
+  document.querySelector(".modal").style.display = "none";
 
 }
 
-
-document.getElementById('invite-modal').addEventListener('click',
+document.getElementById("invite-modal").addEventListener("click",
   closeInviteModal);
 
-document.getElementById('user').addEventListener('click', openInviteModal);
-
-
-
+document.getElementById("user").addEventListener("click", openInviteModal);
 
 openModal();

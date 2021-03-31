@@ -57,7 +57,7 @@ class FreeDraw {
   // freedraw is active until the mousebutton is clicked
   freeDrawing(canvas, freeDraw, color, isActive) {
 
-    canvas.on('mouse:down', function(o) {
+    canvas.on("mouse:down", function(o) {
       Config.FREEDRAWMENUE.classList.add("hide");
     });
 

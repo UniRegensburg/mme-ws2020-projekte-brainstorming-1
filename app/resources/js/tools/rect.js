@@ -3,7 +3,7 @@ import { selectedColor } from "./color.js";
 import Config from "../utilis/config.js";
 
 var isDown, origX, origY, rectangle, color = Config.COLORDEFAULT,
-  fill, stroke;
+  fill, stroke, pointer;
 
 class Rect {
 
@@ -36,11 +36,11 @@ class Rect {
   //rectangles are created by clicking and draging on the canvas
   drawRect(canvas, rect, pan) {
 
-    canvas.on('mouse:down', function(o) {
+    canvas.on("mouse:down", function(o) {
 
       Config.RECTMENUE.classList.add("hide");
 
-      var pointer = canvas.getPointer(o.e);
+      pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
       if (rect.getType() === "withBorder") {
@@ -66,10 +66,10 @@ class Rect {
       canvas.add(rectangle);
     });
 
-    canvas.on('mouse:move', function(o) {
+    canvas.on("mouse:move", function(o) {
 
-      if (!isDown) return;
-      var pointer = canvas.getPointer(o.e);
+      if (!isDown) {return;}
+      pointer = canvas.getPointer(o.e);
       if (origX > pointer.x) {
         rectangle.set({ left: Math.abs(pointer.x) });
       }
@@ -81,11 +81,11 @@ class Rect {
       canvas.renderAll();
     });
 
-    canvas.on('mouse:up', function(o) {
+    canvas.on("mouse:up", function(o) {
       isDown = false;
-      canvas.off('mouse:down');
+      canvas.off("mouse:down");
       pan.enablePan(canvas);
-      canvas.fire('object:modified', { target: rectangle });
+      canvas.fire("object:modified", { target: rectangle });
     });
 
   }

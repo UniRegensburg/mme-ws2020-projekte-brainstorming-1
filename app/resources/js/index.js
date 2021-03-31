@@ -17,21 +17,8 @@ import Canvas from "./utilis/canvas.js";
 
 import ObjectMenue from "./objectMenue.js";
 
-
-
-var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan,
-  timer, image, objMenue,
-  textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton,
-  mouseButton, arrowButton,
-  colorButton1, colorButton2, colorButton3, colorButton4, colorButton5,
-  colorButton6, colorButton7,
-  circleButton1, circleButton2,
-  rectButton1, rectButton2,
-  textboxButton1, textboxButton2,
-  freeDrawButton1, freeDrawButton2,
-  downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton,
-  imageUploadButton,
-  objectMenue = document.getElementById("objectMenue");
+var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, image, objMenue,
+  downloadButton, zoomInButton, zoomInitButton, zoomOutButton, imageUploadButton;
 
 function init() {
   eventListeners();
@@ -145,7 +132,6 @@ function initUI() {
       "double"); });
   Config.ARROWBUTTON3.addEventListener("click", function() { arrow.setType(
       "angled"); });
-
 
   downloadButton = document.getElementById("button-download");
 
