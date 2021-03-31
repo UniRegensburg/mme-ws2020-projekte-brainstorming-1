@@ -43,7 +43,6 @@ rect: erstellt Rechtecke; blendet das entsprechende Untermenü ein
 textbox: erstellt Textboxen; blendet das entsprechende Untermenü ein  
 zoom: regelt den Zoom des Canvas  
 canvas: erstellt das Canvas Element; achtet dadrauf, ob Objekte auf dem Canvas hinzugefügt, gelöscht oder modifiziert werden  
-Client:  
 config: definiert Konstanten  
 connect: öffnet und verwaltet das Anfangsmodal und das Einladungsmodal  
 timerClient: regelt die clientseitigen Aktionen des Timers  
