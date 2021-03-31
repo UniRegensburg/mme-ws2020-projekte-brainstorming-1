@@ -63,7 +63,7 @@ Der Nutzer bzw. die Nutzerin hat die Möglichkeit einen Timer während des Brain
 <br>
 ![gif of zoom and pan usage](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/zoom-and-pan.gif)
 
-Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gezoomt werden kann mit dem Mausrad bzw. mit dem Touchpad oder über den Klick auf die Zoom-Buttons unten rechts. Der Pan funktioniert über das Gedrückthalten von strg + Maus (die Information zur Funktionsweise ist in dem Informationsfeld neben dem "export"-Button festgehalten).
+Zur individuellen Anpassung der Ansicht können Zoom und Pan genutzt werden. Gezoomt werden kann mit dem Mausrad bzw. mit dem Touchpad oder über den Klick auf die Zoom-Buttons unten rechts. Der Pan funktioniert über das Gedrückthalten von strg + Maus (die Information zur Funktionsweise ist im Informationsfeld neben dem "export"-Button festgehalten).
 <br>
 <br>
 ## Abweichungen von den geplanten Funktionen
