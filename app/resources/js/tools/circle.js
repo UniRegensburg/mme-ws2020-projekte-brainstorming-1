@@ -32,6 +32,7 @@ class Circle {
   }
 
   // from https://stackoverflow.com/questions/34100866/how-to-free-draw-ellipse-using-fabricjs
+  //circles are created by clicking and draging on the canvas
   drawCircle(canvas, circle, pan) {
 
     canvas.on('mouse:down', function(o) {

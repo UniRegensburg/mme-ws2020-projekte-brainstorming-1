@@ -60,6 +60,7 @@ h1 {
     background-color: var(--ui-dark) !important;
 }
 
+/*color of icon is updated into the selected color*/
 #icon-colorpicker {
     color: var(--default);
 }
@@ -90,6 +91,13 @@ h1 {
     opacity: 1;
 }
 
+#button-info .tooltiptext {
+    top: 105%;
+    background-color: var(--ui-semilight);
+    height: 50px;
+    padding: 10px;
+}
+
 .colorPickerToolbar {
     top: 90px;
     left: 110px;
@@ -114,6 +122,7 @@ h1 {
     border-color: var(--ui-semidark);
 }
 
+/*different hover for this colorbutton to make it better visible*/
 #button-color-9:hover {
     border-color: var(--ui-dark);
 }
@@ -134,6 +143,7 @@ h1 {
     bottom: 50%;
 }
 
+/*different color for marker pen to differ from normal pen*/
 #icon-freedraw-marker {
     color: var(--ui-semidark);
 }

@@ -37,7 +37,7 @@ document.getElementById('modal-join').addEventListener('click',
     console.log("connecting with room " + roomID);
     Instance.joinById(roomID).then(room => {
       console.log(room.sessionId, "joined", room.name, " ", room.id);
-
+      Config.INVITECODE.innerText = room.id;
       document.dispatchEvent(new CustomEvent(
         "RoomConnectEvent", { detail: room }));
 

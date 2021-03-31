@@ -56,6 +56,7 @@ class Color {
     Config.COLORMENUE.classList.add("hide");
     Config.COLORICON.style.color = selectedColor;
 
+    //color can be changed while freedraw is activated
     if (freeDraw.getIsActive()) {
       freeDraw.freeDrawing(canvas, freeDraw,
         selectedColor, true);

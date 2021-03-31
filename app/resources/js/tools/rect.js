@@ -33,6 +33,7 @@ class Rect {
   }
 
   // from https://jsfiddle.net/wcwabpwc/
+  //rectangles are created by clicking and draging on the canvas
   drawRect(canvas, rect, pan) {
 
     canvas.on('mouse:down', function(o) {
