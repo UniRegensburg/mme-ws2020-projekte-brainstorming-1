@@ -14,9 +14,9 @@ Screenshot Whiteboard ("invite"-Button geklickt, Fenster geöffnet)
 
 Über den "invite"-Button neben dem Logo öffnet sich ein Fenster, in dem der Zugangscode für den Beitritt zum Whiteboard angezeigt wird. Mithilfe des Buttons "copy to clipboard" kann der Zugangscode in die Zwischenablage gespeichert werden, um ihn anschließend zu verschicken.
 
-Screenshot Werkzeugleiste
+![gif of toolbar](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/toolbar.gif)
 
-Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe in der
+Über den obersten Button wählt der Nutzer bzw. die Nutzerin eine Farbe aus, in der die später erzeugten Elemente (Textboxen, Formen, ...) eingefärbt werden sollen. Abgesehen vom Image Import (letzter Button) und dem "selection"-Button (zweiter Button von oben) öffnet sich jeweils ein Untermenü zur Auswahl der folgenden Aktion.
 
 
 
