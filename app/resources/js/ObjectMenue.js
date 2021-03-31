@@ -1,14 +1,12 @@
 import Config from "./utilis/config.js";
 
-var top, left, obj, _clipboard, colorMenue = Config.COLORMENUEOBJ,
+var obj, clipboard, colorMenue = Config.COLORMENUEOBJ,
   selectedColor;
 
 function showObjMenue(canvas) {
   obj = canvas.getActiveObject();
 
   if (obj) {
-    Config.OBJECTMENUE.style.display = "inline-Block";
-
     Config.OBJECTMENUE.classList.remove("hide");
   } else {
     Config.OBJECTMENUE.classList.add("hide");
@@ -52,14 +50,15 @@ function changeColor(canvas, obj, position) {
       selectedColor = "#F94144";
   }
 
+  //changes the color of the colored attribute (background, text, stroke) for each type of element; 
   obj.forEach(element => {
-    if (element.fill !== "transparent" && element.fill !== "#EEEEEE" &&
+    if (element.fill !== "transparent" && element.fill !== "#EEEEEE" && //"#EEEEEE" is only the only the color of the font of filled textboxes
       element.fill !== null) {
       element.set({ fill: selectedColor });
     } else if (element.fill === "#EEEEEE") {
       element.set({ backgroundColor: selectedColor });
-    } else if (element.stroke.length === 9) {
-      element.set({ stroke: selectedColor + "80" });
+    } else if (element.stroke.length === 9) { //check if object has a transpatrent color (marker pan)
+      element.set({ stroke: selectedColor + "80" }); //changes the color in a transparent color again
     } else {
       element.set({ stroke: selectedColor });
     }
@@ -71,6 +70,7 @@ function changeColor(canvas, obj, position) {
 }
 
 class ObjectMenue {
+  //ObjectMenue is only shown when an object (or more) is selected
   isObjMenue(canvas) {
     canvas.on('selection:updated', function(o) {
       showObjMenue(canvas);
@@ -112,12 +112,13 @@ class ObjectMenue {
   copy(canvas) {
     // from http://fabricjs.com/copypaste
     canvas.getActiveObject().clone(function(cloned) {
-      _clipboard = cloned;
+      clipboard = cloned;
     });
 
-    _clipboard.clone(function(clonedObj) {
+    clipboard.clone(function(clonedObj) {
       canvas.discardActiveObject();
       clonedObj.set({
+        //pastes the cloned object a bit offset to visulize that the dublication worked
         left: clonedObj.left + 15,
         top: clonedObj.top + 15,
         evented: true,
@@ -131,9 +132,9 @@ class ObjectMenue {
       } else {
         canvas.add(clonedObj);
       }
-      _clipboard.top += 15;
-      _clipboard.left += 15;
-      canvas.setActiveObject(clonedObj);
+      clipboard.top += 15;
+      clipboard.left += 15;
+      canvas.setActiveObject(clonedObj); //the cloned object is now the selected object
       canvas.requestRenderAll();
     });
   }

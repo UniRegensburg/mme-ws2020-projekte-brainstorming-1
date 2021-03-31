@@ -98,6 +98,7 @@ function initUI() {
   Config.TEXTBOXBUTTON2.addEventListener("click", function() { textbox.setType(
       "filled"); });
 
+  // mousebutton stops pen tool
   Config.MOUSEBUTTON.addEventListener("click", function() { pan.enablePan(
       canvas);
     freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
@@ -180,7 +181,9 @@ function initUI() {
   Config.OBJECTBUTTON5.addEventListener("click", function() { objMenue.delete(
       canvas); });
 
+  //Timerbuttons are shown by hovering over the start/pause Button and 
   Config.STARTPAUSEBUTTON.onmouseover = function() { Config.TIMERBUTTONS.classList.remove("hide"); };
+  //Timerbuttons disappear when the mousepointer leaves the start/pause Button or the timer buttons
   Config.TIMERBUTTONSHOVER.onmouseleave = function() { Config.TIMERBUTTONS.classList.add("hide"); };
   
 }

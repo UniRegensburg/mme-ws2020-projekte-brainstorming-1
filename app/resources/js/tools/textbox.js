@@ -42,6 +42,7 @@ class Textbox {
     return this.type;
   }
 
+  //draws the selected textbox on the place where user clicked
   drawTextbox(canvas, textbox, pan) {
 
     canvas.on('mouse:down', function(o) {

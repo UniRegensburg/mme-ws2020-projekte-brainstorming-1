@@ -4,9 +4,10 @@ import Config from "./config.js";
 var canvas, room;
 
 class Canvas {
+  //draws canvas the same size then the window
   drawCanvas() {
     canvas = new fabric.Canvas("canvas", {
-      height: window.innerHeight,
+      height: window.innerHeight, 
       width: window.innerWidth,
       backgroundColor: Config.COLORCANVAS,
       stateful: true,
@@ -132,10 +133,11 @@ class Canvas {
     return canvas;
   }
 
+  /*
   update(element) {
     canvas.add(element);
     canvas.renderAll();
-  }
+  }*/
 }
 
 export default Canvas;

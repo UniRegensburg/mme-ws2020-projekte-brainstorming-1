@@ -54,6 +54,7 @@ class FreeDraw {
     this.isActive = isActive;
   }
 
+  // freedraw is active until the mousebutton is clicked
   freeDrawing(canvas, freeDraw, color, isActive) {
 
     canvas.on('mouse:down', function(o) {
@@ -68,8 +69,8 @@ class FreeDraw {
         colorDraw;
     } else if (freeDraw.getType() === "marker") {
       canvas
-        .freeDrawingBrush.color = colorDraw + "80";
-    } //80 = 50% transparent
+        .freeDrawingBrush.color = colorDraw + "80"; // generates a transparent color; 80 = 50% transparent
+    } 
 
     canvas.freeDrawingBrush.width = parseInt(Config.FREEDRAWSLIDER.value);
 
