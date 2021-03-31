@@ -39,7 +39,7 @@ Im Untermenü zum Freihandzeichnen kann der Nutzer bzw. die Nutzerin zwischen ei
 <br>
 ![gif of form creation](https://github.com/UniRegensburg/mme-ws2020-projekte-brainstorming-1/blob/Dev/docs/assets/gifs/form.gif)
 
-Bei der Erstellung der Formen kann in den Untermenüs der Kreise und Rechtecke zwischen umrandeten und ausgefüllten Formen gewählt werden. Kreise und Rechtecke werden durch das Aufziehen mit der Maus erzeugt. Im Untermenüs der Pfeile werden dem Nutzer bzw. der Nutzerin drei verschiedene Arten von Pfeilen angeboten. 
+Bei der Erstellung der Formen kann in den Untermenüs der Kreise und Rechtecke zwischen umrandeten und ausgefüllten Formen gewählt werden. Kreise und Rechtecke werden durch das Aufziehen mit der Maus erzeugt. Im Untermenü der Pfeile werden dem Nutzer bzw. der Nutzerin drei verschiedene Arten von Pfeilen angeboten. 
 <br>
 <br>
 <br>
