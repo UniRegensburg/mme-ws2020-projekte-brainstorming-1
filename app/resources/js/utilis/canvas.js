@@ -59,7 +59,6 @@ class Canvas {
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
           canvas.renderOnAddRemove = false;
-
           objects.forEach(function(o) {
             canvas.remove(canvas.getObjects().find(obj => obj.id == o.id));
             
