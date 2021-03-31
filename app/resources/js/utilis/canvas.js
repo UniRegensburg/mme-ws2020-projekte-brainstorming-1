@@ -19,7 +19,7 @@ class Canvas {
 
       //task to do if object is added by other users
       room.onMessage("object:added", (message) => {
-        console.log("new object received from server");
+        //console.log("new object received from server");
         fabric.util.enlivenObjects([message.object], function(
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
@@ -36,7 +36,7 @@ class Canvas {
 
       //task to do if object is modified by other users
       room.onMessage("object:modified", (message) => {
-        console.log("modified object received from server");
+        //console.log("modified object received from server");
         fabric.util.enlivenObjects([message.object], function(
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
@@ -54,7 +54,7 @@ class Canvas {
 
       //task to do if object was removed by other users
       room.onMessage("object:removed", (message) => {
-        console.log("removed object received from server");
+        //console.log("removed object received from server");
         fabric.util.enlivenObjects([message.object], function(
           objects) {
           var origRenderOnAddRemove = canvas.renderOnAddRemove;
@@ -78,7 +78,7 @@ class Canvas {
     canvas.on('object:added', function(options) {
       if (options.target) {
         var obj = options.target;
-        console.log("created")
+        //console.log("created")
         if (!obj.id) {
           // If object created by you, initially id will be undefined
           // Set the id and sync object
@@ -98,7 +98,7 @@ class Canvas {
     canvas.on('object:modified', function(options) {
       if (options.target) {
         var obj = options.target;
-        console.log("modified")
+        //console.log("modified")
         obj.toJSON = (function(toJSON) {
           return function() {
             return fabric.util.object.extend(toJSON.call(this), {

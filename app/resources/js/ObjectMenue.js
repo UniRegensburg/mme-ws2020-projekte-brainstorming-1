@@ -25,7 +25,6 @@ function changeColor(canvas, obj, position) {
       selectedColor = "#F3722C";
       break;
     case 3:
-      //selectedColor = "#F8961E";
       selectedColor = "#00ACC1";
       break;
     case 4:
@@ -64,10 +63,9 @@ function changeColor(canvas, obj, position) {
     } else {
       element.set({ stroke: selectedColor });
     }
-    canvas.fire('object:modified', {target: element});
+    canvas.fire('object:modified', { target: element });
   });
 
-  //obj.set({fill: selectedColor});
   canvas.renderAll();
   colorMenue.classList.add("hide");
 }
@@ -90,25 +88,25 @@ class ObjectMenue {
     colorMenue.classList.remove("hide");
 
     Config.COLORBUTTONOBJ1.addEventListener("click",
-  function() { changeColor(canvas, obj, 1); });
+      function() { changeColor(canvas, obj, 1); });
     Config.COLORBUTTONOBJ2.addEventListener("click",
-  function() { changeColor(canvas, obj, 2); });
+      function() { changeColor(canvas, obj, 2); });
     Config.COLORBUTTONOBJ3.addEventListener("click",
-  function() { changeColor(canvas, obj, 3); });
+      function() { changeColor(canvas, obj, 3); });
     Config.COLORBUTTONOBJ4.addEventListener("click",
-  function() { changeColor(canvas, obj, 4); });
+      function() { changeColor(canvas, obj, 4); });
     Config.COLORBUTTONOBJ5.addEventListener("click",
-  function() { changeColor(canvas, obj, 5); });
+      function() { changeColor(canvas, obj, 5); });
     Config.COLORBUTTONOBJ6.addEventListener("click",
-  function() { changeColor(canvas, obj, 6); });
+      function() { changeColor(canvas, obj, 6); });
     Config.COLORBUTTONOBJ7.addEventListener("click",
-  function() { changeColor(canvas, obj, 7); });
+      function() { changeColor(canvas, obj, 7); });
     Config.COLORBUTTONOBJ8.addEventListener("click",
-  function() { changeColor(canvas, obj, 8); });
+      function() { changeColor(canvas, obj, 8); });
     Config.COLORBUTTONOBJ9.addEventListener("click",
-  function() { changeColor(canvas, obj, 9); });
+      function() { changeColor(canvas, obj, 9); });
     Config.COLORBUTTONOBJ10.addEventListener("click",
-  function() { changeColor(canvas, obj, 10); });
+      function() { changeColor(canvas, obj, 10); });
   }
 
   copy(canvas) {
@@ -144,7 +142,7 @@ class ObjectMenue {
     obj = canvas.getActiveObjects();
     obj.forEach(element => {
       canvas.bringToFront(element);
-      canvas.fire('object:modified', {target: element});
+      canvas.fire('object:modified', { target: element });
     });
     canvas.discardActiveObject().renderAll();
   }
@@ -153,7 +151,7 @@ class ObjectMenue {
     obj = canvas.getActiveObjects();
     obj.forEach(element => {
       canvas.sendToBack(element);
-      canvas.fire('object:modified', {target: element});
+      canvas.fire('object:modified', { target: element });
     });
     canvas.discardActiveObject().renderAll();
   }

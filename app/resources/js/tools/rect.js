@@ -42,10 +42,14 @@ class Rect {
       var pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
-      if (rect.getType() === "withBorder") { fill = "transparent";
-        stroke = 3; } else if (rect.getType() === "filled") { fill =
-        color;
-        stroke = 0; }
+      if (rect.getType() === "withBorder") {
+        fill = "transparent";
+        stroke = 3;
+      } else if (rect.getType() === "filled") {
+        fill =
+          color;
+        stroke = 0;
+      }
 
       isDown = true;
       origX = pointer.x;

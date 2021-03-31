@@ -25,7 +25,7 @@ class Arrow {
     Config.FREEDRAWMENUE.classList.add("hide");
     Config.COLORMENUE.classList.add("hide");
     Config.COLORMENUEOBJ.classList.add("hide");
-    
+
     canvas.discardActiveObject().renderAll();
   }
 
@@ -50,10 +50,16 @@ class Arrow {
 
       if (selectedColor) { color = selectedColor; }
 
-      if (arrow.getType() === "single") { path =
-        pathSingleArrow; } else if (arrow.getType() === "double") { path =
-          pathdoubleArrow; } else if (arrow.getType() === "angled") { path
-          = pathAngledArrow; }
+      if (arrow.getType() === "single") {
+        path =
+          pathSingleArrow;
+      } else if (arrow.getType() === "double") {
+        path =
+          pathdoubleArrow;
+      } else if (arrow.getType() === "angled") {
+        path
+          = pathAngledArrow;
+      }
 
       origX = pointer.x;
       origY = pointer.y;

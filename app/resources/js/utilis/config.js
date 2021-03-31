@@ -79,17 +79,14 @@ const Config = {
 
 
   // Image-Upload
-
   IMAGEUPLOAD: document.getElementById("addImg"),
 
 
   // Const for Connect.js
-
   INVITECODE: document.getElementById('inviteCode'),
 
 
   // Const for timerClient.js
-
   MINUTESVIEW: document.getElementById("minutes"),
   SECONDSVIEW: document.getElementById("seconds"),
   STARTPAUSEBUTTON: document.getElementById("button-start-pause"),

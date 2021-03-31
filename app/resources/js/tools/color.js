@@ -56,8 +56,10 @@ class Color {
     Config.COLORMENUE.classList.add("hide");
     Config.COLORICON.style.color = selectedColor;
 
-    if (freeDraw.getIsActive()) { freeDraw.freeDrawing(canvas, freeDraw,
-        selectedColor, true); }
+    if (freeDraw.getIsActive()) {
+      freeDraw.freeDrawing(canvas, freeDraw,
+        selectedColor, true);
+    }
   }
 
 }

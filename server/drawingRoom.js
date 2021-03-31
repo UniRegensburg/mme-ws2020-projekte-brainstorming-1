@@ -4,14 +4,14 @@ const Timer = require('./timerServer');
 class DrawingRoom extends colyseus.Room {
   // When room is initialized
   onCreate(options) {
-    console.log("new Drawing room ID:", this.roomId, " Created.");
+    //console.log("new Drawing room ID:", this.roomId, " Created.");
     this.Timer = new Timer(this.onTimerTick.bind(this), this.onTimerEnd
       .bind(this));
     this.Timer.setSeconds(0);
     this.objects = new Map();
 
     this.onMessage("object:added", (client, message) => {
-      console.log("object added by ", client.id);
+      //console.log("object added by ", client.id);
       this.clients.forEach(element => {
         if (client.id != element.id) {
           element.send("object:added", message);
@@ -21,7 +21,7 @@ class DrawingRoom extends colyseus.Room {
     });
 
     this.onMessage("object:modified", (client, message) => {
-      console.log("object modified by ", client.id);
+      //console.log("object modified by ", client.id);
       this.clients.forEach(element => {
         if (client.id != element.id) {
           element.send("object:modified", message);
@@ -31,7 +31,7 @@ class DrawingRoom extends colyseus.Room {
     });
 
     this.onMessage("object:removed", (client, message) => {
-      console.log("object removed by ", client.id);
+      //console.log("object removed by ", client.id);
       this.clients.forEach(element => {
         if (client.id != element.id) {
           element.send("object:removed", message);

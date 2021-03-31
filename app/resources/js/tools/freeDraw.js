@@ -63,9 +63,13 @@ class FreeDraw {
     colorDraw = color;
     if (selectedColor) { colorDraw = selectedColor; }
 
-    if (freeDraw.getType() === "pen") { canvas.freeDrawingBrush.color =
-        colorDraw; } else if (freeDraw.getType() === "marker") { canvas
-        .freeDrawingBrush.color = colorDraw + "80"; } //80 = 50% transparent
+    if (freeDraw.getType() === "pen") {
+      canvas.freeDrawingBrush.color =
+        colorDraw;
+    } else if (freeDraw.getType() === "marker") {
+      canvas
+        .freeDrawingBrush.color = colorDraw + "80";
+    } //80 = 50% transparent
 
     canvas.freeDrawingBrush.width = parseInt(Config.FREEDRAWSLIDER.value);
 

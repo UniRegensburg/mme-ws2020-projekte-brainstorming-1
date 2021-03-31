@@ -4,7 +4,7 @@ var room;
 
 document.addEventListener("RoomConnectEvent", function(e) {
   room = e.detail;
-  console.log("timer got room ", e.detail.id);
+  //console.log("timer got room ", e.detail.id);
   room.onMessage("timer:start", (message) => {
     Config.STARTPAUSEICON.innerHTML = "pause";
     Config.STARTPAUSETOOLTIP.innerHTML = "pause";
@@ -16,8 +16,8 @@ document.addEventListener("RoomConnectEvent", function(e) {
   room.onMessage("timer:tick", (message) => {
     updateViews(message.seconds);
   });
-  room.onMessage("timer:end", (message) => { 
-    alert('Time is up!')   
+  room.onMessage("timer:end", (message) => {
+    alert('Time is up!')
   });
 });
 
@@ -29,24 +29,20 @@ Config.STARTPAUSEBUTTON.addEventListener("click", function() {
   }
 });
 
-/*
-resetButton.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 0 })
-});
-*/
-
 Config.TIMER15.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 900 })
+  room.send("timer:set", { seconds: 900 }) //15 minutes
 })
 
 Config.TIMER30.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 1800 })
+  room.send("timer:set", { seconds: 1800 }) //30 minutes
 })
 
 Config.TIMER45.addEventListener("click", function() {
-  room.send("timer:set", { seconds: 2700 })
+  room.send("timer:set", { seconds: 2700 }) //45 minutes
 })
 
+
+//function to calculate seconds and fill the html-tag
 function updateViews(sec_num) {
   var hours = Math.floor(sec_num / 3600);
   var minutes = Math.floor((sec_num - (hours * 3600)) / 60);

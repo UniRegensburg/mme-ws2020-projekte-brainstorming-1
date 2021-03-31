@@ -11,7 +11,7 @@ import Download from "./tools/download.js";
 import Zoom from "./tools/zoom.js";
 import Pan from "./tools/pan.js";
 
-import {Instance, Connect} from "./utilis/client.js";
+import { Instance, Connect } from "./utilis/client.js";
 import Config from "./utilis/config.js";
 import Canvas from "./utilis/canvas.js";
 
@@ -19,121 +19,174 @@ import ObjectMenue from "./objectMenue.js";
 
 
 
-var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan, timer, image, objMenue,
-textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton, mouseButton, arrowButton,
-colorButton1, colorButton2, colorButton3, colorButton4, colorButton5, colorButton6, colorButton7,
-circleButton1, circleButton2,
-rectButton1, rectButton2,
-textboxButton1, textboxButton2,
-freeDrawButton1, freeDrawButton2,
-downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton, imageUploadButton,
-objectMenue = document.getElementById("objectMenue");
+var textbox, rect, circle, color, canvas, freeDraw, arrow, download, zoom, pan,
+  timer, image, objMenue,
+  textboxButton, rectButton, circleButton, colorpickerButton, freeDrawButton,
+  mouseButton, arrowButton,
+  colorButton1, colorButton2, colorButton3, colorButton4, colorButton5,
+  colorButton6, colorButton7,
+  circleButton1, circleButton2,
+  rectButton1, rectButton2,
+  textboxButton1, textboxButton2,
+  freeDrawButton1, freeDrawButton2,
+  downloadButton, zoomInButton, zoomInitButton, zoomOutButton, timerButton,
+  imageUploadButton,
+  objectMenue = document.getElementById("objectMenue");
 
 function init() {
-	eventListeners();
-	initUI();
-	initClient();
+  eventListeners();
+  initUI();
+  initClient();
 }
 
-function eventListeners(){
-	document.addEventListener("RoomConnectEvent", function(e) {
-		console.log("connected to room " + e.detail.id);
-	}, true);
+function eventListeners() {
+  document.addEventListener("RoomConnectEvent", function(e) {
+    console.log("connected to room " + e.detail.id);
+  }, true);
 }
 
-function initClient(){
-    Connect("ws://localhost:8001")
+function initClient() {
+  Connect("ws://localhost:8001")
 }
 
-function initUI(){
-	canvas = new Canvas;
-	canvas = canvas.drawCanvas();
+function initUI() {
+  canvas = new Canvas;
+  canvas = canvas.drawCanvas();
 
-	zoom = new Zoom;
-	pan = new Pan;
-	pan.enablePan(canvas);
+  zoom = new Zoom;
+  pan = new Pan;
+  pan.enablePan(canvas);
 
-	color = new Color;
-	freeDraw = new FreeDraw (false); 
-	textbox = new Textbox ("notFilled");
-	circle = new Circle ("withBorder");
-	rect = new Rect ("withBorder");
-	arrow = new Arrow ("single");
-	objMenue = new ObjectMenue;
-	
-	Config.COLORPICKERBUTTON.addEventListener("click", function(){color.showMenue(canvas);});
-	Config.COLORBUTTON1.addEventListener("click", function(){color.selectColor(1, canvas, freeDraw);});
-	Config.COLORBUTTON2.addEventListener("click", function(){color.selectColor(2, canvas, freeDraw);});
-	Config.COLORBUTTON3.addEventListener("click", function(){color.selectColor(3, canvas, freeDraw);});
-	Config.COLORBUTTON4.addEventListener("click", function(){color.selectColor(4, canvas, freeDraw);});
-	Config.COLORBUTTON5.addEventListener("click", function(){color.selectColor(5, canvas, freeDraw);});
-	Config.COLORBUTTON6.addEventListener("click", function(){color.selectColor(6, canvas, freeDraw);});
-	Config.COLORBUTTON7.addEventListener("click", function(){color.selectColor(7, canvas, freeDraw);});
-	Config.COLORBUTTON8.addEventListener("click", function(){color.selectColor(8, canvas, freeDraw);});
-	Config.COLORBUTTON9.addEventListener("click", function(){color.selectColor(9, canvas, freeDraw);});
-	Config.COLORBUTTON10.addEventListener("click", function(){color.selectColor(10, canvas, freeDraw);});
+  color = new Color;
+  freeDraw = new FreeDraw(false);
+  textbox = new Textbox("notFilled");
+  circle = new Circle("withBorder");
+  rect = new Rect("withBorder");
+  arrow = new Arrow("single");
+  objMenue = new ObjectMenue;
 
-	Config.TEXTBOXBUTTON.addEventListener("click", function(){pan.disablePan(canvas); textbox.showMenue(canvas); textbox.drawTextbox(canvas, textbox, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	Config.TEXTBOXBUTTON1.addEventListener("click", function(){textbox.setType("notFilled");});
-	Config.TEXTBOXBUTTON2.addEventListener("click", function(){textbox.setType("filled");});
+  Config.COLORPICKERBUTTON.addEventListener("click", function() { color
+      .showMenue(canvas); });
+  Config.COLORBUTTON1.addEventListener("click", function() { color.selectColor(
+      1, canvas, freeDraw); });
+  Config.COLORBUTTON2.addEventListener("click", function() { color.selectColor(
+      2, canvas, freeDraw); });
+  Config.COLORBUTTON3.addEventListener("click", function() { color.selectColor(
+      3, canvas, freeDraw); });
+  Config.COLORBUTTON4.addEventListener("click", function() { color.selectColor(
+      4, canvas, freeDraw); });
+  Config.COLORBUTTON5.addEventListener("click", function() { color.selectColor(
+      5, canvas, freeDraw); });
+  Config.COLORBUTTON6.addEventListener("click", function() { color.selectColor(
+      6, canvas, freeDraw); });
+  Config.COLORBUTTON7.addEventListener("click", function() { color.selectColor(
+      7, canvas, freeDraw); });
+  Config.COLORBUTTON8.addEventListener("click", function() { color.selectColor(
+      8, canvas, freeDraw); });
+  Config.COLORBUTTON9.addEventListener("click", function() { color.selectColor(
+      9, canvas, freeDraw); });
+  Config.COLORBUTTON10.addEventListener("click", function() { color.selectColor(
+      10, canvas, freeDraw); });
 
-	Config.MOUSEBUTTON.addEventListener("click", function(){pan.enablePan(canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	
-	Config.FREEDRAWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); freeDraw.showMenue(freeDraw, canvas); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, true);});
-	Config.FREEDRAWBUTTON1.addEventListener("click", function(){freeDraw.setType("pen"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
-	Config.FREEDRAWBUTTON2.addEventListener("click", function(){freeDraw.setType("marker"); freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true);});
+  Config.TEXTBOXBUTTON.addEventListener("click", function() { pan.disablePan(
+      canvas);
+    textbox.showMenue(canvas);
+    textbox.drawTextbox(canvas, textbox, pan);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
+  Config.TEXTBOXBUTTON1.addEventListener("click", function() { textbox.setType(
+      "notFilled"); });
+  Config.TEXTBOXBUTTON2.addEventListener("click", function() { textbox.setType(
+      "filled"); });
 
-	Config.CIRCLEBUTTON.addEventListener("click", function(){pan.disablePan(canvas); circle.showMenue(canvas); circle.drawCircle(canvas, circle, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	Config.CIRCLEBUTTON1.addEventListener("click", function(){circle.setType("withBorder");});
-	Config.CIRCLEBUTTON2.addEventListener("click", function(){circle.setType("filled");});
+  Config.MOUSEBUTTON.addEventListener("click", function() { pan.enablePan(
+      canvas);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
 
-	Config.RECTBUTTON.addEventListener("click", function(){pan.disablePan(canvas); rect.showMenue(canvas); rect.drawRect(canvas, rect, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	Config.RECTBUTTON1.addEventListener("click", function(){rect.setType("withBorder");});
-	Config.RECTBUTTON2.addEventListener("click", function(){rect.setType("filled");});
+  Config.FREEDRAWBUTTON.addEventListener("click", function() { pan.disablePan(
+      canvas);
+    freeDraw.showMenue(freeDraw, canvas);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, true); });
+  Config.FREEDRAWBUTTON1.addEventListener("click", function() { freeDraw
+      .setType("pen");
+    freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true); });
+  Config.FREEDRAWBUTTON2.addEventListener("click", function() { freeDraw
+      .setType("marker");
+    freeDraw.freeDrawing(canvas, freeDraw, freeDraw.getColor(), true); });
 
-	Config.ARROWBUTTON.addEventListener("click", function(){pan.disablePan(canvas); arrow.showMenue(canvas); arrow.drawArrow(canvas, arrow, pan); freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false);});
-	Config.ARROWBUTTON1.addEventListener("click", function(){arrow.setType("single");});
-	Config.ARROWBUTTON2.addEventListener("click", function(){arrow.setType("double");});
-	Config.ARROWBUTTON3.addEventListener("click", function(){arrow.setType("angled");});
-	
+  Config.CIRCLEBUTTON.addEventListener("click", function() { pan.disablePan(
+      canvas);
+    circle.showMenue(canvas);
+    circle.drawCircle(canvas, circle, pan);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
+  Config.CIRCLEBUTTON1.addEventListener("click", function() { circle.setType(
+      "withBorder"); });
+  Config.CIRCLEBUTTON2.addEventListener("click", function() { circle.setType(
+      "filled"); });
 
-	downloadButton = document.getElementById("button-download");
-	
-	Config.DOWNLOADBUTTON.addEventListener("click", function(){download = new Download; download.startDownlad(canvas);});
+  Config.RECTBUTTON.addEventListener("click", function() { pan.disablePan(
+      canvas);
+    rect.showMenue(canvas);
+    rect.drawRect(canvas, rect, pan);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
+  Config.RECTBUTTON1.addEventListener("click", function() { rect.setType(
+      "withBorder"); });
+  Config.RECTBUTTON2.addEventListener("click", function() { rect.setType(
+      "filled"); });
 
-	image = new Image;
-	imageUploadButton = document.getElementById("button-image-upload");
-	imageUploadButton.addEventListener("click", function() {
-		document.querySelector("#uploaded-file").click();
-		image.loadImage(canvas);
-	});
+  Config.ARROWBUTTON.addEventListener("click", function() { pan.disablePan(
+      canvas);
+    arrow.showMenue(canvas);
+    arrow.drawArrow(canvas, arrow, pan);
+    freeDraw.freeDrawing(canvas, freeDraw, Config.COLORDEFAULT, false); });
+  Config.ARROWBUTTON1.addEventListener("click", function() { arrow.setType(
+      "single"); });
+  Config.ARROWBUTTON2.addEventListener("click", function() { arrow.setType(
+      "double"); });
+  Config.ARROWBUTTON3.addEventListener("click", function() { arrow.setType(
+      "angled"); });
 
-	zoom = new Zoom;
-	zoomInButton = document.getElementById("button-zoom-in");
-	zoomInitButton = document.getElementById("button-zoom-init");
-	zoomOutButton = document.getElementById("button-zoom-out");
-	zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
 
-	pan = new Pan;
-	pan.enablePan(canvas);
+  downloadButton = document.getElementById("button-download");
 
-	objMenue.isObjMenue(canvas);
-	Config.OBJECTBUTTON1.addEventListener("click", function(){objMenue.showColorMenue(canvas);});
-	Config.OBJECTBUTTON2.addEventListener("click", function(){objMenue.copy(canvas);});
-	Config.OBJECTBUTTON3.addEventListener("click", function(){objMenue.toFront(canvas);});
-	Config.OBJECTBUTTON4.addEventListener("click", function(){objMenue.toBack(canvas);});
-	Config.OBJECTBUTTON5.addEventListener("click", function(){objMenue.delete(canvas);});
+  Config.DOWNLOADBUTTON.addEventListener("click", function() { download =
+      new Download;
+    download.startDownlad(canvas); });
 
-	var t = document.getElementById("timerbutton"),
-	b = document.getElementById("button-start-pause");
+  image = new Image;
+  imageUploadButton = document.getElementById("button-image-upload");
+  imageUploadButton.addEventListener("click", function() {
+    document.querySelector("#uploaded-file").click();
+    image.loadImage(canvas);
+  });
 
-	b.onmouseover = function(){t.classList.remove("hide");};
-	//b.onmouseleave = function(){t.classList.add("hide");};
-	t.onmouseleave = function(){t.classList.add("hide");};
-	//b.onmouseleave = function(){t.classList.add("hide");};
+  zoom = new Zoom;
+  zoomInButton = document.getElementById("button-zoom-in");
+  zoomInitButton = document.getElementById("button-zoom-init");
+  zoomOutButton = document.getElementById("button-zoom-out");
+  zoom.enableZoom(zoomInButton, zoomInitButton, zoomOutButton, canvas);
 
-	//b.addEventListener("mouseover", function(){t.classList.remove("hide");});
+  pan = new Pan;
+  pan.enablePan(canvas);
+
+  objMenue.isObjMenue(canvas);
+  Config.OBJECTBUTTON1.addEventListener("click", function() { objMenue
+      .showColorMenue(canvas); });
+  Config.OBJECTBUTTON2.addEventListener("click", function() { objMenue.copy(
+      canvas); });
+  Config.OBJECTBUTTON3.addEventListener("click", function() { objMenue.toFront(
+      canvas); });
+  Config.OBJECTBUTTON4.addEventListener("click", function() { objMenue.toBack(
+      canvas); });
+  Config.OBJECTBUTTON5.addEventListener("click", function() { objMenue.delete(
+      canvas); });
+
+  var t = document.getElementById("timerbutton"),
+    b = document.getElementById("button-start-pause");
+
+  b.onmouseover = function() { t.classList.remove("hide"); };
+  
+  t.onmouseleave = function() { t.classList.add("hide"); };
+  
 }
 
 init();
-

@@ -50,13 +50,17 @@ class Textbox {
       var pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
-      if (textbox.getType() === "notFilled") { textColor = color;
+      if (textbox.getType() === "notFilled") {
+        textColor = color;
         backgroundColor = "transparent";
-        shadow = "transpatent"; } else if (textbox.getType() ===
-        "filled") { textColor = "#EEEEEE";
+        shadow = "transpatent";
+      } else if (textbox.getType() ===
+        "filled") {
+        textColor = "#EEEEEE";
         backgroundColor = color;
         shadow =
-        "#9E9E9E 4px 4px 10px"; } //shadow: "color, offsetX, offsetY, blur"
+          "#9E9E9E 4px 4px 10px";
+      } //shadow: "color, offsetX, offsetY, blur"
 
       origX = pointer.x;
       origY = pointer.y;

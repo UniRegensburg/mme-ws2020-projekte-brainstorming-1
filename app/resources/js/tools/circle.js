@@ -41,10 +41,14 @@ class Circle {
       var pointer = canvas.getPointer(o.e);
 
       if (selectedColor) { color = selectedColor; }
-      if (circle.getType() === "withBorder") { fill = "transparent";
-        stroke = 3; } else if (circle.getType() === "filled") { fill =
+      if (circle.getType() === "withBorder") {
+        fill = "transparent";
+        stroke = 3;
+      } else if (circle.getType() === "filled") {
+        fill =
           color;
-        stroke = 0; }
+        stroke = 0;
+      }
 
       isDown = true;
       origX = pointer.x;
